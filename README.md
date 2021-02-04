@@ -1,16 +1,17 @@
-# flutter_template
+# App name - Flutter
 
-A new Flutter application.
+## 📖 Project description
+This project serves as a template project for Flutter applications. You can generate a new repository by clicking [here](https://github.com/monstar-lab-oss/flutter-template/generate).
 
-## Getting Started
+## 🔧 Setup and Installation
+- Install Flutter and Dart SDK
+- Install Flutter and Dart Android Studio Plugins
+- Run `$ flutter doctor` to verify installations
+- Run `$ pub get` to pull project dependencies
+- Run `main.dart`
 
-This project is a starting point for a Flutter application.
+## 🌲 Branches
+* `master` - Latest version in the app store.
+* `develop` - Default. Feature branches are merged in when complete and then deleted.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔗 Useful links
