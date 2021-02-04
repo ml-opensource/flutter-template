@@ -1,7 +1,7 @@
 # App name - Flutter
 
 ## 📖 Project description
-This project serves as a template project for Flutter applications. You can generate a new repository by clicking the "Use this remplate" above.
+This project serves as a template project for Flutter applications. You can generate a new repository by clicking [here](https://github.com/monstar-lab-oss/flutter-template/generate).
 
 ## 🔧 Setup and Installation
 - Install Flutter and Dart SDK
@@ -15,5 +15,3 @@ This project serves as a template project for Flutter applications. You can gene
 * `develop` - Default. Feature branches are merged in when complete and then deleted.
 
 ## 🔗 Useful links
-
-## 💻 Developers
