@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_template/domain/model/error.dart';
+import 'package:flutter_template/domain/error/error.dart';
 
 extension ErrorMessages on Error {
   String getMessage(BuildContext context) {

@@ -1,16 +1,5 @@
 import 'package:dio/dio.dart';
-
-/// Defines user facing errors.
-enum Error {
-  /// A generic error.
-  unknown,
-
-  /// No internet connection error.
-  connection,
-
-  /// Unauthorized 401 error.
-  unauthorized,
-}
+import 'package:flutter_template/domain/error/error.dart';
 
 class ErrorHandler {
   static List<Error> obtainAll(dynamic error) {
