@@ -6,9 +6,9 @@ This project serves as a template project for Flutter applications. You can gene
 ## 🔧 Setup and Installation
 - Install Flutter and Dart SDK
 - Install Flutter and Dart Android Studio Plugins
-- Run `$ flutter doctor` to verify installations
-- Run `$ pub get` to pull project dependencies
-- Run `main.dart`
+- Execute `$ flutter doctor` to verify installations
+- Execute `$ pub get` to pull project dependencies
+- Run `Staging Debug` or any other run configuration of choice
 
 ## 🌲 Branches
 * `master` - Latest version in the app store.
