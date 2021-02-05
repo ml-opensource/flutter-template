@@ -1,0 +1,1 @@
+enum AppFlavor { staging, production }
