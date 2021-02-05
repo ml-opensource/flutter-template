@@ -13,6 +13,6 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter pub get
-      - run: flutter build apk --release -t lib/main_common.dart
+      - run: flutter build apk --release -t lib/main_production.dart
       - run: flutter analyze
       - run: flutter test
