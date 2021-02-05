@@ -1,7 +1,7 @@
-abstract class BaseUseCase<Output> {
+abstract class UseCase<Output> {
   Future<Output> run();
 }
 
-abstract class BaseStreamUseCase<Output> {
+abstract class StreamUseCase<Output> {
   Stream<Output> run();
 }
