@@ -24,7 +24,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.colors.background,
       appBar: AppBar(
+        backgroundColor: context.colors.accent,
         title: Text(widget.tab.toString()),
       ),
       body: Center(
@@ -33,8 +35,10 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
+              style: AppTextStyles.body1.copyWith(
+                color: context.colors.text,
+              ),
             ),
-            // Usage of Textstyle and color
             Text(
               '$_counter',
               style: AppTextStyles.headline1.copyWith(
@@ -49,9 +53,12 @@ class _HomePageState extends State<HomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         elevation: 0,
-        backgroundColor: Colors.transparent,
-        child: SvgIcon.from(AppIcons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        backgroundColor: context.colors.accent,
+        child: SvgIcon.from(
+          AppIcons.add,
+          color: context.colors.text,
+        ),
+      ),
     );
   }
 }
