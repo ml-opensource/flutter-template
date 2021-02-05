@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             // Usage of Textstyle and color
             Text(
               '$_counter',
-              style: context.textStyles.headline1.copyWith(
+              style: AppTextStyles.headline1.copyWith(
                 color: context.colors.accent,
               ),
             ),
