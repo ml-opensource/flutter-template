@@ -23,7 +23,7 @@ const _appColorsLight = AppColors(
 
 const _appColorsDark = AppColors(
   background: Colors.black54,
-  surface: Colors.black12,
+  surface: Color(0xFF222222),
   accent: Colors.lightBlueAccent,
   text: Colors.white,
 );
