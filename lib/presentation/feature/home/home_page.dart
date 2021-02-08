@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/feature/home/home_page_tab.dart';
+import 'package:flutter_template/presentation/feature/news/news_page.dart';
+import 'package:flutter_template/presentation/feature/profile/profile_page.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
-import 'package:flutter_template/presentation/widgets/svg_icon.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.tab}) : super(key: key);
@@ -13,45 +14,54 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
+  HomePageTab _tabSelection;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  @override
+  void initState() {
+    _tabSelection = widget.tab;
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.tab.toString()),
+      backgroundColor: context.colors.background,
+      body: _getSelectedPage(_tabSelection),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: context.colors.surface,
+        unselectedItemColor: context.colors.text,
+        items: _getBottomNavigationBarItems(context),
+        currentIndex: _tabSelection.index,
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) => setState(() {
+          _tabSelection = HomePageTab.values[index];
+        }),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            // Usage of Textstyle and color
-            Text(
-              '$_counter',
-              style: AppTextStyles.headline1.copyWith(
-                color: context.colors.accent,
-              ),
-            ),
-          ],
-        ),
-      ),
-      // Usage of icon
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        child: SvgIcon.from(AppIcons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  Widget _getSelectedPage(HomePageTab tab) {
+    switch (tab) {
+      case HomePageTab.news:
+        return NewsPage();
+      case HomePageTab.profile:
+        return ProfilePage();
+      default:
+        throw ("Unknown HomePageTab");
+    }
+  }
+
+  List<BottomNavigationBarItem> _getBottomNavigationBarItems(
+      BuildContext context) {
+    return [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        label: "News",
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.person_rounded),
+        label: "Profile",
+      ),
+    ];
   }
 }
