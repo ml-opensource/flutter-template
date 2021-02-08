@@ -1,5 +1,4 @@
 enum HomePageTab {
-  first,
-  second,
-  third,
+  news,
+  profile,
 }
