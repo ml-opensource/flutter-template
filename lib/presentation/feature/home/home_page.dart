@@ -5,16 +5,16 @@ import 'package:flutter_template/presentation/feature/profile/profile_page.dart'
 import 'package:flutter_template/presentation/resources/resources.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.tab}) : super(key: key);
+  HomePage({Key? key, this.tab}) : super(key: key);
 
-  final HomePageTab tab;
+  final HomePageTab? tab;
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  HomePageTab _tabSelection;
+  HomePageTab? _tabSelection;
 
   @override
   void initState() {
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: context.colors.surface,
         unselectedItemColor: context.colors.text,
         items: _getBottomNavigationBarItems(context),
-        currentIndex: _tabSelection.index,
+        currentIndex: _tabSelection!.index,
         type: BottomNavigationBarType.fixed,
         onTap: (index) => setState(() {
           _tabSelection = HomePageTab.values[index];
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _getSelectedPage(HomePageTab tab) {
+  Widget _getSelectedPage(HomePageTab? tab) {
     switch (tab) {
       case HomePageTab.news:
         return NewsPage();
