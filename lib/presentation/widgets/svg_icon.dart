@@ -12,12 +12,12 @@ class SvgIcon {
   /// [size] If provided, both width and height are set to this value.
   static SvgPicture from(
     String assetName, {
-    Key key,
-    double width,
-    double height,
-    double size,
-    Color color,
-    BoxFit fit,
+    Key? key,
+    double? width,
+    double? height,
+    double? size,
+    Color? color,
+    BoxFit? fit,
   }) =>
       SvgPicture.asset(
         assetName,
@@ -29,7 +29,7 @@ class SvgIcon {
       );
 
   /// Create a square icon with = height = 24.0
-  static SvgPicture s24(String assetName, {Key key, Color color}) => SvgPicture.asset(
+  static SvgPicture s24(String assetName, {Key? key, Color? color}) => SvgPicture.asset(
         assetName,
         key: key,
         width: 24.0,
@@ -39,7 +39,7 @@ class SvgIcon {
       );
 
   /// Create a square icon with = height = 30.0
-  static SvgPicture s30(String assetName, {Key key, Color color}) => SvgPicture.asset(
+  static SvgPicture s30(String assetName, {Key? key, Color? color}) => SvgPicture.asset(
     assetName,
     key: key,
     width: 30.0,
@@ -49,7 +49,7 @@ class SvgIcon {
   );
 
   /// Create a square icon with = height = 48.0
-  static SvgPicture s48(String assetName, {Key key, Color color}) => SvgPicture.asset(
+  static SvgPicture s48(String assetName, {Key? key, Color? color}) => SvgPicture.asset(
         assetName,
         key: key,
         width: 48.0,

@@ -3,15 +3,15 @@ import 'package:flutter_template/domain/error/error.dart';
 
 class ErrorHandler {
   static List<Error> obtainAll(dynamic error) {
-    final result = List<Error>();
+    final List<Error> result = [];
 
     if (error is DioError) {
-      if (error.type != DioErrorType.RESPONSE) {
+      if (error.type != DioErrorType.response) {
         result.add(Error.connection);
         return result;
       }
 
-      final code = error.response.statusCode;
+      final code = error.response!.statusCode;
 
       if (code == 401) {
         result.add(Error.unauthorized);

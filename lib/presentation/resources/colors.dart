@@ -7,10 +7,10 @@ class AppColors {
   final Color text;
 
   const AppColors({
-    @required this.background,
-    @required this.surface,
-    @required this.accent,
-    @required this.text,
+    required this.background,
+    required this.surface,
+    required this.accent,
+    required this.text,
   });
 }
 
