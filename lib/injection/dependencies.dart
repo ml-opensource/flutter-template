@@ -1,4 +1,6 @@
+import 'package:flutter_template/injection/data_module.dart';
 import 'package:flutter_template/presentation/app_flavor.dart';
+import 'package:flutter_template/presentation/feature/profile/profile_module.dart';
 import 'injector.dart';
 
 class DependencyManager {
@@ -6,10 +8,9 @@ class DependencyManager {
 		injector.registerLazySingleton<AppFlavor>(() => flavor);
 
 		// App modules
-		//await *Module.inject();
+		await DataModule.inject();
 
 		// Feature modules
-		//await *Module.inject();
-
+		await ProfileModule.inject();
 	}
 }
