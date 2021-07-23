@@ -1,14 +1,13 @@
-
 enum AuthStatus {
-	/// Authentication required.
-	unknown,
+  /// Authentication required.
+  unknown,
 
-	/// Authenticated user available.
-	ok,
+  /// Authenticated user available.
+  ok,
 
-	/// Email verification pending.
-	verification,
+  /// Email verification pending.
+  verification,
 
-	/// Authentication token expired.
-	expired,
+  /// Authentication token expired.
+  expired,
 }

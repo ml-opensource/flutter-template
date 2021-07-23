@@ -1,6 +1,3 @@
-
-
-
 import 'dart:convert';
 
 import 'package:flutter_template/data/model/auth/auth.dart';
@@ -11,49 +8,49 @@ import 'package:prefs/prefs.dart';
 import 'package:rxdart/rxdart.dart';
 
 class AuthStorageRepositoryImpl implements AuthStorageRepository {
-	static const authStatusKey = 'authStatusKey';
-	static const tokenKey = 'tokenKey';
+  static const authStatusKey = 'authStatusKey';
+  static const tokenKey = 'tokenKey';
 
-	final BehaviorSubject<AuthStatus> items = BehaviorSubject();
+  final BehaviorSubject<AuthStatus> items = BehaviorSubject();
 
-	AuthStorageRepositoryImpl() {
-		Prefs.init();
-	}
+  AuthStorageRepositoryImpl() {
+    Prefs.init();
+  }
 
-	@override
-	Future<void> setAuthStatus(AuthStatus status) async {
-		Prefs.setInt(authStatusKey, status.index);
-		items.add(AuthStatus.values[Prefs.getInt(authStatusKey)]);
-	}
+  @override
+  Future<void> setAuthStatus(AuthStatus status) async {
+    Prefs.setInt(authStatusKey, status.index);
+    items.add(AuthStatus.values[Prefs.getInt(authStatusKey)]);
+  }
 
-	@override
-	Future<AuthStatus> getAuthStatus() async {
-		return AuthStatus.values[Prefs.getInt(authStatusKey)];
-	}
+  @override
+  Future<AuthStatus> getAuthStatus() async {
+    return AuthStatus.values[Prefs.getInt(authStatusKey)];
+  }
 
-	@override
-	Future<Stream<AuthStatus>> getAuthStatusStream() async {
-		return items.stream;
-	}
+  @override
+  Future<Stream<AuthStatus>> getAuthStatusStream() async {
+    return items.stream;
+  }
 
-	@override
-	Future<void> setToken(Token token) async {
-		await Prefs.setString(tokenKey, jsonEncode(token.toJson()));
-	}
+  @override
+  Future<void> setToken(Token token) async {
+    await Prefs.setString(tokenKey, jsonEncode(token.toJson()));
+  }
 
-	@override
-	Future<Token> getToken() async {
-		return Token.fromJson(jsonDecode(Prefs.getString(tokenKey, "")));
-	}
+  @override
+  Future<Token> getToken() async {
+    return Token.fromJson(jsonDecode(Prefs.getString(tokenKey, "")));
+  }
 
-	@override
-	Future<Auth> refreshToken(Token token) {
-		throw UnsupportedError('Not supported via storage.');
-	}
+  @override
+  Future<Auth> refreshToken(Token token) {
+    throw UnsupportedError('Not supported via storage.');
+  }
 
-	@override
-	Future<void> clear() async {
-		Prefs.remove(tokenKey);
-		Prefs.remove(authStatusKey);
-	}
+  @override
+  Future<void> clear() async {
+    Prefs.remove(tokenKey);
+    Prefs.remove(authStatusKey);
+  }
 }

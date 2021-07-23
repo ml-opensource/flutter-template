@@ -44,11 +44,15 @@ const $Auth = _$AuthTearOff();
 /// @nodoc
 mixin _$Auth {
   int get id => throw _privateConstructorUsedError;
+
   String get username => throw _privateConstructorUsedError;
+
   DateTime get createdAt => throw _privateConstructorUsedError;
+
   Token get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $AuthCopyWith<Auth> get copyWith => throw _privateConstructorUsedError;
 }
@@ -57,6 +61,7 @@ mixin _$Auth {
 abstract class $AuthCopyWith<$Res> {
   factory $AuthCopyWith(Auth value, $Res Function(Auth) then) =
       _$AuthCopyWithImpl<$Res>;
+
   $Res call({int id, String username, DateTime createdAt, Token token});
 
   $TokenCopyWith<$Res> get token;
@@ -67,6 +72,7 @@ class _$AuthCopyWithImpl<$Res> implements $AuthCopyWith<$Res> {
   _$AuthCopyWithImpl(this._value, this._then);
 
   final Auth _value;
+
   // ignore: unused_field
   final $Res Function(Auth) _then;
 
@@ -109,6 +115,7 @@ class _$AuthCopyWithImpl<$Res> implements $AuthCopyWith<$Res> {
 abstract class _$AuthCopyWith<$Res> implements $AuthCopyWith<$Res> {
   factory _$AuthCopyWith(_Auth value, $Res Function(_Auth) then) =
       __$AuthCopyWithImpl<$Res>;
+
   @override
   $Res call({int id, String username, DateTime createdAt, Token token});
 
@@ -224,12 +231,16 @@ abstract class _Auth implements Auth {
 
   @override
   int get id => throw _privateConstructorUsedError;
+
   @override
   String get username => throw _privateConstructorUsedError;
+
   @override
   DateTime get createdAt => throw _privateConstructorUsedError;
+
   @override
   Token get token => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$AuthCopyWith<_Auth> get copyWith => throw _privateConstructorUsedError;
