@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_template/data/model/auth/auth.dart';
 import 'package:flutter_template/data/model/auth/auth_status.dart';
 import 'package:flutter_template/data/model/auth/token.dart';
-import 'package:flutter_template/data/repository/auth_network_repository.dart';
+import 'package:flutter_template/data/repository/auth/auth_network_repository.dart';
 
 class AuthNetworkRepositoryImpl implements AuthNetworkRepository {
   final Dio dio;

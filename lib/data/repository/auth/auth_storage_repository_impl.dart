@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_template/data/model/auth/auth.dart';
 import 'package:flutter_template/data/model/auth/auth_status.dart';
 import 'package:flutter_template/data/model/auth/token.dart';
-import 'package:flutter_template/data/repository/auth_storage_repository.dart';
+import 'package:flutter_template/data/repository/auth/auth_storage_repository.dart';
 import 'package:prefs/prefs.dart';
 import 'package:rxdart/rxdart.dart';
 

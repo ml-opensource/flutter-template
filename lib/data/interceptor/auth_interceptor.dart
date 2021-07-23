@@ -3,8 +3,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_template/data/model/auth/auth_status.dart';
 import 'package:flutter_template/data/model/auth/token.dart';
-import 'package:flutter_template/data/repository/auth_network_repository.dart';
-import 'package:flutter_template/data/repository/auth_storage_repository.dart';
+import 'package:flutter_template/data/repository/auth/auth_network_repository.dart';
+import 'package:flutter_template/data/repository/auth/auth_storage_repository.dart';
 import 'package:flutter_template/extensions/extensions.dart';
 
 class AuthInterceptor extends InterceptorsWrapper {
