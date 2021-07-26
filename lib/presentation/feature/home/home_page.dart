@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/feature/home/home_page_tab.dart';
-import 'package:flutter_template/presentation/feature/news/news_page.dart';
-import 'package:flutter_template/presentation/feature/profile/profile_page.dart';
+import 'package:flutter_template/presentation/feature/news/news_screen.dart';
+import 'package:flutter_template/presentation/feature/profile/profile_screen.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,9 +43,9 @@ class _HomePageState extends State<HomePage> {
   Widget _getSelectedPage(HomePageTab? tab) {
     switch (tab) {
       case HomePageTab.news:
-        return NewsPage();
+        return NewsScreen();
       case HomePageTab.profile:
-        return ProfilePage();
+        return ProfileScreen();
       default:
         throw ("Unknown HomePageTab");
     }
