@@ -1,14 +1,15 @@
 import 'package:flutter/widgets.dart';
 
+extension StringExNullable on String? {
+  bool get isNullOrEmpty => this == null || this!.isEmpty;
+
+  bool get isNullOrBlank => this == null || this!.isEmpty || this!.trim().isEmpty;
+
+  bool get isNotNullOrEmpty => this == null || this!.isNotEmpty;
+}
+
 extension StringEx on String {
-  bool get isNullOrEmpty => this == null || this.isEmpty;
-
-  bool get isNullOrBlank => this == null || this.isEmpty || this.trim().isEmpty;
-
-  bool get isNotNullOrEmpty => this != null && this.isNotEmpty;
-
   bool get isNotNullOrBlank =>
-      this != null &&
       this != 'null' &&
       this.isNotEmpty &&
       this.trim().isNotEmpty;

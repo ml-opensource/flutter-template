@@ -51,7 +51,7 @@ class DataModule {
 
     // Services
     injector.registerLazySingleton<ProfileService>(
-      () => HttpProfileService(injector()),
+      () => HttpProfileService(),
     );
   }
 }

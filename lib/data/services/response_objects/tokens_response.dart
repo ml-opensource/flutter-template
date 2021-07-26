@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'tokens_response.freezed.dart';
 part 'tokens_response.g.dart';
 
+// ignore: non_constant_identifier_names
 @freezed
 class TokensResponse with _$TokensResponse {
   const TokensResponse._();

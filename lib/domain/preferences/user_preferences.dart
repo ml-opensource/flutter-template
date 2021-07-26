@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_template/domain/entities/user.dart';
 
 abstract class UserPreferences {

@@ -9,7 +9,6 @@ import 'package:flutter_template/data/services/http_client/http_client.dart';
 import 'package:flutter_template/data/services/response_errors.dart';
 import 'package:flutter_template/data/services/response_objects/tokens_response.dart';
 import 'package:flutter_template/domain/preferences/user_preferences.dart';
-import 'package:flutter_template/extensions/extensions.dart';
 
 class AuthInterceptor extends InterceptorsWrapper {
 	AuthInterceptor({
@@ -123,7 +122,7 @@ class AuthInterceptor extends InterceptorsWrapper {
 	/// RequestOptions is needed to get N-Meta information and base URL.
 	Future<AuthTokens> _getNewTokens(RequestOptions requestOptions) async {
 		try {
-			final Map<String, dynamic> response = await refreshTokenHttpClient.get(
+			final Map<String, dynamic>? response = await refreshTokenHttpClient.get<Map<String, dynamic>> (
 				'${requestOptions.baseUrl}v1/auth/token',
 				headers: {
 					'Authorization': 'Bearer ${authPreferences.refreshToken}',
@@ -131,6 +130,11 @@ class AuthInterceptor extends InterceptorsWrapper {
 					requestOptions.headers[MetaInterceptor.nMetaHeaderKey]
 				},
 			);
+
+			if(response == null) {
+				throw ResponseErrors.unprocessableEntity();
+			}
+
 			return TokensResponse.fromJson(response['data']).getEntity();
 		} on DioError catch (e) {
 			if (e.response?.statusCode == 401) {
