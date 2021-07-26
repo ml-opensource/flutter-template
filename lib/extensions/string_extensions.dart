@@ -53,7 +53,7 @@ extension StringEx on String {
   String withNumber(num number) =>
       this.replaceAll('[NUMBER]', number.toString());
 
-  String withEmail(String email) => this.replaceAll('[EMAIL]', email ?? '');
+  String withEmail(String email) => this.replaceAll('[EMAIL]', email);
 
   bool get isValidUsername => this.isNotNullOrBlank;
 }

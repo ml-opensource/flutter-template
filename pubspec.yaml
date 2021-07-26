@@ -37,6 +37,10 @@ dependencies:
   dio: ^4.0.0
   jaguar_jwt: ^3.0.0
 
+  # Utility
+  device_info_plus: ^2.1.0
+  package_info_plus: ^1.0.4
+
   # Persistence
   prefs: ^3.3.0
 

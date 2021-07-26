@@ -4,7 +4,7 @@ import 'package:flutter_template/presentation/feature/profile/profile_presenter.
 class ProfileModule {
   static Future<void> inject() async {
     injector.registerFactory<ProfilePresenter>(
-      () => ProfilePresenter(),
+      () => ProfilePresenter(profileService: injector()),
     );
   }
 }
