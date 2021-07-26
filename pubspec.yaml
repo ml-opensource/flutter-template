@@ -54,8 +54,8 @@ dependencies:
 
 
 # Not sure if this is the best approach
-#dependency_overrides:
-#  meta: ">=1.7.0"
+dependency_overrides:
+  meta: ">=1.7.0"
 
 dev_dependencies:
   flutter_test:
