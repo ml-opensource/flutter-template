@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # UI
   cupertino_icons: ^1.0.3
   flutter_svg: ^0.22.0
@@ -51,11 +50,6 @@ dependencies:
   flutter_bloc: 7.0.1
   rxdart: ^0.27.1
   dartx: ^0.7.1
-
-
-# Not sure if this is the best approach
-dependency_overrides:
-  meta: ">=1.7.0"
 
 dev_dependencies:
   flutter_test:
