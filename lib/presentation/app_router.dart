@@ -1,28 +1,78 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_template/presentation/feature/home/home_page_route.dart';
+import 'package:flutter_template/presentation/feature/splash/splash_screen.dart';
 
 /// Contains classes and helpers for navigation.
-/// To navigate to a page use the [BuildContext.navigateTo] extension function.
-/// - Example: context.navigateTo(HomeRoute(fieldExample = "hello"));
-/// To pop the Navigation stack to a specific page use the [BuildContext.popUntil] extension function.
-/// - Example: context.popUntil(HomeRoute.name);
 class AppRouter {
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  static PageRoute onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
-    return args is AppRoute ? args.route : HomePageRoute().route;
+    return args is ScreenRoute
+        ? args.material()
+        : SplashScreen.route.material();
   }
 }
 
-abstract class AppRoute {
-  String get name;
+class ScreenRoute {
+  ScreenRoute({required this.name, required this.builder});
+  final String name;
 
-  Widget get page;
+  final WidgetBuilder builder;
 
-  MaterialPageRoute get route {
+  PageRoute material() {
     return MaterialPageRoute(
-      builder: (context) => page,
-      settings: RouteSettings(name: name),
+      builder: builder,
+      settings: RouteSettings(name: name, arguments: this),
     );
   }
+
+  PageRoute dialog({bool fullscreenDialog = false}) {
+    return MaterialPageRoute(
+      fullscreenDialog: fullscreenDialog,
+      builder: builder,
+      settings: RouteSettings(name: name, arguments: this),
+    );
+  }
+
+  PageRoute fade() {
+    return FadePageRoute(
+      screen: builder,
+      name: name,
+      arguments: this,
+    );
+  }
+}
+
+class FadePageRoute<T> extends PageRoute<T> {
+  FadePageRoute({
+    required this.screen,
+    required this.name,
+    Object? arguments,
+  }) : super(settings: RouteSettings(name: name, arguments: arguments));
+
+  final WidgetBuilder screen;
+  final String name;
+
+  @override
+  Widget buildPage(
+      BuildContext context,
+      Animation<double> animation,
+      Animation<double> secondaryAnimation,
+      ) {
+    return FadeTransition(
+      opacity: animation,
+      child: screen(context),
+    );
+  }
+
+  @override
+  bool get maintainState => true;
+
+  @override
+  Duration get transitionDuration => const Duration(microseconds: 300);
+
+  @override
+  Color? get barrierColor => Colors.transparent;
+
+  @override
+  String? get barrierLabel => '';
 }

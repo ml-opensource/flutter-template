@@ -1,4 +1,4 @@
-enum HomePageTab {
+enum HomeScreenTab {
   news,
   profile,
 }
