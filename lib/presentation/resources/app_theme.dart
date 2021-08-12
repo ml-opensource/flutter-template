@@ -7,6 +7,7 @@ ThemeData getAppTheme(Brightness brightness) {
   return ThemeData(
     brightness: brightness,
     fontFamily: AppFonts.roboto,
+    scaffoldBackgroundColor: colors.background,
     appBarTheme: AppBarTheme(brightness: brightness),
   );
 }
