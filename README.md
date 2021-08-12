@@ -4,8 +4,6 @@
 This project serves as a template project for Flutter applications. You can generate a new repository by clicking "Use this remplate" above.
 
 ## 🔧 Setup and Installation
-- Install Flutter and Dart SDK
-- Install Flutter and Dart Android Studio Plugins
 - Execute `$ flutter doctor` to verify installations
 - Execute `$ pub get` to pull project dependencies
 - Execute a run configuration of choice
