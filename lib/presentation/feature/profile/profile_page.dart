@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_template/injection/injector.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_presenter.dart';
+import 'package:flutter_template/presentation/feature/profile/profile_state.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _ProfilePageState createState() => _ProfilePageState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfilePageState extends State<ProfilePage> {
   final _profilePresenter = injector.get<ProfilePresenter>();
 
   @override
@@ -27,11 +28,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: context.colors.accent,
         title: BlocBuilder<ProfilePresenter, ProfileState>(
-            bloc: _profilePresenter,
-            builder: (context, state) {
-              return Text(
-                  state.isLoading ? "Profile" : "Profile: " + state.name);
-            }),
+          bloc: _profilePresenter,
+          builder: (context, state) {
+            return Text(state.isLoading ? 'Profile' : 'Profile: ' + state.name);
+          },
+        ),
       ),
       body: SafeArea(
         child: Padding(
@@ -45,7 +46,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       if (state.isLoading) {
                         return CircularProgressIndicator();
                       } else {
-                        return Text("Hi ${state.name}!");
+                        return Text('Hi ${state.name}!');
                       }
                     })
               ],

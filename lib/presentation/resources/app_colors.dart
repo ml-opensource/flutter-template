@@ -14,14 +14,14 @@ class AppColors {
   });
 }
 
-const _appColorsLight = AppColors(
+const colorsLight = AppColors(
   background: Colors.white,
   surface: Colors.white,
   accent: Colors.blueAccent,
   text: Colors.black,
 );
 
-const _appColorsDark = AppColors(
+const colorsDark = AppColors(
   background: Colors.black54,
   surface: Color(0xFF222222),
   accent: Colors.lightBlueAccent,
@@ -30,14 +30,14 @@ const _appColorsDark = AppColors(
 
 extension AppColorsExtension on BuildContext {
   AppColors get colors {
-    final brightness = MediaQuery.of(this).platformBrightness;
+    final brightness = Theme.of(this).brightness;
     switch (brightness) {
       case Brightness.light:
-        return _appColorsLight;
+        return colorsLight;
       case Brightness.dark:
-        return _appColorsDark;
+        return colorsDark;
       default:
-        return _appColorsLight;
+        return colorsLight;
     }
   }
 }

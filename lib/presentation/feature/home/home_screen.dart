@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/presentation/feature/home/home_page_tab.dart';
-import 'package:flutter_template/presentation/feature/news/news_screen.dart';
-import 'package:flutter_template/presentation/feature/profile/profile_screen.dart';
+import 'package:flutter_template/presentation/app_router.dart';
+import 'package:flutter_template/presentation/feature/home/home_screen_tab.dart';
+import 'package:flutter_template/presentation/feature/news/news_page.dart';
+import 'package:flutter_template/presentation/feature/profile/profile_page.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key, this.tab}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({
+    Key? key,
+    this.tab = HomeScreenTab.news,
+  }) : super(key: key);
 
-  final HomePageTab? tab;
+  static ScreenRoute get route => ScreenRoute(
+        name: '/home',
+        builder: (_) => const HomeScreen(),
+      );
+
+  final HomeScreenTab tab;
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
-  HomePageTab? _tabSelection;
+class _HomeScreenState extends State<HomeScreen> {
+  HomeScreenTab? _tabSelection;
 
   @override
   void initState() {
@@ -34,25 +43,26 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _tabSelection!.index,
         type: BottomNavigationBarType.fixed,
         onTap: (index) => setState(() {
-          _tabSelection = HomePageTab.values[index];
+          _tabSelection = HomeScreenTab.values[index];
         }),
       ),
     );
   }
 
-  Widget _getSelectedPage(HomePageTab? tab) {
+  Widget _getSelectedPage(HomeScreenTab? tab) {
     switch (tab) {
-      case HomePageTab.news:
-        return NewsScreen();
-      case HomePageTab.profile:
-        return ProfileScreen();
+      case HomeScreenTab.news:
+        return NewsPage();
+      case HomeScreenTab.profile:
+        return ProfilePage();
       default:
-        throw ("Unknown HomePageTab");
+        throw ("Unknown HomeScreenTab");
     }
   }
 
   List<BottomNavigationBarItem> _getBottomNavigationBarItems(
-      BuildContext context) {
+    BuildContext context,
+  ) {
     return [
       BottomNavigationBarItem(
         icon: Icon(Icons.home),

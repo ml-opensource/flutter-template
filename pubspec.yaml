@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # UI
   cupertino_icons: ^1.0.3
   flutter_svg: ^0.22.0
@@ -52,15 +51,14 @@ dependencies:
   rxdart: ^0.27.1
   dartx: ^0.7.1
 
-
-# Not sure if this is the best approach
+# TODO: Remove once json_serializable plays nice again
 dependency_overrides:
   meta: ">=1.7.0"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner:
+  build_runner: ^2.1.1
   json_serializable: ^5.0.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

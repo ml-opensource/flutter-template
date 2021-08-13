@@ -1,5 +1,9 @@
-abstract class UseCase<Output> {
-  Future<Output> run();
+abstract class UseCase<Input, Output> {
+  Output run(Input input);
+}
+
+abstract class OutputUseCase<Output> {
+  Output run();
 }
 
 abstract class StreamUseCase<Output> {
