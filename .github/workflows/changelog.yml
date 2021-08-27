@@ -1,0 +1,51 @@
+# This workflow generates changelogs based on conventional-commits between for every tag.
+name: Changelog
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create changelog.yml text
+        id: changelog.yml
+        uses: loopwerk/tag-changelog.yml@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_types: other,doc,chore,build
+
+      - name: Create release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{ steps.changelog.yml.outputs.changes }}
+
+      - name: Read CHANGELOG.md
+        id: readfile
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./CHANGELOG.md
+
+      - name: Write to CHANGELOG.md
+        uses: DamianReeves/write-file-action@master
+        with:
+          path: ./CHANGELOG.md
+          contents: ${{ steps.changelog.yml.outputs.changelog.yml }}${{ steps.readfile.outputs.content }}
+          write-mode: overwrite
+
+      - name: Commit and push CHANGELOG.md
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: CHANGELOG.md
+          message: "chore: Update CHANGELOG.md [skip ci]"
+          branch: main
