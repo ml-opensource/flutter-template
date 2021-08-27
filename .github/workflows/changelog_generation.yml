@@ -40,7 +40,7 @@ jobs:
         uses: DamianReeves/write-file-action@master
         with:
           path: ./CHANGELOG.md
-          contents: ${{ steps.changelog.outputs.changelog.yml }}${{ steps.readfile.outputs.content }}
+          contents: ${{ steps.changelog.outputs.changes }}${{ steps.readfile.outputs.content }}
           write-mode: overwrite
 
       - name: Commit and push CHANGELOG.md
