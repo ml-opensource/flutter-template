@@ -1,5 +1,5 @@
 # This workflow generates a changelog based on conventional-commits between for every tag.
-name: Changelog
+name: Changelog Generation
 
 on:
   push:
