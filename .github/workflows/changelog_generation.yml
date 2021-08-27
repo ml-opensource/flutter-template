@@ -48,4 +48,4 @@ jobs:
         with:
           add: CHANGELOG.md
           message: "chore: Update CHANGELOG.md [skip ci]"
-          branch: main
+          branch: master
