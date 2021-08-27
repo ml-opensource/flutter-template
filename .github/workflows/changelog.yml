@@ -1,4 +1,4 @@
-# This workflow generates changelogs based on conventional-commits between for every tag.
+# This workflow generates a changelog based on conventional-commits between for every tag.
 name: Changelog
 
 on:
