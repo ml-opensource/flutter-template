@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create changelog.yml text
-        id: changelog.yml
+        id: changelog_yml
         uses: loopwerk/tag-changelog.yml@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: ${{ steps.changelog.yml.outputs.changes }}
+          body: ${{ steps.changelog_yml.outputs.changes }}
 
       - name: Read CHANGELOG.md
         id: readfile
@@ -40,7 +40,7 @@ jobs:
         uses: DamianReeves/write-file-action@master
         with:
           path: ./CHANGELOG.md
-          contents: ${{ steps.changelog.yml.outputs.changelog.yml }}${{ steps.readfile.outputs.content }}
+          contents: ${{ steps.changelog_yml.outputs.changelog.yml }}${{ steps.readfile.outputs.content }}
           write-mode: overwrite
 
       - name: Commit and push CHANGELOG.md
