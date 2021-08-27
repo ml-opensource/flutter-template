@@ -3,6 +3,8 @@ name: Changelog Generation
 
 on:
   push:
+    branches:
+      - feat/changelog
     tags:
       - '*'
 
@@ -48,3 +50,4 @@ jobs:
         with:
           add: CHANGELOG.md --force
           message: "chore: Update CHANGELOG.md [skip ci]"
+          branch: feat/changelog
