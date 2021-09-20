@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return NStackInitWidget(
       child: Scaffold(
         backgroundColor: context.colors.accent,
-        body: SafeArea(
+        body: const SafeArea(
           child: Center(
             child: Text('SplashScreen'),
           ),

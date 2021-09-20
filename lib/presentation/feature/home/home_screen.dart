@@ -52,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _getSelectedPage(HomeScreenTab? tab) {
     switch (tab) {
       case HomeScreenTab.news:
-        return NewsPage();
+        return const NewsPage();
       case HomeScreenTab.profile:
-        return ProfilePage();
+        return const ProfilePage();
       default:
         throw ("Unknown HomeScreenTab");
     }
@@ -64,11 +64,11 @@ class _HomeScreenState extends State<HomeScreen> {
     BuildContext context,
   ) {
     return [
-      BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(Icons.home),
         label: "News",
       ),
-      BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(Icons.person_rounded),
         label: "Profile",
       ),
