@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     bloc: _profilePresenter,
                     builder: (context, state) {
                       if (state.isLoading) {
-                        return CircularProgressIndicator();
+                        return const CircularProgressIndicator();
                       } else {
                         return Text('Hi ${state.name}!');
                       }

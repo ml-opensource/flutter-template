@@ -7,7 +7,7 @@ class HttpProfileService extends ProfileService {
   @override
   Future<String?> getProfileName() async {
     // TODO: implement getProfileName
-    await Future.delayed(Duration(milliseconds: 800));
+    await Future.delayed(const Duration(milliseconds: 800));
     return "Michael Laudrup";
   }
 }

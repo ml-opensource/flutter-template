@@ -11,19 +11,19 @@ extension StringExNullable on String? {
 extension StringEx on String {
   bool get isNotNullOrBlank =>
       this != 'null' &&
-      this.isNotEmpty &&
-      this.trim().isNotEmpty;
+      isNotEmpty &&
+      trim().isNotEmpty;
 
   String limit(int charCount, {bool ellipsize = false}) {
-    if (this.isNullOrBlank) {
+    if (isNullOrBlank) {
       return this;
-    } else if (this.length <= charCount) {
+    } else if (length <= charCount) {
       return this;
     } else {
       if (ellipsize) {
-        return '${this.substring(0, charCount)}...';
+        return '${substring(0, charCount)}...';
       } else {
-        return this.substring(0, charCount);
+        return substring(0, charCount);
       }
     }
   }
@@ -33,7 +33,7 @@ extension StringEx on String {
       required double maxWidth,
       double minWidth = 0.0,
       TextStyle style = const TextStyle()}) {
-    if (this.isNullOrBlank) {
+    if (isNullOrBlank) {
       return false;
     }
 
@@ -49,12 +49,12 @@ extension StringEx on String {
     return textPainter.didExceedMaxLines;
   }
 
-  String withDate(String date) => this.replaceAll('[DATE]', date);
+  String withDate(String date) => replaceAll('[DATE]', date);
 
   String withNumber(num number) =>
-      this.replaceAll('[NUMBER]', number.toString());
+      replaceAll('[NUMBER]', number.toString());
 
-  String withEmail(String email) => this.replaceAll('[EMAIL]', email);
+  String withEmail(String email) => replaceAll('[EMAIL]', email);
 
-  bool get isValidUsername => this.isNotNullOrBlank;
+  bool get isValidUsername => isNotNullOrBlank;
 }

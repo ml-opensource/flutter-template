@@ -132,7 +132,7 @@ class AuthInterceptor extends InterceptorsWrapper {
 			);
 
 			if(response == null) {
-				throw ResponseErrors.unprocessableEntity();
+				throw const ResponseErrors.unprocessableEntity();
 			}
 
 			return TokensResponse.fromJson(response['data']).getEntity();

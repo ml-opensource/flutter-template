@@ -1,6 +1,6 @@
 class RateLimiter {
   final Duration timeout;
-  final Map<String, DateTime> timestamps = Map();
+  final Map<String, DateTime> timestamps = {};
 
   RateLimiter(this.timeout);
 

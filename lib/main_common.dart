@@ -7,5 +7,5 @@ import 'presentation/app_flavor.dart';
 
 void mainCommon(AppFlavor flavor) async {
   await DependencyManager.inject(flavor);
-  runApp(NStackWidget(child: App()));
+  runApp(NStackWidget(child: const App()));
 }
