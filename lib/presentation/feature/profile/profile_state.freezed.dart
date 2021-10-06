@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProfileStateTearOff {
   const _$ProfileStateTearOff();
 
-  _ProfileState call({required bool isLoading, required String name}) {
+  _ProfileState call({bool isLoading = false, String name = ''}) {
     return _ProfileState(
       isLoading: isLoading,
       name: name,
@@ -112,10 +112,12 @@ class __$ProfileStateCopyWithImpl<$Res> extends _$ProfileStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ProfileState extends _ProfileState {
-  _$_ProfileState({required this.isLoading, required this.name}) : super._();
+  _$_ProfileState({this.isLoading = false, this.name = ''}) : super._();
 
+  @JsonKey(defaultValue: false)
   @override
   final bool isLoading;
+  @JsonKey(defaultValue: '')
   @override
   final String name;
 
@@ -148,8 +150,7 @@ class _$_ProfileState extends _ProfileState {
 }
 
 abstract class _ProfileState extends ProfileState {
-  factory _ProfileState({required bool isLoading, required String name}) =
-      _$_ProfileState;
+  factory _ProfileState({bool isLoading, String name}) = _$_ProfileState;
   _ProfileState._() : super._();
 
   @override
