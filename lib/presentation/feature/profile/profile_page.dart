@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/data/services/http_profile_service.dart';
+import 'package:flutter_template/injection/injector.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_state.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_view_model.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
@@ -14,7 +14,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final _provider = StateNotifierProvider<ProfileViewModel, ProfileState>(
-      (ref) => ProfileViewModel(profileService: HttpProfileService()));
+      (ref) => injector.get<ProfileViewModel>());
 
   @override
   void initState() {
