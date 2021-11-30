@@ -17,7 +17,7 @@ export 'package:nstack/models/app_open_platform.dart';
       
 class Localization {
 	final defaultSection = const _DefaultSection();
-	final test = const _Test();
+	final error = const _Error();
 
 	const Localization();
 }
@@ -25,29 +25,40 @@ class Localization {
 class _DefaultSection extends SectionKeyDelegate {
 	const _DefaultSection(): super('default');
 
-	String get title => get('title', "NStack SDK Demo");
-	String get test => get('test', "test");
+	String get cancel => get('cancel', "Cancel");
+	String get ok => get('ok', "Ok");
+	String get no => get('no', "No");
+	String get yes => get('yes', "Yes");
+	String get retry => get('retry', "Retry");
+	String get edit => get('edit', "Edit");
+	String get save => get('save', "Save");
+	String get back => get('back', "Back");
+	String get settings => get('settings', "Settings");
+	String get later => get('later', "Later");
+	String get next => get('next', "Next");
+	String get previous => get('previous', "Previous");
+	String get skip => get('skip', "Skip");
 }
 
-class _Test extends SectionKeyDelegate {
-	const _Test(): super('test');
+class _Error extends SectionKeyDelegate {
+	const _Error(): super('error');
 
-	String get testDollarSign => get('testDollarSign', "\$testing again new");
-	String get testSingleQuotationMark => get('testSingleQuotationMark', "\'testing\'");
-	String get testDoubleQuotationMark => get('testDoubleQuotationMark', "\"testing\"");
-	String get testMultipleLines => get('testMultipleLines', "testing\nmultiple\nlines\nupdated");
+	String get authenticationError => get('authenticationError', "Login expired, please login again.");
+	String get connectionError => get('connectionError', "No or bad connection, please try again.");
+	String get errorTitle => get('errorTitle', "Error");
+	String get unknownError => get('unknownError', "Unknown error, please try again.");
 }
 
-const _config = NStackConfig(projectId: 'h6wJremI2TGFM88gbLkdyljWQuwf2hxhxvCH', apiKey: 'zp2S18H32b67eYAbRQh94tVw76ZzaKKXlHjd');
+const _config = NStackConfig(projectId: 'k78R0OadfzZQmlhvKYkF1znwdQYShK1SCiLl', apiKey: 'e5tzJcRuIE3UsivDicjQZlI03TLgpWPEroOf');
     
 final _languages = [
-	LocalizeIndex(id: 1216, url: null, lastUpdatedAt: null, shouldUpdate: false,  language: Language(id: 56, name: 'English', locale: 'en-EN', direction: 'LRM', isDefault: true, isBestFit: true)),
-	LocalizeIndex(id: 1270, url: null, lastUpdatedAt: null, shouldUpdate: false,  language: Language(id: 7, name: 'German (Austria)', locale: 'de-AT', direction: 'LRM', isDefault: false, isBestFit: false)),
+	LocalizeIndex(id: 1372, url: null, lastUpdatedAt: null, shouldUpdate: false,  language: Language(id: 11, name: 'English (UK)', locale: 'en-GB', direction: 'LRM', isDefault: true, isBestFit: true)),
+	LocalizeIndex(id: 1373, url: null, lastUpdatedAt: null, shouldUpdate: false,  language: Language(id: 34, name: 'Dutch', locale: 'nl-NL', direction: 'LRM', isDefault: false, isBestFit: false)),
 ];
 
 const _bundledTranslations = {
-	'en-EN': r'''{"data":{"default":{"title":"NStack SDK Demo","test":"test"},"test":{"testDollarSign":"$testing again new","testSingleQuotationMark":"'testing'","testDoubleQuotationMark":"\"testing\"","testMultipleLines":"testing\nmultiple\nlines\nupdated"}},"meta":{"language":{"id":56,"name":"English","locale":"en-EN","direction":"LRM","is_default":false,"is_best_fit":false},"platform":{"id":515,"slug":"mobile"}}}''',
-	'de-AT': r'''{"data":{"default":{"title":"NStack SDK Demo","test":"test"},"test":{"testDollarSign":"\u00a0","testSingleQuotationMark":"__testSingleQuotationMark","testDoubleQuotationMark":"__testDoubleQuotationMark","testMultipleLines":"__testMultipleLines"}},"meta":{"language":{"id":7,"name":"German (Austria)","locale":"de-AT","direction":"LRM","is_default":false,"is_best_fit":false},"platform":{"id":515,"slug":"mobile"}}}''',
+	'en-GB': r'''{"data":{"default":{"cancel":"Cancel","ok":"Ok","no":"No","yes":"Yes","retry":"Retry","edit":"Edit","save":"Save","back":"Back","settings":"Settings","later":"Later","next":"Next","previous":"Previous","skip":"Skip"},"error":{"authenticationError":"Login expired, please login again.","connectionError":"No or bad connection, please try again.","errorTitle":"Error","unknownError":"Unknown error, please try again."}},"meta":{"language":{"id":11,"name":"English (UK)","locale":"en-GB","direction":"LRM","is_default":false,"is_best_fit":false},"platform":{"id":564,"slug":"mobile"}}}''',
+	'nl-NL': r'''{"data":{"default":{"cancel":"__cancel","ok":"__ok","no":"__no","yes":"__yes","retry":"__retry","edit":"__edit","save":"__save","back":"__back","settings":"__settings","later":"__later","next":"__next","previous":"__previous","skip":"__skip"},"error":{"authenticationError":"__authenticationError","connectionError":"__connectionError","errorTitle":"__errorTitle","unknownError":"__unknownError"}},"meta":{"language":{"id":34,"name":"Dutch","locale":"nl-NL","direction":"LRM","is_default":false,"is_best_fit":false},"platform":{"id":564,"slug":"mobile"}}}''',
 };
 
 final _nstack = NStack<Localization>(
