@@ -1,3 +1,4 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
@@ -27,7 +28,7 @@ class _$UserTearOff {
     );
   }
 
-  User fromJson(Map<String, Object> json) {
+  User fromJson(Map<String, Object?> json) {
     return User.fromJson(json);
   }
 }
@@ -133,19 +134,15 @@ class _$_User extends _User {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _User &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _User &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+                other.username == username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(runtimeType, id, username);
 
   @JsonKey(ignore: true)
   @override
@@ -165,9 +162,9 @@ abstract class _User extends User {
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
