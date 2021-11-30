@@ -1,6 +1,7 @@
 
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_template/data/interceptor/meta_interceptor.dart';
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
 import 'package:flutter_template/data/preferences/auth_preferences.dart';
