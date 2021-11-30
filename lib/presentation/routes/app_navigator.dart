@@ -6,8 +6,6 @@ class AppNavigator {
   AppNavigator(this._appRouter);
 
   Future navigateToHome() {
-    return _appRouter.pushAndPopUntil(HomeScreenRoute(), predicate: (route) {
-      return route.isFirst;
-    });
+    return _appRouter.replace(HomeScreenRoute());
   }
 }
