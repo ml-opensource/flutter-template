@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_template/nstack/nstack.dart';
 import 'package:flutter_template/presentation/app_router.dart';
 import 'package:flutter_template/presentation/feature/home/home_screen.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
@@ -40,13 +39,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return NStackInitWidget(
-      child: Scaffold(
-        backgroundColor: context.colors.accent,
-        body: const SafeArea(
-          child: Center(
-            child: Text('SplashScreen'),
-          ),
+    return Scaffold(
+      backgroundColor: context.colors.accent,
+      body: const SafeArea(
+        child: Center(
+          child: Text('SplashScreen'),
         ),
       ),
     );

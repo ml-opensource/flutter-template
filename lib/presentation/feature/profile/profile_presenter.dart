@@ -1,5 +1,5 @@
+import 'package:domain/domain.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/domain/services/profile_service.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_state.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
