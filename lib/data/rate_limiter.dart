@@ -5,8 +5,8 @@ class RateLimiter {
   RateLimiter(this.timeout);
 
   bool shouldFetch(String key) {
-    final DateTime? lastFetched = timestamps[key];
-    final DateTime now = DateTime.now();
+    final lastFetched = timestamps[key];
+    final now = DateTime.now();
 
     if (lastFetched == null) {
       timestamps[key] = now;

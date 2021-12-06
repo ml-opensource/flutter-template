@@ -14,7 +14,7 @@ class ProfileState with _$ProfileState {
   factory ProfileState.initial() {
     return ProfileState(
       isLoading: false,
-      name: "",
+      name: '',
     );
   }
 }
