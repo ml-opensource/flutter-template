@@ -13,7 +13,7 @@ class ProfilePresenter extends Cubit<ProfileState> {
 
   void load() async {
     emit(state.copyWith(isLoading: true));
-    var profileName = await profileService.getProfileName() ?? "";
+    var profileName = await profileService.getProfileName() ?? '';
     emit(state.copyWith(isLoading: false, name: profileName));
   }
 }
