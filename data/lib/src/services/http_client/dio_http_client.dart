@@ -1,6 +1,6 @@
-import 'package:data/src/services/http_client/http_client.dart';
 import 'package:data/src/services/response_errors.dart';
 import 'package:dio/dio.dart';
+import 'package:domain/domain.dart';
 
 /// Abstraction of the Dio http client class.
 class DioHttpClient extends HttpClient {

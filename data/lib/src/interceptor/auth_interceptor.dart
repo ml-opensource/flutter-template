@@ -2,7 +2,6 @@ import 'package:data/src/interceptor/meta_interceptor.dart';
 import 'package:data/src/model/auth/auth_tokens.dart';
 import 'package:data/src/preferences/auth_preferences.dart';
 import 'package:data/src/services/http_client/dio_http_client.dart';
-import 'package:data/src/services/http_client/http_client.dart';
 import 'package:data/src/services/response_errors.dart';
 import 'package:data/src/services/response_objects/tokens_response.dart';
 import 'package:dio/dio.dart';

@@ -4,6 +4,7 @@
 library domain;
 
 export 'src/api/api_config.dart';
+export 'src/api/http_client.dart';
 export 'src/common/use_case.dart';
 export 'src/entities/user.dart';
 export 'src/app_flavor.dart';

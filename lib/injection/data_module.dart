@@ -32,7 +32,7 @@ class DataModule {
           httpClient: injector(),
           authPreferences: injector(),
           userPreferences: injector(),
-          refreshTokenHttpClient: injector(),
+          refreshTokenHttpClient: DioHttpClient(Dio()),
           onTokenExpired: () {
             // Handle log out
           },

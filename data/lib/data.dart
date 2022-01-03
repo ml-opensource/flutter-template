@@ -8,7 +8,6 @@ export 'src/preferences/user_shared_preferences.dart';
 
 export 'src/model/auth/auth_tokens.dart';
 
-export 'src/services/http_client/http_client.dart';
 export 'src/services/http_client/dio_http_client.dart';
 export 'src/services/http_client/dio_http_client_builder.dart';
 
