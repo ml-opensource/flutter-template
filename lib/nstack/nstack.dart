@@ -3,6 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nstack/models/language.dart';
+import 'package:nstack/models/localize_index.dart';
 import 'package:nstack/models/nstack_config.dart';
 import 'package:nstack/nstack.dart';
 import 'package:nstack/partial/section_key_delegate.dart';
@@ -47,8 +48,21 @@ class _Error extends SectionKeyDelegate {
 
 const _config = NStackConfig(projectId: 'k78R0OadfzZQmlhvKYkF1znwdQYShK1SCiLl', apiKey: 'e5tzJcRuIE3UsivDicjQZlI03TLgpWPEroOf');
     
-const _languages = [
-	Language(id: 11, name: 'English (UK)', locale: 'en-GB', direction: 'LRM', isDefault: true, isBestFit: true),
+final _languages = [
+  LocalizeIndex(
+    id: 1425,
+    url: null,
+    lastUpdatedAt: null,
+    shouldUpdate: false,
+    language: const Language(
+      id: 11,
+      name: 'English (UK)',
+      locale: 'en-GB',
+      direction: 'LRM',
+      isDefault: true,
+      isBestFit: true,
+    ),
+  ),
 ];
 
 const _bundledTranslations = {
