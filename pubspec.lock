@@ -444,7 +444,7 @@ packages:
       resolved-ref: "46809853dae97f77c252de05de49ad03b12c23a7"
       url: "https://github.com/nstack-io/flutter-sdk.git"
     source: git
-    version: "0.2.5"
+    version: "0.5.1"
   package_config:
     dependency: transitive
     description:
