@@ -12,7 +12,16 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: flutter pub get
+      - run: |
+         flutter pub get
+         cd /domain && dart pub get
+         cd ../data && flutter pub get
+      - run: |
+         flutter analyze
+          cd /domain && dartanalyzer
+          cd ../data && flutter analyze
+      - run: |
+         flutter test
+        cd /domain && dart test
+        cd ../data && flutter test
       - run: flutter build apk --release -t lib/main_production.dart
-      - run: flutter analyze
-      - run: flutter test

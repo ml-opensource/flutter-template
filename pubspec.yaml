@@ -17,22 +17,26 @@ dependencies:
 
   # UI
   cupertino_icons: ^1.0.3
-  flutter_svg: ^0.22.0
+  flutter_svg: ^0.23.0+1
   nstack:
     git:
-      url: git://github.com/nstack-io/flutter-sdk.git
-      #ref: v0.2.5
+      url: https://github.com/nstack-io/flutter-sdk.git
+      ref: v0.5.1
 
   # Utility
   device_info_plus: ^2.1.0
   package_info_plus: ^1.0.4
 
+  # Persistence
+  shared_preferences: ^2.0.8
+  streaming_shared_preferences: ^2.0.0
+
   # Architecture
   freezed: ^0.15.0+1
   freezed_annotation: ^0.15.0
   get_it: ^7.2.0
-  flutter_bloc: 7.0.1
-  rxdart: ^0.27.1
+  flutter_bloc: 7.3.0
+  rxdart: ^0.27.2
   dartx: ^0.7.1
 
 dev_dependencies:

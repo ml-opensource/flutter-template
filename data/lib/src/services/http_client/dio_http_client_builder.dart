@@ -4,36 +4,14 @@ import 'package:dio/dio.dart';
 DioHttpClient? _dioClient;
 
 class DioHttpClientBuilder {
-	late String _baseUrl;
-	late int _sendTimeout;
-	late int _connectTimeout;
-	late int _receiveTimeout;
+	String baseUrl = '';
+	int sendTimeout = 5000;
+	int connectTimeout = 10000;
+	int receiveTimeout = 15000;
 	final List<Interceptor> _interceptors = [];
 
-	DioHttpClientBuilder setBaseUrl(String url) {
-		_baseUrl = url;
-		return this;
-	}
-
-	DioHttpClientBuilder setConnectTimeout(int connectTimeout) {
-		_connectTimeout = connectTimeout;
-		return this;
-	}
-
-	DioHttpClientBuilder setReceiveTimeout(int receiveTimeout) {
-		_receiveTimeout = receiveTimeout;
-		return this;
-	}
-
-	DioHttpClientBuilder setSendTimeout(int sendTimeout) {
-		_sendTimeout = sendTimeout;
-		return this;
-	}
-
-	DioHttpClientBuilder addInterceptor(Interceptor interceptor) {
-		_interceptors.add(interceptor);
-		return this;
-	}
+	void addInterceptor(Interceptor interceptor) =>
+			_interceptors.add(interceptor);
 
 	DioHttpClient build() {
 		if (_dioClient != null) {
@@ -41,10 +19,10 @@ class DioHttpClientBuilder {
 		}
 
 		final options = BaseOptions()
-			..baseUrl = _baseUrl
-			..connectTimeout = _connectTimeout
-			..receiveTimeout = _receiveTimeout
-			..sendTimeout = _sendTimeout;
+			..baseUrl = baseUrl
+			..connectTimeout = connectTimeout
+			..receiveTimeout = receiveTimeout
+			..sendTimeout = sendTimeout;
 
 		final dio = Dio(options);
 		dio.interceptors.addAll(_interceptors);

@@ -172,28 +172,21 @@ class _$_AuthTokens extends _AuthTokens {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AuthTokens &&
+        (other.runtimeType == runtimeType &&
+            other is _AuthTokens &&
             (identical(other.accessToken, accessToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessToken, accessToken)) &&
+                other.accessToken == accessToken) &&
             (identical(other.refreshToken, refreshToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshToken, refreshToken)) &&
+                other.refreshToken == refreshToken) &&
             (identical(other.tokenType, tokenType) ||
-                const DeepCollectionEquality()
-                    .equals(other.tokenType, tokenType)) &&
+                other.tokenType == tokenType) &&
             (identical(other.expiresIn, expiresIn) ||
-                const DeepCollectionEquality()
-                    .equals(other.expiresIn, expiresIn)));
+                other.expiresIn == expiresIn));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(accessToken) ^
-      const DeepCollectionEquality().hash(refreshToken) ^
-      const DeepCollectionEquality().hash(tokenType) ^
-      const DeepCollectionEquality().hash(expiresIn);
+      Object.hash(runtimeType, accessToken, refreshToken, tokenType, expiresIn);
 
   @JsonKey(ignore: true)
   @override
@@ -210,13 +203,13 @@ abstract class _AuthTokens extends AuthTokens {
   const _AuthTokens._() : super._();
 
   @override
-  String get accessToken => throw _privateConstructorUsedError;
+  String get accessToken;
   @override
-  String get refreshToken => throw _privateConstructorUsedError;
+  String get refreshToken;
   @override
-  String get tokenType => throw _privateConstructorUsedError;
+  String get tokenType;
   @override
-  double get expiresIn => throw _privateConstructorUsedError;
+  double get expiresIn;
   @override
   @JsonKey(ignore: true)
   _$AuthTokensCopyWith<_AuthTokens> get copyWith =>

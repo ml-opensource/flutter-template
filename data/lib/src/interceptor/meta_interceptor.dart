@@ -1,8 +1,7 @@
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
 import 'package:domain/domain.dart';
+import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class MetaInterceptor extends InterceptorsWrapper {
@@ -14,7 +13,9 @@ class MetaInterceptor extends InterceptorsWrapper {
 
   @override
   void onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     options.headers['Accept'] = 'application/json; charset=UTF-8';
     options.headers['content-type'] = 'application/json';
     options.headers[nMetaHeaderKey] = '$platform;${flavor.name};'

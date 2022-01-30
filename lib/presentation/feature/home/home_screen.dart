@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/app_router.dart';
 import 'package:flutter_template/presentation/feature/home/home_screen_tab.dart';
-import 'package:flutter_template/presentation/feature/news/news_page.dart';
-import 'package:flutter_template/presentation/feature/profile/profile_page.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -52,9 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _getSelectedPage(HomeScreenTab? tab) {
     switch (tab) {
       case HomeScreenTab.news:
-        return const NewsPage();
+        return const Scaffold(
+          body: Center(child: Text('News')),
+        );
       case HomeScreenTab.profile:
-        return const ProfilePage();
+        return const Scaffold(
+          body: Center(child: Text('Profile')),
+        );
       default:
         throw ("Unknown HomeScreenTab");
     }

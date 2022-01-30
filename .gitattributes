@@ -1,0 +1,4 @@
+**/*.g.dart linguist-generated=true
+**/*.freezed.dart linguist-generated=true
+**/*.g.dart -diff -merge
+**/*.freezed.dart -diff -merge

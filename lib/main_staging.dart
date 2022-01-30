@@ -1,7 +1,8 @@
-import 'presentation/app_flavor.dart';
+import 'package:domain/domain.dart';
+
 import 'main_common.dart';
 
 void main() async {
-  const config = AppFlavor.staging;
-  mainCommon(config);
+  const flavor = AppFlavor.staging;
+  mainCommon(flavor);
 }
