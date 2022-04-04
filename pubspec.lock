@@ -440,11 +440,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: bf246c268d0403aef0f06bc271bdd0f049c73c51
-      url: "git://github.com/nstack-io/flutter-sdk.git"
+      ref: "v0.5.1"
+      resolved-ref: "61bdad236d24a599c8e6b2f4bed9987ca7f58bee"
+      url: "https://github.com/nstack-io/flutter-sdk.git"
     source: git
-    version: "0.2.5"
+    version: "0.5.1"
   package_config:
     dependency: transitive
     description:
