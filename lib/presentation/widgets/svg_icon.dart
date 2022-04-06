@@ -1,4 +1,3 @@
-
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -27,7 +26,8 @@ class SvgIcon {
       );
 
   /// Create a square icon with = height = 24.0
-  static SvgPicture s24(String assetName, {Key? key, Color? color}) => SvgPicture.asset(
+  static SvgPicture s24(String assetName, {Key? key, Color? color}) =>
+      SvgPicture.asset(
         assetName,
         key: key,
         width: 24.0,
@@ -37,17 +37,19 @@ class SvgIcon {
       );
 
   /// Create a square icon with = height = 30.0
-  static SvgPicture s30(String assetName, {Key? key, Color? color}) => SvgPicture.asset(
-    assetName,
-    key: key,
-    width: 30.0,
-    height: 30.0,
-    color: color,
-    fit: BoxFit.contain,
-  );
+  static SvgPicture s30(String assetName, {Key? key, Color? color}) =>
+      SvgPicture.asset(
+        assetName,
+        key: key,
+        width: 30.0,
+        height: 30.0,
+        color: color,
+        fit: BoxFit.contain,
+      );
 
   /// Create a square icon with = height = 48.0
-  static SvgPicture s48(String assetName, {Key? key, Color? color}) => SvgPicture.asset(
+  static SvgPicture s48(String assetName, {Key? key, Color? color}) =>
+      SvgPicture.asset(
         assetName,
         key: key,
         width: 48.0,
