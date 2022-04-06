@@ -10,7 +10,7 @@ class NewsPage extends StatelessWidget {
       backgroundColor: context.colors.background,
       appBar: AppBar(
         backgroundColor: context.colors.accent,
-        title: const Text("News"),
+        title: const Text('News'),
       ),
     );
   }

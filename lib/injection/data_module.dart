@@ -31,7 +31,7 @@ class DataModule {
     });
 
     injector.registerLazySingleton<Dio>(() {
-      final Dio dio = Dio();
+      final dio = Dio();
       dio.httpClientAdapter = DefaultHttpClientAdapter();
       dio.options.baseUrl = injector.get<ApiConfig>().apiUrl;
       dio.interceptors.add(

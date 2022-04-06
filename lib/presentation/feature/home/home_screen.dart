@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case HomeScreenTab.profile:
         return const ProfilePage();
       default:
-        throw ("Unknown HomeScreenTab");
+        throw ('Unknown HomeScreenTab');
     }
   }
 
@@ -60,11 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return [
       const BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        label: "News",
+        label: 'News',
       ),
       const BottomNavigationBarItem(
         icon: Icon(Icons.person_rounded),
-        label: "Profile",
+        label: 'Profile',
       ),
     ];
   }

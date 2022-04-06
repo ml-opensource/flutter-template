@@ -3,7 +3,7 @@ import 'package:flutter_template/domain/error/error.dart';
 
 class ErrorHandler {
   static List<Error> obtainAll(dynamic error) {
-    final List<Error> result = [];
+    final result = <Error>[];
 
     if (error is DioError) {
       if (error.type != DioErrorType.response) {
