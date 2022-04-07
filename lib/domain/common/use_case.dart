@@ -62,8 +62,8 @@ abstract class OutputUseCase<Output> {
 /// Example:
 ///
 /// ```dart
-/// class ObserveStoryPlayerStateUseCase extends StreamUseCase<StoryPlayerState> {
-///   GetAllStoriesUseCase({
+/// class ObserveStoryPlayerStateUseCase extends StreamOutputUseCase<StoryPlayerState> {
+///   ObserveStoryPlayerStateUseCase({
 ///     required this._storyPlayerPreferences,
 ///   });
 ///
@@ -78,8 +78,48 @@ abstract class OutputUseCase<Output> {
 /// }
 /// ```
 ///
-abstract class StreamUseCase<Output> {
+abstract class StreamOutputUseCase<Output>
+    extends OutputUseCase<Stream<Output>> {
+  @override
   Stream<Output> run();
+}
+
+/// Stream output use case that would take in an [Input] and return [Output] as a [Stream].
+///
+/// Used when we want to get an async sequence of data.
+/// <https://dart.dev/tutorials/language/streams/>
+///
+/// Example:
+///
+/// ```dart
+/// class ObserveStoryPlayerStateFromStoryIdUseCase extends StreamUseCase<Query, StoryPlayerState> {
+///   ObserveStoryPlayerStateFromStoryIdUseCase({
+///     required this._storyPlayerPreferences,
+///   });
+///
+///   final StoryPlayerPreferences _storyPlayerPreferences;
+///
+///   @override
+///   Stream<StoryPlayerState> run(Query input) {
+///     return _storyPlayerPreferences
+//         .getStoryPlayerStateStreamFromStoryID(input.storyID)
+//         .where((storyPlayerState) => storyPlayerState.hasStoryForPlayback);
+///   }
+/// }
+///
+/// class Query {
+//    final String name;
+//    final String author;
+//    final int storyID;
+//
+//    Query(this.name, this.author, this.storyID);
+//  }
+/// ```
+///
+abstract class StreamUseCase<Input, Output>
+    extends UseCase<Input, Stream<Output>> {
+  @override
+  Stream<Output> run(Input input);
 }
 
 /// Future output use case that would take in an [Input] and return [Output] as a [Future].
@@ -111,7 +151,9 @@ abstract class StreamUseCase<Output> {
 // }
 /// ```
 ///
-abstract class FutureUseCase<Input, Output> {
+abstract class FutureUseCase<Input, Output>
+    extends UseCase<Input, Future<Output>> {
+  @override
   Future<Output> run(Input input);
 }
 
@@ -136,6 +178,8 @@ abstract class FutureUseCase<Input, Output> {
 /// }
 /// ```
 ///
-abstract class FutureOutputUseCase<Output> {
+abstract class FutureOutputUseCase<Output>
+    extends OutputUseCase<Future<Output>> {
+  @override
   Future<Output> run();
 }
