@@ -53,7 +53,7 @@ class NetworkModule {
                 injector.get<Dio>(instanceName: instanceAuth),
               ),
               onTokenExpired: () {
-                // Handle log out
+                // TODO Handle log out
               },
             ),
           )
