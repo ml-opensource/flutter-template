@@ -6,7 +6,7 @@ extension StringExNullable on String? {
   bool get isNullOrBlank =>
       this == null || this!.isEmpty || this!.trim().isEmpty;
 
-  bool get isNotNullOrEmpty => this == null || this!.isNotEmpty;
+  bool get isNotNullOrEmpty => !isNullOrEmpty;
 }
 
 extension StringEx on String {
