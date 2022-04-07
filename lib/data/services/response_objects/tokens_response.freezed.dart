@@ -1,3 +1,4 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
@@ -33,7 +34,7 @@ class _$TokensResponseTearOff {
     );
   }
 
-  TokensResponse fromJson(Map<String, Object> json) {
+  TokensResponse fromJson(Map<String, Object?> json) {
     return TokensResponse.fromJson(json);
   }
 }
@@ -186,28 +187,21 @@ class _$_TokensResponse extends _TokensResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TokensResponse &&
+        (other.runtimeType == runtimeType &&
+            other is _TokensResponse &&
             (identical(other.accessToken, accessToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.accessToken, accessToken)) &&
+                other.accessToken == accessToken) &&
             (identical(other.refreshToken, refreshToken) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshToken, refreshToken)) &&
+                other.refreshToken == refreshToken) &&
             (identical(other.tokenType, tokenType) ||
-                const DeepCollectionEquality()
-                    .equals(other.tokenType, tokenType)) &&
+                other.tokenType == tokenType) &&
             (identical(other.expiresIn, expiresIn) ||
-                const DeepCollectionEquality()
-                    .equals(other.expiresIn, expiresIn)));
+                other.expiresIn == expiresIn));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(accessToken) ^
-      const DeepCollectionEquality().hash(refreshToken) ^
-      const DeepCollectionEquality().hash(tokenType) ^
-      const DeepCollectionEquality().hash(expiresIn);
+      Object.hash(runtimeType, accessToken, refreshToken, tokenType, expiresIn);
 
   @JsonKey(ignore: true)
   @override
@@ -232,13 +226,13 @@ abstract class _TokensResponse extends TokensResponse {
       _$_TokensResponse.fromJson;
 
   @override
-  String get accessToken => throw _privateConstructorUsedError;
+  String get accessToken;
   @override
-  String get refreshToken => throw _privateConstructorUsedError;
+  String get refreshToken;
   @override
-  String get tokenType => throw _privateConstructorUsedError;
+  String get tokenType;
   @override
-  double get expiresIn => throw _privateConstructorUsedError;
+  double get expiresIn;
   @override
   @JsonKey(ignore: true)
   _$TokensResponseCopyWith<_TokensResponse> get copyWith =>

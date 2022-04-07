@@ -1,3 +1,4 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
@@ -112,6 +113,27 @@ mixin _$ResponseErrors<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noInternetConnection,
     TResult Function()? sendTimeout,
@@ -156,6 +178,28 @@ mixin _$ResponseErrors<T> {
     required TResult Function(_InvalidLoginCredentials<T> value)
         invalidLoginCredentials,
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -241,7 +285,8 @@ class _$_NoInternetConnection<T> extends _NoInternetConnection<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoInternetConnection<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NoInternetConnection<T>);
   }
 
   @override
@@ -269,6 +314,30 @@ class _$_NoInternetConnection<T> extends _NoInternetConnection<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return noInternetConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return noInternetConnection?.call();
   }
 
   @override
@@ -325,6 +394,31 @@ class _$_NoInternetConnection<T> extends _NoInternetConnection<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return noInternetConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return noInternetConnection?.call(this);
   }
 
   @override
@@ -400,7 +494,8 @@ class _$_SendTimeout<T> extends _SendTimeout<T> with DiagnosticableTreeMixin {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SendTimeout<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SendTimeout<T>);
   }
 
   @override
@@ -428,6 +523,30 @@ class _$_SendTimeout<T> extends _SendTimeout<T> with DiagnosticableTreeMixin {
     required TResult Function() invalidSearhTerm,
   }) {
     return sendTimeout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return sendTimeout?.call();
   }
 
   @override
@@ -484,6 +603,31 @@ class _$_SendTimeout<T> extends _SendTimeout<T> with DiagnosticableTreeMixin {
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return sendTimeout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return sendTimeout?.call(this);
   }
 
   @override
@@ -560,7 +704,8 @@ class _$_ConnectTimeout<T> extends _ConnectTimeout<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ConnectTimeout<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ConnectTimeout<T>);
   }
 
   @override
@@ -588,6 +733,30 @@ class _$_ConnectTimeout<T> extends _ConnectTimeout<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return connectTimeout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return connectTimeout?.call();
   }
 
   @override
@@ -644,6 +813,31 @@ class _$_ConnectTimeout<T> extends _ConnectTimeout<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return connectTimeout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return connectTimeout?.call(this);
   }
 
   @override
@@ -720,7 +914,8 @@ class _$_ReceiveTimeout<T> extends _ReceiveTimeout<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ReceiveTimeout<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ReceiveTimeout<T>);
   }
 
   @override
@@ -748,6 +943,30 @@ class _$_ReceiveTimeout<T> extends _ReceiveTimeout<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return receiveTimeout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return receiveTimeout?.call();
   }
 
   @override
@@ -804,6 +1023,31 @@ class _$_ReceiveTimeout<T> extends _ReceiveTimeout<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return receiveTimeout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return receiveTimeout?.call(this);
   }
 
   @override
@@ -879,7 +1123,8 @@ class _$_BadRequest<T> extends _BadRequest<T> with DiagnosticableTreeMixin {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BadRequest<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _BadRequest<T>);
   }
 
   @override
@@ -907,6 +1152,30 @@ class _$_BadRequest<T> extends _BadRequest<T> with DiagnosticableTreeMixin {
     required TResult Function() invalidSearhTerm,
   }) {
     return badRequest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return badRequest?.call();
   }
 
   @override
@@ -963,6 +1232,31 @@ class _$_BadRequest<T> extends _BadRequest<T> with DiagnosticableTreeMixin {
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return badRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return badRequest?.call(this);
   }
 
   @override
@@ -1037,7 +1331,8 @@ class _$_NotFound<T> extends _NotFound<T> with DiagnosticableTreeMixin {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NotFound<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NotFound<T>);
   }
 
   @override
@@ -1065,6 +1360,30 @@ class _$_NotFound<T> extends _NotFound<T> with DiagnosticableTreeMixin {
     required TResult Function() invalidSearhTerm,
   }) {
     return notFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return notFound?.call();
   }
 
   @override
@@ -1121,6 +1440,31 @@ class _$_NotFound<T> extends _NotFound<T> with DiagnosticableTreeMixin {
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return notFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return notFound?.call(this);
   }
 
   @override
@@ -1197,7 +1541,8 @@ class _$_TooManyRequests<T> extends _TooManyRequests<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TooManyRequests<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _TooManyRequests<T>);
   }
 
   @override
@@ -1225,6 +1570,30 @@ class _$_TooManyRequests<T> extends _TooManyRequests<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return tooManyRequests();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return tooManyRequests?.call();
   }
 
   @override
@@ -1281,6 +1650,31 @@ class _$_TooManyRequests<T> extends _TooManyRequests<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return tooManyRequests(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return tooManyRequests?.call(this);
   }
 
   @override
@@ -1358,7 +1752,8 @@ class _$_UnprocessableEntity<T> extends _UnprocessableEntity<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnprocessableEntity<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _UnprocessableEntity<T>);
   }
 
   @override
@@ -1386,6 +1781,30 @@ class _$_UnprocessableEntity<T> extends _UnprocessableEntity<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return unprocessableEntity();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return unprocessableEntity?.call();
   }
 
   @override
@@ -1442,6 +1861,31 @@ class _$_UnprocessableEntity<T> extends _UnprocessableEntity<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return unprocessableEntity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return unprocessableEntity?.call(this);
   }
 
   @override
@@ -1519,7 +1963,8 @@ class _$_InternalServerError<T> extends _InternalServerError<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InternalServerError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _InternalServerError<T>);
   }
 
   @override
@@ -1547,6 +1992,30 @@ class _$_InternalServerError<T> extends _InternalServerError<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return internalServerError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return internalServerError?.call();
   }
 
   @override
@@ -1603,6 +2072,31 @@ class _$_InternalServerError<T> extends _InternalServerError<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return internalServerError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return internalServerError?.call(this);
   }
 
   @override
@@ -1679,7 +2173,8 @@ class _$_UnexpectedError<T> extends _UnexpectedError<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnexpectedError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _UnexpectedError<T>);
   }
 
   @override
@@ -1707,6 +2202,30 @@ class _$_UnexpectedError<T> extends _UnexpectedError<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return unexpectedError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return unexpectedError?.call();
   }
 
   @override
@@ -1763,6 +2282,31 @@ class _$_UnexpectedError<T> extends _UnexpectedError<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return unexpectedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return unexpectedError?.call(this);
   }
 
   @override
@@ -1839,7 +2383,8 @@ class _$_RequestCancelled<T> extends _RequestCancelled<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RequestCancelled<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _RequestCancelled<T>);
   }
 
   @override
@@ -1867,6 +2412,30 @@ class _$_RequestCancelled<T> extends _RequestCancelled<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return requestCancelled();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return requestCancelled?.call();
   }
 
   @override
@@ -1923,6 +2492,31 @@ class _$_RequestCancelled<T> extends _RequestCancelled<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return requestCancelled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return requestCancelled?.call(this);
   }
 
   @override
@@ -1997,7 +2591,8 @@ class _$_Conflict<T> extends _Conflict<T> with DiagnosticableTreeMixin {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Conflict<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Conflict<T>);
   }
 
   @override
@@ -2025,6 +2620,30 @@ class _$_Conflict<T> extends _Conflict<T> with DiagnosticableTreeMixin {
     required TResult Function() invalidSearhTerm,
   }) {
     return conflict();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return conflict?.call();
   }
 
   @override
@@ -2081,6 +2700,31 @@ class _$_Conflict<T> extends _Conflict<T> with DiagnosticableTreeMixin {
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return conflict(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return conflict?.call(this);
   }
 
   @override
@@ -2156,7 +2800,8 @@ class _$_Unauthorized<T> extends _Unauthorized<T> with DiagnosticableTreeMixin {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unauthorized<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unauthorized<T>);
   }
 
   @override
@@ -2184,6 +2829,30 @@ class _$_Unauthorized<T> extends _Unauthorized<T> with DiagnosticableTreeMixin {
     required TResult Function() invalidSearhTerm,
   }) {
     return unauthorized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return unauthorized?.call();
   }
 
   @override
@@ -2240,6 +2909,31 @@ class _$_Unauthorized<T> extends _Unauthorized<T> with DiagnosticableTreeMixin {
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return unauthorized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return unauthorized?.call(this);
   }
 
   @override
@@ -2316,7 +3010,8 @@ class _$InvalidPasswordError<T> extends InvalidPasswordError<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidPasswordError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is InvalidPasswordError<T>);
   }
 
   @override
@@ -2344,6 +3039,30 @@ class _$InvalidPasswordError<T> extends InvalidPasswordError<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return invalidPassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return invalidPassword?.call();
   }
 
   @override
@@ -2400,6 +3119,31 @@ class _$InvalidPasswordError<T> extends InvalidPasswordError<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return invalidPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return invalidPassword?.call(this);
   }
 
   @override
@@ -2476,7 +3220,8 @@ class _$InvalidEmailError<T> extends InvalidEmailError<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidEmailError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is InvalidEmailError<T>);
   }
 
   @override
@@ -2504,6 +3249,30 @@ class _$InvalidEmailError<T> extends InvalidEmailError<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return invalidEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return invalidEmail?.call();
   }
 
   @override
@@ -2560,6 +3329,31 @@ class _$InvalidEmailError<T> extends InvalidEmailError<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return invalidEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return invalidEmail?.call(this);
   }
 
   @override
@@ -2638,7 +3432,9 @@ class _$_InvalidLoginCredentials<T> extends _InvalidLoginCredentials<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InvalidLoginCredentials<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _InvalidLoginCredentials<T>);
   }
 
   @override
@@ -2666,6 +3462,30 @@ class _$_InvalidLoginCredentials<T> extends _InvalidLoginCredentials<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return invalidLoginCredentials();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return invalidLoginCredentials?.call();
   }
 
   @override
@@ -2722,6 +3542,31 @@ class _$_InvalidLoginCredentials<T> extends _InvalidLoginCredentials<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return invalidLoginCredentials(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return invalidLoginCredentials?.call(this);
   }
 
   @override
@@ -2799,7 +3644,9 @@ class _$InvalidSearchTermError<T> extends InvalidSearchTermError<T>
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidSearchTermError<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is InvalidSearchTermError<T>);
   }
 
   @override
@@ -2827,6 +3674,30 @@ class _$InvalidSearchTermError<T> extends InvalidSearchTermError<T>
     required TResult Function() invalidSearhTerm,
   }) {
     return invalidSearhTerm();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? noInternetConnection,
+    TResult Function()? sendTimeout,
+    TResult Function()? connectTimeout,
+    TResult Function()? receiveTimeout,
+    TResult Function()? badRequest,
+    TResult Function()? notFound,
+    TResult Function()? tooManyRequests,
+    TResult Function()? unprocessableEntity,
+    TResult Function()? internalServerError,
+    TResult Function()? unexpectedError,
+    TResult Function()? requestCancelled,
+    TResult Function()? conflict,
+    TResult Function()? unauthorized,
+    TResult Function()? invalidPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidLoginCredentials,
+    TResult Function()? invalidSearhTerm,
+  }) {
+    return invalidSearhTerm?.call();
   }
 
   @override
@@ -2883,6 +3754,31 @@ class _$InvalidSearchTermError<T> extends InvalidSearchTermError<T>
     required TResult Function(InvalidSearchTermError<T> value) invalidSearhTerm,
   }) {
     return invalidSearhTerm(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_NoInternetConnection<T> value)? noInternetConnection,
+    TResult Function(_SendTimeout<T> value)? sendTimeout,
+    TResult Function(_ConnectTimeout<T> value)? connectTimeout,
+    TResult Function(_ReceiveTimeout<T> value)? receiveTimeout,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_TooManyRequests<T> value)? tooManyRequests,
+    TResult Function(_UnprocessableEntity<T> value)? unprocessableEntity,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_UnexpectedError<T> value)? unexpectedError,
+    TResult Function(_RequestCancelled<T> value)? requestCancelled,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Unauthorized<T> value)? unauthorized,
+    TResult Function(InvalidPasswordError<T> value)? invalidPassword,
+    TResult Function(InvalidEmailError<T> value)? invalidEmail,
+    TResult Function(_InvalidLoginCredentials<T> value)?
+        invalidLoginCredentials,
+    TResult Function(InvalidSearchTermError<T> value)? invalidSearhTerm,
+  }) {
+    return invalidSearhTerm?.call(this);
   }
 
   @override

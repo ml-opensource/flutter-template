@@ -75,8 +75,6 @@ class AuthInterceptor extends InterceptorsWrapper {
       return;
     }
 
-    // Lock all requests.
-    httpClient.lock();
     _tokenRefreshState = _TokenRefreshStatus.inProgress;
 
     try {
@@ -99,20 +97,12 @@ class AuthInterceptor extends InterceptorsWrapper {
   ) async {
     await authPreferences.setAuthTokens(tokens);
 
-    // Unlock all requests.
-    httpClient.unlock();
-
     // Update headers and retry the first failed request.
     requestOptions.headers['Authorization'] = 'Bearer ${tokens.accessToken}';
     handler.resolve(await httpClient.fetch(requestOptions));
   }
 
   Future _clearUserSessionAndNotifyCallback() async {
-    // Clear all requests in the queue and unlock client.
-    httpClient
-      ..clear()
-      ..unlock();
-
     await authPreferences.clearAll();
     await userPreferences.clearAll();
     onTokenExpired();
