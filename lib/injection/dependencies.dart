@@ -1,4 +1,5 @@
 import 'package:flutter_template/injection/data_module.dart';
+import 'package:flutter_template/injection/network_module.dart';
 import 'package:flutter_template/presentation/app_flavor.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_module.dart';
 import 'package:flutter_template/presentation/routes/app_navigator.dart';
@@ -15,6 +16,7 @@ class DependencyManager {
 
     // App modules
     await DataModule.inject();
+    await NetworkModule.inject(flavor);
 
     // Feature modules
     await ProfileModule.inject();

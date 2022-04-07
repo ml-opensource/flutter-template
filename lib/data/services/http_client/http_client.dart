@@ -1,11 +1,5 @@
 /// Abstraction of the http client class.
 abstract class HttpClient {
-  /// All API endpoints that does not require auth token.
-  static const List<String> nonAuthenticatedPaths = [
-    // Add paths here...
-    // UserService.loginPath,
-  ];
-
   Map<String, dynamic> get headers;
 
   Future<T?> get<T>(
