@@ -79,10 +79,7 @@ abstract class OutputUseCase<Output> {
 /// ```
 ///
 abstract class StreamOutputUseCase<Output>
-    extends OutputUseCase<Stream<Output>> {
-  @override
-  Stream<Output> run();
-}
+    extends OutputUseCase<Stream<Output>> {}
 
 /// Stream output use case that would take in an [Input] and return [Output] as a [Stream].
 ///
@@ -93,9 +90,9 @@ abstract class StreamOutputUseCase<Output>
 ///
 /// ```dart
 /// class ObserveStoryPlayerStateFromStoryIdUseCase extends StreamUseCase<Query, StoryPlayerState> {
-///   ObserveStoryPlayerStateFromStoryIdUseCase({
-///     required this._storyPlayerPreferences,
-///   });
+///   ObserveStoryPlayerStateFromStoryIdUseCase(
+///      this._storyPlayerPreferences,
+///   );
 ///
 ///   final StoryPlayerPreferences _storyPlayerPreferences;
 ///
@@ -117,10 +114,7 @@ abstract class StreamOutputUseCase<Output>
 /// ```
 ///
 abstract class StreamUseCase<Input, Output>
-    extends UseCase<Input, Stream<Output>> {
-  @override
-  Stream<Output> run(Input input);
-}
+    extends UseCase<Input, Stream<Output>> {}
 
 /// Future output use case that would take in an [Input] and return [Output] as a [Future].
 ///
@@ -130,9 +124,9 @@ abstract class StreamUseCase<Input, Output>
 ///
 /// ```dart
 /// class QueryStoriesUseCase extends FutureUseCase<Query, List<Story>> {
-///   QueryStoriesUseCase({
-///     required this._storiesService,
-///   });
+///   QueryStoriesUseCase(
+///     this._storiesService,
+///   );
 ///
 ///   final StoriesService _storiesService;
 ///
@@ -152,10 +146,7 @@ abstract class StreamUseCase<Input, Output>
 /// ```
 ///
 abstract class FutureUseCase<Input, Output>
-    extends UseCase<Input, Future<Output>> {
-  @override
-  Future<Output> run(Input input);
-}
+    extends UseCase<Input, Future<Output>> {}
 
 /// Future output use case that would return [Output] as a [Future].
 ///
@@ -165,9 +156,9 @@ abstract class FutureUseCase<Input, Output>
 ///
 /// ```dart
 /// class GetAllStoriesUseCase extends FutureOutputUseCase<List<Story>> {
-///   GetAllStoriesUseCase({
-///     required this._storiesService,
-///   });
+///   GetAllStoriesUseCase(
+///     this._storiesService,
+///   );
 ///
 ///   final StoriesService _storiesService;
 ///
@@ -179,7 +170,4 @@ abstract class FutureUseCase<Input, Output>
 /// ```
 ///
 abstract class FutureOutputUseCase<Output>
-    extends OutputUseCase<Future<Output>> {
-  @override
-  Future<Output> run();
-}
+    extends OutputUseCase<Future<Output>> {}
