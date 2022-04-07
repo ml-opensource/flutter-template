@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/presentation/app_router.dart';
 import 'package:flutter_template/presentation/feature/home/home_screen_tab.dart';
 import 'package:flutter_template/presentation/feature/news/news_page.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_page.dart';
@@ -10,11 +9,6 @@ class HomeScreen extends StatefulWidget {
     Key? key,
     this.tab = HomeScreenTab.news,
   }) : super(key: key);
-
-  static ScreenRoute get route => ScreenRoute(
-        name: '/home',
-        builder: (_) => const HomeScreen(),
-      );
 
   final HomeScreenTab tab;
 
