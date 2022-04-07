@@ -38,14 +38,14 @@ abstract class UseCase<Input, Output> {
 /// ```dart
 /// class AgeValidationUseCase extends OutputUseCase<bool> {
 ///   AgeValidationUseCase({
-///     required this.user,
+///     required this._user,
 ///   });
 ///
-///   final User user;
+///   final User _user;
 ///
 ///   @override
 ///   bool run() {
-///     return user.age >= 18;
+///     return _user.age >= 18;
 ///   }
 /// }
 /// ```
@@ -64,14 +64,14 @@ abstract class OutputUseCase<Output> {
 /// ```dart
 /// class ObserveStoryPlayerStateUseCase extends StreamUseCase<StoryPlayerState> {
 ///   GetAllStoriesUseCase({
-///     required this.storyPlayerPreferences,
+///     required this._storyPlayerPreferences,
 ///   });
 ///
-///   final StoryPlayerPreferences storyPlayerPreferences;
+///   final StoryPlayerPreferences _storyPlayerPreferences;
 ///
 ///   @override
 ///   Stream<StoryPlayerState> run() {
-///     return storyPlayerPreferences
+///     return _storyPlayerPreferences
 //         .getStoryPlayerStateStream()
 //         .where((storyPlayerState) => storyPlayerState.hasStoryForPlayback);
 ///   }
@@ -91,14 +91,14 @@ abstract class StreamUseCase<Output> {
 /// ```dart
 /// class QueryStoriesUseCase extends FutureUseCase<Query, List<Story>> {
 ///   QueryStoriesUseCase({
-///     required this.storiesService,
+///     required this._storiesService,
 ///   });
 ///
-///   final StoriesService storiesService;
+///   final StoriesService _storiesService;
 ///
 ///   @override
 ///   Future<List<Story>> run(Query input) async {
-///     return storiesService.queryStories(input);
+///     return _storiesService.queryStories(input);
 ///   }
 /// }
 ///
@@ -124,14 +124,14 @@ abstract class FutureUseCase<Input, Output> {
 /// ```dart
 /// class GetAllStoriesUseCase extends FutureOutputUseCase<List<Story>> {
 ///   GetAllStoriesUseCase({
-///     required this.storiesService,
+///     required this._storiesService,
 ///   });
 ///
-///   final StoriesService storiesService;
+///   final StoriesService _storiesService;
 ///
 ///   @override
 ///   Future<List<Story>> run() async {
-///     return storiesService.fetchAllStories();
+///     return _storiesService.fetchAllStories();
 ///   }
 /// }
 /// ```
