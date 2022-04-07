@@ -98,7 +98,7 @@ abstract class StreamUseCase<Output> {
 ///
 ///   @override
 ///   Future<List<Story>> run(Query input) async {
-///     return storiesService.queryStories(query);
+///     return storiesService.queryStories(input);
 ///   }
 /// }
 ///
