@@ -73,6 +73,9 @@ linter:
 
 
 analyzer:
+  errors:
+    # Ignore invalid annotations since freezed annotation and json serializable required it 
+    invalid_annotation_target: ignore
   exclude:
     # Ignore warnings in files from json_serializable, built_value and most generators
     - "**/*.g.dart"

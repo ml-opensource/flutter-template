@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_template/domain/services/profile_service.dart';
+import 'package:flutter_template/extensions/extensions.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_state.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,8 +13,23 @@ class ProfilePresenter extends Cubit<ProfileState> {
   }) : super(state ?? ProfileState.initial());
 
   void load() async {
+    if (state.isLoading) return;
+
     emit(state.copyWith(isLoading: true));
-    var profileName = await profileService.getProfileName() ?? '';
-    emit(state.copyWith(isLoading: false, name: profileName));
+    await profileService
+        .getProfileName()
+        .then(
+          (value) => emit(
+            state.copyWith(isLoading: false, name: value ?? ''),
+          ),
+        )
+        .catchPrintError((e, s) {
+      emit(
+        state.copyWith(
+          isLoading: false,
+          name: '',
+        ),
+      );
+    });
   }
 }

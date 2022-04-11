@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_template/data/services/http_client/http_client.dart';
-import 'package:flutter_template/data/services/response_errors.dart';
+import 'package:flutter_template/data/services/response_error.dart';
 
 /// Abstraction of the Dio http client class.
 class DioHttpClient extends HttpClient {
@@ -42,7 +42,7 @@ class DioHttpClient extends HttpClient {
       );
       return response.data;
     } catch (e) {
-      throw ResponseErrors.fromDioError(e);
+      throw ResponseError.from(e);
     }
   }
 
@@ -74,7 +74,7 @@ class DioHttpClient extends HttpClient {
       );
       return response.data;
     } catch (e) {
-      throw ResponseErrors.fromDioError(e);
+      throw ResponseError.from(e);
     }
   }
 
@@ -107,7 +107,7 @@ class DioHttpClient extends HttpClient {
       return response.data;
     } catch (e) {
       // ignore: only_throw_errors
-      throw ResponseErrors.fromDioError(e);
+      throw ResponseError.from(e);
     }
   }
 
@@ -115,7 +115,7 @@ class DioHttpClient extends HttpClient {
     try {
       return _dio.fetch<T>(options);
     } catch (e) {
-      throw ResponseErrors.fromDioError(e);
+      throw ResponseError.from(e);
     }
   }
 }
