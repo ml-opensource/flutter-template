@@ -17,12 +17,12 @@
 /// }
 ///
 /// class Query {
-//   final int age;
-//   final String name;
-//   final String author;
-//
-//   Query(this.age, this.name, this.author);
-// }
+///   final int age;
+///   final String name;
+///   final String author;
+///
+///   Query(this.age, this.name, this.author);
+/// }
 /// ```
 ///
 abstract class UseCase<Input, Output> {
@@ -72,8 +72,8 @@ abstract class OutputUseCase<Output> {
 ///   @override
 ///   Stream<StoryPlayerState> run() {
 ///     return _storyPlayerPreferences
-//         .getStoryPlayerStateStream()
-//         .where((storyPlayerState) => storyPlayerState.hasStoryForPlayback);
+///        .getStoryPlayerStateStream()
+///        .where((storyPlayerState) => storyPlayerState.hasStoryForPlayback);
 ///   }
 /// }
 /// ```
@@ -99,18 +99,18 @@ abstract class StreamOutputUseCase<Output>
 ///   @override
 ///   Stream<StoryPlayerState> run(Query input) {
 ///     return _storyPlayerPreferences
-//         .getStoryPlayerStateStreamFromStoryID(input.storyID)
-//         .where((storyPlayerState) => storyPlayerState.hasStoryForPlayback);
+///        .getStoryPlayerStateStreamFromStoryID(input.storyID)
+///        .where((storyPlayerState) => storyPlayerState.hasStoryForPlayback);
 ///   }
 /// }
 ///
 /// class Query {
-//    final String name;
-//    final String author;
-//    final int storyID;
-//
-//    Query(this.name, this.author, this.storyID);
-//  }
+///   final String name;
+///   final String author;
+///   final int storyID;
+///
+///   Query(this.name, this.author, this.storyID);
+/// }
 /// ```
 ///
 abstract class StreamUseCase<Input, Output>
@@ -137,12 +137,12 @@ abstract class StreamUseCase<Input, Output>
 /// }
 ///
 /// class Query {
-//   final int age;
-//   final String name;
-//   final String author;
-//
-//   Query(this.age, this.name, this.author);
-// }
+///  final int age;
+///  final String name;
+///  final String author;
+///
+///  Query(this.age, this.name, this.author);
+/// }
 /// ```
 ///
 abstract class FutureUseCase<Input, Output>

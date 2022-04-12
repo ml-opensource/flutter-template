@@ -1,1 +1,1 @@
-{"bricks":{"cubit":{"version":"0.1.1"},"bloc":{"version":"0.1.1"},"usecase":{"path":"bricks/usecases/usecase"}}}
+{"bricks":{"cubit":{"version":"0.1.1"},"bloc":{"version":"0.1.1"},"usecase":{"path":"bricks/usecase/"},"output_usecase":{"path":"bricks/output_usecase/"},"stream_usecase":{"path":"bricks/stream_usecase/"},"stream_output_usecase":{"path":"bricks/stream_output_usecase/"},"future_output_usecase":{"path":"bricks/future_output_usecase/"},"future_usecase":{"path":"bricks/future_usecase/"}}}
