@@ -7,6 +7,8 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
@@ -41,18 +43,20 @@ class AppRouter extends _i3.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.SplashScreen]
+/// generated route for
+/// [_i1.SplashScreen]
 class SplashScreenRoute extends _i3.PageRouteInfo<void> {
-  const SplashScreenRoute() : super(name, path: '/');
+  const SplashScreenRoute() : super(SplashScreenRoute.name, path: '/');
 
   static const String name = 'SplashScreenRoute';
 }
 
-/// generated route for [_i2.HomeScreen]
+/// generated route for
+/// [_i2.HomeScreen]
 class HomeScreenRoute extends _i3.PageRouteInfo<HomeScreenRouteArgs> {
   HomeScreenRoute(
       {_i4.Key? key, _i5.HomeScreenTab tab = _i5.HomeScreenTab.news})
-      : super(name,
+      : super(HomeScreenRoute.name,
             path: '/home', args: HomeScreenRouteArgs(key: key, tab: tab));
 
   static const String name = 'HomeScreenRoute';
