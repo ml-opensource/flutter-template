@@ -5,7 +5,7 @@ import 'package:flutter_template/data/model/auth/auth_tokens.dart';
 import 'package:flutter_template/data/preferences/auth_preferences.dart';
 import 'package:flutter_template/data/services/http_client/dio_http_client.dart';
 import 'package:flutter_template/data/services/http_client/http_client.dart';
-import 'package:flutter_template/data/services/response_errors.dart';
+import 'package:flutter_template/data/services/response_error.dart';
 import 'package:flutter_template/data/services/response_objects/tokens_response.dart';
 import 'package:flutter_template/domain/preferences/user_preferences.dart';
 
@@ -80,7 +80,7 @@ class AuthInterceptor extends InterceptorsWrapper {
     try {
       final tokens = await _getNewTokens(requestOptions);
       await _saveTokensAndRetryCurrentRequest(tokens, requestOptions, handler);
-    } on ResponseErrors {
+    } on ResponseError {
       _tokenRefreshState = _TokenRefreshStatus.expired;
       await _clearUserSessionAndNotifyCallback();
     } on DioError catch (e) {
@@ -121,13 +121,13 @@ class AuthInterceptor extends InterceptorsWrapper {
       );
 
       if (response == null) {
-        throw const ResponseErrors.unprocessableEntity();
+        throw const ResponseError.unprocessableEntity();
       }
 
       return TokensResponse.fromJson(response['data']).getEntity();
     } on DioError catch (e) {
       if (e.response?.statusCode == 401) {
-        throw const ResponseErrors.unauthorized();
+        throw const ResponseError.unauthorized();
       }
       rethrow;
     }
