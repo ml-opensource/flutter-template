@@ -14,7 +14,7 @@ part 'response_error.freezed.dart';
 ///
 /// We return those errors to get localized messages to display to the user.
 @freezed
-class ResponseError<T> with _$ResponseError<T> implements Error {
+class ResponseError<T> with _$ResponseError<T> implements Exception {
   const ResponseError._();
   const factory ResponseError.noInternetConnection() = _NoInternetConnection;
   const factory ResponseError.sendTimeout() = _SendTimeout;
@@ -29,14 +29,11 @@ class ResponseError<T> with _$ResponseError<T> implements Error {
   const factory ResponseError.requestCancelled() = _RequestCancelled;
   const factory ResponseError.conflict() = _Conflict;
   const factory ResponseError.unauthorized() = _Unauthorized;
-  const factory ResponseError.invalidPassword() = InvalidPasswordError;
-  const factory ResponseError.invalidEmail() = InvalidEmailError;
+  const factory ResponseError.invalidPassword() = _InvalidPasswordError;
+  const factory ResponseError.invalidEmail() = _InvalidEmailError;
   const factory ResponseError.invalidLoginCredentials() =
       _InvalidLoginCredentials;
-  const factory ResponseError.invalidSearhTerm() = InvalidSearchTermError;
-
-  @override
-  StackTrace? get stackTrace => StackTrace.fromString(toString());
+  const factory ResponseError.invalidSearhTerm() = _InvalidSearchTermError;
 
   static ResponseError from(Object error) {
     if (error is ResponseError) {
