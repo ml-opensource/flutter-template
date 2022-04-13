@@ -14,13 +14,13 @@ mason add <BRICK> [--path <LOCAL_BRICK_PATH>]
 
 ## Bricks
 
-| Brick   | Description          |
-| ------- | -------------------- |
-| `bloc`  | Generate a new Bloc  |
-| `cubit` | Generate a new Cubit |
-| `usecase` | Generate a new usecase |
-| `output_usecase` | Generate a new output usecase |
-| `stream_usecase` | Generate a new stream usecase |
+| Brick                   | Description                          |
+| ----------------------- | ------------------------------------ |
+| `bloc`                  | Generate a new Bloc                  |
+| `cubit`                 | Generate a new Cubit                 |
+| `usecase`               | Generate a new usecase               |
+| `output_usecase`        | Generate a new output usecase        |
+| `stream_usecase`        | Generate a new stream usecase        |
 | `stream_output_usecase` | Generate a new stream output usecase |
-| `future_usecase` | Generate a new future usecase |
+| `future_usecase`        | Generate a new future usecase        |
 | `future_output_usecase` | Generate a new future output usecase |
