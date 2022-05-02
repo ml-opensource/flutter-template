@@ -11,7 +11,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   ProfileCubit({
     required this.profileService,
-    @factoryParam @visibleForTesting ProfileState? state,
+    @visibleForTesting ProfileState? state,
   }) : super(state ?? ProfileState.initial());
 
   void load() async {

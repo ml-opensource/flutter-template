@@ -41,9 +41,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       _i13.UserSharedPreferences(await get.getAsync<_i12.SharedPreferences>()));
   gh.lazySingletonAsync<_i14.AuthPreferences>(() async =>
       _i14.AuthPreferences(await get.getAsync<_i12.SharedPreferences>()));
-  gh.factoryParam<_i15.ProfileCubit, _i16.ProfileState?, dynamic>((state, _) =>
-      _i15.ProfileCubit(
-          profileService: get<_i10.ProfileService>(), state: state));
+  gh.factory<_i15.ProfileCubit>(() => _i15.ProfileCubit(
+      profileService: get<_i10.ProfileService>(),
+      state: get<_i16.ProfileState>()));
   return get;
 }
 
