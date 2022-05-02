@@ -12,85 +12,7 @@ part of 'response_error.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ResponseErrorTearOff {
-  const _$ResponseErrorTearOff();
-
-  _NoInternetConnection<T> noInternetConnection<T>() {
-    return _NoInternetConnection<T>();
-  }
-
-  _SendTimeout<T> sendTimeout<T>() {
-    return _SendTimeout<T>();
-  }
-
-  _ConnectTimeout<T> connectTimeout<T>() {
-    return _ConnectTimeout<T>();
-  }
-
-  _ReceiveTimeout<T> receiveTimeout<T>() {
-    return _ReceiveTimeout<T>();
-  }
-
-  _BadRequest<T> badRequest<T>(ErrorName errorName) {
-    return _BadRequest<T>(
-      errorName,
-    );
-  }
-
-  _NotFound<T> notFound<T>() {
-    return _NotFound<T>();
-  }
-
-  _TooManyRequests<T> tooManyRequests<T>() {
-    return _TooManyRequests<T>();
-  }
-
-  _UnprocessableEntity<T> unprocessableEntity<T>() {
-    return _UnprocessableEntity<T>();
-  }
-
-  _InternalServerError<T> internalServerError<T>() {
-    return _InternalServerError<T>();
-  }
-
-  _UnexpectedError<T> unexpectedError<T>() {
-    return _UnexpectedError<T>();
-  }
-
-  _RequestCancelled<T> requestCancelled<T>() {
-    return _RequestCancelled<T>();
-  }
-
-  _Conflict<T> conflict<T>() {
-    return _Conflict<T>();
-  }
-
-  _Unauthorized<T> unauthorized<T>() {
-    return _Unauthorized<T>();
-  }
-
-  _InvalidPasswordError<T> invalidPassword<T>() {
-    return _InvalidPasswordError<T>();
-  }
-
-  _InvalidEmailError<T> invalidEmail<T>() {
-    return _InvalidEmailError<T>();
-  }
-
-  _InvalidLoginCredentials<T> invalidLoginCredentials<T>() {
-    return _InvalidLoginCredentials<T>();
-  }
-
-  _InvalidSearchTermError<T> invalidSearhTerm<T>() {
-    return _InvalidSearchTermError<T>();
-  }
-}
-
-/// @nodoc
-const $ResponseError = _$ResponseErrorTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ResponseError<T> {
@@ -1324,10 +1246,10 @@ class _$_BadRequest<T> extends _BadRequest<T> with DiagnosticableTreeMixin {
 }
 
 abstract class _BadRequest<T> extends ResponseError<T> {
-  const factory _BadRequest(ErrorName errorName) = _$_BadRequest<T>;
+  const factory _BadRequest(final ErrorName errorName) = _$_BadRequest<T>;
   const _BadRequest._() : super._();
 
-  ErrorName get errorName;
+  ErrorName get errorName => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$BadRequestCopyWith<T, _BadRequest<T>> get copyWith =>
       throw _privateConstructorUsedError;

@@ -12,22 +12,7 @@ part of 'profile_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ProfileStateTearOff {
-  const _$ProfileStateTearOff();
-
-  _ProfileState call({required bool isLoading, required String name}) {
-    return _ProfileState(
-      isLoading: isLoading,
-      name: name,
-    );
-  }
-}
-
-/// @nodoc
-const $ProfileState = _$ProfileStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ProfileState {
@@ -148,14 +133,15 @@ class _$_ProfileState extends _ProfileState {
 }
 
 abstract class _ProfileState extends ProfileState {
-  factory _ProfileState({required bool isLoading, required String name}) =
-      _$_ProfileState;
+  factory _ProfileState(
+      {required final bool isLoading,
+      required final String name}) = _$_ProfileState;
   _ProfileState._() : super._();
 
   @override
-  bool get isLoading;
+  bool get isLoading => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ProfileStateCopyWith<_ProfileState> get copyWith =>
