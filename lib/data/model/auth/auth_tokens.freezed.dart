@@ -12,28 +12,7 @@ part of 'auth_tokens.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthTokensTearOff {
-  const _$AuthTokensTearOff();
-
-  _AuthTokens call(
-      {required String accessToken,
-      required String refreshToken,
-      required String tokenType,
-      required double expiresIn}) {
-    return _AuthTokens(
-      accessToken: accessToken,
-      refreshToken: refreshToken,
-      tokenType: tokenType,
-      expiresIn: expiresIn,
-    );
-  }
-}
-
-/// @nodoc
-const $AuthTokens = _$AuthTokensTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthTokens {
@@ -199,20 +178,20 @@ class _$_AuthTokens extends _AuthTokens {
 
 abstract class _AuthTokens extends AuthTokens {
   const factory _AuthTokens(
-      {required String accessToken,
-      required String refreshToken,
-      required String tokenType,
-      required double expiresIn}) = _$_AuthTokens;
+      {required final String accessToken,
+      required final String refreshToken,
+      required final String tokenType,
+      required final double expiresIn}) = _$_AuthTokens;
   const _AuthTokens._() : super._();
 
   @override
-  String get accessToken;
+  String get accessToken => throw _privateConstructorUsedError;
   @override
-  String get refreshToken;
+  String get refreshToken => throw _privateConstructorUsedError;
   @override
-  String get tokenType;
+  String get tokenType => throw _privateConstructorUsedError;
   @override
-  double get expiresIn;
+  double get expiresIn => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AuthTokensCopyWith<_AuthTokens> get copyWith =>

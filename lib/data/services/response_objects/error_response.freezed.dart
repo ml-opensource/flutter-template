@@ -12,43 +12,11 @@ part of 'error_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 APIError _$APIErrorFromJson(Map<String, dynamic> json) {
   return _APIError.fromJson(json);
 }
-
-/// @nodoc
-class _$APIErrorTearOff {
-  const _$APIErrorTearOff();
-
-  _APIError call(
-      {required String? requestId,
-      required String? timestamp,
-      required int statusCode,
-      required String message,
-      required String localizedMessage,
-      @JsonKey(unknownEnumValue: ErrorName.unknown)
-          required ErrorName errorName,
-      required String? path}) {
-    return _APIError(
-      requestId: requestId,
-      timestamp: timestamp,
-      statusCode: statusCode,
-      message: message,
-      localizedMessage: localizedMessage,
-      errorName: errorName,
-      path: path,
-    );
-  }
-
-  APIError fromJson(Map<String, Object?> json) {
-    return APIError.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $APIError = _$APIErrorTearOff();
 
 /// @nodoc
 mixin _$APIError {
@@ -251,6 +219,7 @@ class _$_APIError implements _APIError {
             const DeepCollectionEquality().equals(other.path, path));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -275,32 +244,32 @@ class _$_APIError implements _APIError {
 
 abstract class _APIError implements APIError {
   const factory _APIError(
-      {required String? requestId,
-      required String? timestamp,
-      required int statusCode,
-      required String message,
-      required String localizedMessage,
+      {required final String? requestId,
+      required final String? timestamp,
+      required final int statusCode,
+      required final String message,
+      required final String localizedMessage,
       @JsonKey(unknownEnumValue: ErrorName.unknown)
-          required ErrorName errorName,
-      required String? path}) = _$_APIError;
+          required final ErrorName errorName,
+      required final String? path}) = _$_APIError;
 
   factory _APIError.fromJson(Map<String, dynamic> json) = _$_APIError.fromJson;
 
   @override
-  String? get requestId;
+  String? get requestId => throw _privateConstructorUsedError;
   @override
-  String? get timestamp;
+  String? get timestamp => throw _privateConstructorUsedError;
   @override
-  int get statusCode;
+  int get statusCode => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
-  String get localizedMessage;
+  String get localizedMessage => throw _privateConstructorUsedError;
   @override
   @JsonKey(unknownEnumValue: ErrorName.unknown)
-  ErrorName get errorName;
+  ErrorName get errorName => throw _privateConstructorUsedError;
   @override
-  String? get path;
+  String? get path => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$APIErrorCopyWith<_APIError> get copyWith =>
@@ -310,24 +279,6 @@ abstract class _APIError implements APIError {
 ErrorResponse _$ErrorResponseFromJson(Map<String, dynamic> json) {
   return _ErrorResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$ErrorResponseTearOff {
-  const _$ErrorResponseTearOff();
-
-  _ErrorResponse call({required APIError error}) {
-    return _ErrorResponse(
-      error: error,
-    );
-  }
-
-  ErrorResponse fromJson(Map<String, Object?> json) {
-    return ErrorResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ErrorResponse = _$ErrorResponseTearOff();
 
 /// @nodoc
 mixin _$ErrorResponse {
@@ -426,9 +377,10 @@ class _$_ErrorResponse implements _ErrorResponse {
   factory _$_ErrorResponse.fromJson(Map<String, dynamic> json) =>
       _$$_ErrorResponseFromJson(json);
 
-  @override //TODO: name this according to the map key from the error response
+//TODO: name this according to the map key from the error response
 //if no map key exists then just create this factory with the APIError values
 //and remove APIError,
+  @override
   final APIError error;
 
   @override
@@ -444,6 +396,7 @@ class _$_ErrorResponse implements _ErrorResponse {
             const DeepCollectionEquality().equals(other.error, error));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
@@ -460,7 +413,8 @@ class _$_ErrorResponse implements _ErrorResponse {
 }
 
 abstract class _ErrorResponse implements ErrorResponse {
-  const factory _ErrorResponse({required APIError error}) = _$_ErrorResponse;
+  const factory _ErrorResponse({required final APIError error}) =
+      _$_ErrorResponse;
 
   factory _ErrorResponse.fromJson(Map<String, dynamic> json) =
       _$_ErrorResponse.fromJson;
@@ -468,7 +422,7 @@ abstract class _ErrorResponse implements ErrorResponse {
   @override //TODO: name this according to the map key from the error response
 //if no map key exists then just create this factory with the APIError values
 //and remove APIError,
-  APIError get error;
+  APIError get error => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ErrorResponseCopyWith<_ErrorResponse> get copyWith =>

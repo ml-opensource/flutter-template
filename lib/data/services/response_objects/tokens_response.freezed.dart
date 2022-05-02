@@ -12,36 +12,11 @@ part of 'tokens_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 TokensResponse _$TokensResponseFromJson(Map<String, dynamic> json) {
   return _TokensResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$TokensResponseTearOff {
-  const _$TokensResponseTearOff();
-
-  _TokensResponse call(
-      {required String accessToken,
-      required String refreshToken,
-      required String tokenType,
-      required double expiresIn}) {
-    return _TokensResponse(
-      accessToken: accessToken,
-      refreshToken: refreshToken,
-      tokenType: tokenType,
-      expiresIn: expiresIn,
-    );
-  }
-
-  TokensResponse fromJson(Map<String, Object?> json) {
-    return TokensResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TokensResponse = _$TokensResponseTearOff();
 
 /// @nodoc
 mixin _$TokensResponse {
@@ -198,6 +173,7 @@ class _$_TokensResponse extends _TokensResponse {
             const DeepCollectionEquality().equals(other.expiresIn, expiresIn));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -219,23 +195,23 @@ class _$_TokensResponse extends _TokensResponse {
 
 abstract class _TokensResponse extends TokensResponse {
   const factory _TokensResponse(
-      {required String accessToken,
-      required String refreshToken,
-      required String tokenType,
-      required double expiresIn}) = _$_TokensResponse;
+      {required final String accessToken,
+      required final String refreshToken,
+      required final String tokenType,
+      required final double expiresIn}) = _$_TokensResponse;
   const _TokensResponse._() : super._();
 
   factory _TokensResponse.fromJson(Map<String, dynamic> json) =
       _$_TokensResponse.fromJson;
 
   @override
-  String get accessToken;
+  String get accessToken => throw _privateConstructorUsedError;
   @override
-  String get refreshToken;
+  String get refreshToken => throw _privateConstructorUsedError;
   @override
-  String get tokenType;
+  String get tokenType => throw _privateConstructorUsedError;
   @override
-  double get expiresIn;
+  double get expiresIn => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TokensResponseCopyWith<_TokensResponse> get copyWith =>
