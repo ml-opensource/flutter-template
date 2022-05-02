@@ -2,9 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter_template/domain/entities/user.dart';
 import 'package:flutter_template/domain/preferences/user_preferences.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Store the current authenticated user's basic information.
+
+@LazySingleton()
 class UserSharedPreferences extends UserPreferences {
   UserSharedPreferences(this._preferences);
 
