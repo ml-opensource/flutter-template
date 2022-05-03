@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_template/injection/injector.dart';
-import 'package:flutter_template/presentation/feature/profile/profile_presenter.dart';
+import 'package:flutter_template/presentation/feature/profile/profile_cubit.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_state.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
@@ -13,7 +13,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final _profilePresenter = injector.get<ProfilePresenter>();
+  final _profilePresenter = injector.get<ProfileCubit>();
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: context.colors.background,
       appBar: AppBar(
         backgroundColor: context.colors.accent,
-        title: BlocBuilder<ProfilePresenter, ProfileState>(
+        title: BlocBuilder<ProfileCubit, ProfileState>(
           bloc: _profilePresenter,
           builder: (context, state) {
             return Text(state.isLoading ? 'Profile' : 'Profile: ' + state.name);
@@ -40,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Center(
             child: Column(
               children: [
-                BlocBuilder<ProfilePresenter, ProfileState>(
+                BlocBuilder<ProfileCubit, ProfileState>(
                     bloc: _profilePresenter,
                     builder: (context, state) {
                       if (state.isLoading) {

@@ -4,10 +4,10 @@ import 'package:flutter_template/extensions/extensions.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_state.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-class ProfilePresenter extends Cubit<ProfileState> {
+class ProfileCubit extends Cubit<ProfileState> {
   final ProfileService profileService;
 
-  ProfilePresenter({
+  ProfileCubit({
     required this.profileService,
     @visibleForTesting ProfileState? state,
   }) : super(state ?? ProfileState.initial());
