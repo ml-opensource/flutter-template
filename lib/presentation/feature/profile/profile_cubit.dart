@@ -10,7 +10,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   ProfileCubit({
     required this.profileService,
-    ProfileState? state,
+    @factoryParam ProfileState? state,
   }) : super(state ?? ProfileState.initial());
 
   void load() async {
