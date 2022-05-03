@@ -1,7 +1,10 @@
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// This class handles the authentication state of the whole app.
+
+@LazySingleton()
 class AuthPreferences {
   AuthPreferences(this._preferences);
 
