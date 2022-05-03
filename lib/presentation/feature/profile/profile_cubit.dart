@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 class ProfileCubit extends Cubit<ProfileState> {
   final ProfileService profileService;
 
-  ProfileCubit({
+  ProfilePresenter({
     required this.profileService,
     @factoryParam ProfileState? state,
   }) : super(state ?? ProfileState.initial());
