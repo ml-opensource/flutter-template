@@ -22,7 +22,7 @@ abstract class DataModule {
         userPreferences: injector(),
         refreshTokenHttpClient: injector(),
         onTokenExpired: () {
-          // Handle log out
+          // TODO: Handle log out
         },
       ),
     );
