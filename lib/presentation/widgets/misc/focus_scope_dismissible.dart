@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 /// A widget for dismissing the keyboard on tap outside.
 ///
-/// Wrap pages that contain text inputs with this widget
+/// Wrap a widget that contain text inputs with this widget
 /// to enable tap-outside-to-dismiss-keyboard behaviour.
 ///
 /// So instead of this:
@@ -26,8 +26,8 @@ import 'package:flutter/widgets.dart';
 ///   child: MyPage(),
 /// ),
 /// ```
-class BackgroundFocusScopeDismisser extends StatelessWidget {
-  const BackgroundFocusScopeDismisser({
+class FocusScopeDismissible extends StatelessWidget {
+  const FocusScopeDismissible({
     Key? key,
     required this.child,
   }) : super(key: key);
