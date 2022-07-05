@@ -14,8 +14,12 @@ class MetaInterceptor extends InterceptorsWrapper {
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    options.headers['Accept'] = 'application/json; charset=UTF-8';
-    options.headers['content-type'] = 'application/json';
+    if (options.headers['Accept'] == null) {
+      options.headers['Accept'] = 'application/json; charset=UTF-8';
+    }
+    if (options.headers['content-type'] == null) {
+      options.headers['content-type'] = 'application/json';
+    }
     options.headers[nMetaHeaderKey] = '$platform;${flavor.name};'
         '${await appVersion};${await platformVersion};${await device}';
     handler.next(options);
