@@ -499,25 +499,25 @@ app:
     - opts:
         is_expand: false
       BUILD_VERSION: ""
-    - DEVELOPER_TEAM: Y33QN5V968
-    - MATCH_GIT_BRANCH: husl
-    - BUNDLE_ID_STAGING: eu.husl.staging
-    - BUNDLE_ID_PRODUCTION: eu.husl
-    - TEAM_NAME: SATOS B.V.
-    - NOTIFY_SLACK_INTERNAL_CHANNEL: "#p-husl-app-build"
-    - NOTIFY_SLACK_EXTERNAL_CHANNEL: "#p-husl-app-build"
+    - DEVELOPER_TEAM: 123FAMILY321
+    - MATCH_GIT_BRANCH: matchbranch
+    - BUNDLE_ID_STAGING: bundle.id.staging
+    - BUNDLE_ID_PRODUCTION: bundle.id.production
+    - TEAM_NAME: Fast and Furious Tokyo Drift (FAMILY)
+    - NOTIFY_SLACK_INTERNAL_CHANNEL: "#family"
+    - NOTIFY_SLACK_EXTERNAL_CHANNEL: "#family(external)"
     - opts:
         is_expand: false
-      BUNDLE_ID_DEVELOPMENT: eu.husl.development
+      BUNDLE_ID_DEVELOPMENT: bundle.id.development
     - opts:
         is_expand: false
       BUILD_FLAVOUR: Unknown
     - opts:
         is_expand: false
-      GITHUB_PROJECT_URL: https://github.com/nodes-projects/husl-flutter
+      GITHUB_PROJECT_URL: https://github.com/org/repo
     - opts:
         is_expand: false
-      ASC_APP_KEY_ISSUER_ID: 476cde6b-6b84-480a-9f9c-afe89b1f3ec7
+      ASC_APP_KEY_ISSUER_ID: 123abc-456efg
 trigger_map:
   - push_branch: develop
     workflow: deployDevelopmentInternal
