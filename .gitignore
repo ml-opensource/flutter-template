@@ -43,4 +43,7 @@ app.*.map.json
 # Flutter code generation
 *.freezed.dart
 *.g.dart
-nstack.dart
+
+lib/presentation/routes/router.gr.dart
+lib/injection/injector.config.dart
+lib/nstack/nstack.dart
