@@ -44,5 +44,5 @@ app.*.map.json
 *.freezed.dart
 *.g.dart
 nstack.dart
-**.gr.dart
-**.config.dart
+*.gr.dart
+*.config.dart
