@@ -56,6 +56,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mocktail: ^0.3.0
   build_runner: ^2.1.8
   injectable_generator: 1.5.3
   freezed: 2.0.2
