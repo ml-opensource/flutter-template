@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_template/data/api/new/auth_token_storage/auth_token_storage.dart';
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
@@ -9,14 +9,13 @@ import 'package:injectable/injectable.dart';
 /// A storage for auth tokens that uses [FlutterSecureStorage].
 @LazySingleton(as: AuthTokenStorage)
 class SecureAuthTokenStorage extends AuthTokenStorage {
-  static const String _prefix = 'auth';
-
-  @visibleForTesting
-  static const String tokenKey = '${_prefix}_token';
-
   SecureAuthTokenStorage(this._storage);
 
   final FlutterSecureStorage _storage;
+
+  static const String _prefix = 'auth';
+  @visibleForTesting
+  static const String tokenKey = '${_prefix}_token';
 
   @override
   Future<AuthTokens?> get() async {
