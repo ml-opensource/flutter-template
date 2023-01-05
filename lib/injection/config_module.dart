@@ -6,6 +6,8 @@ import 'package:flutter_template/presentation/app_flavor.dart';
 import 'package:flutter_template/presentation/application_config.dart';
 
 abstract class ConfigModule {
+  /// Can't use injectable with preresolve as it fails with a stack overflow exception
+  /// because here we depend on the flutter/services package.
   static Future<void> inject(AppFlavor flavor) async {
     const basePath = 'assets/configuration/application_configuration';
     final configPath = '$basePath.${flavor.name}.json';
