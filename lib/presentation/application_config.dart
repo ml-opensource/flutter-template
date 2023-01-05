@@ -6,7 +6,7 @@ part 'application_config.g.dart';
 
 @freezed
 class ApplicationConfig with _$ApplicationConfig {
-  factory ApplicationConfig({
+  const factory ApplicationConfig({
     required String apiUrl,
     required AppFlavor flavor,
   }) = _ApplicationConfig;
