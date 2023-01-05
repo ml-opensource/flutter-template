@@ -85,23 +85,17 @@ void main() {
             );
           });
 
-          test(
-            'Must return a valid token',
-            () {
-              expect(sut.accessToken, mockTokens.accessToken);
-            },
-          );
+          test('Must return a valid token', () {
+            expect(sut.accessToken, mockTokens.accessToken);
+          });
         });
       });
 
       group('when accessing the [refreshToken] getter', () {
         group('and the token is not restored', () {
-          test(
-            'Must return null',
-            () async {
-              expect(sut.refreshToken, null);
-            },
-          );
+          test('Must return null', () async {
+            expect(sut.refreshToken, null);
+          });
         });
 
         group('and the token is restored', () {
@@ -121,23 +115,17 @@ void main() {
             );
           });
 
-          test(
-            'Must return a valid token',
-            () {
-              expect(sut.refreshToken, mockTokens.refreshToken);
-            },
-          );
+          test('Must return a valid token', () {
+            expect(sut.refreshToken, mockTokens.refreshToken);
+          });
         });
       });
 
       group('when accessing the [expiresSoon] getter', () {
         group('and the token is not restored', () {
-          test(
-            'Must return true',
-            () async {
-              expect(sut.expiresSoon, true);
-            },
-          );
+          test('Must return true', () async {
+            expect(sut.expiresSoon, true);
+          });
         });
 
         group('and the token is restored', () {
@@ -157,37 +145,32 @@ void main() {
             );
           });
 
-          test(
-            'Must return a valid expires soon value',
-            () {
-              expect(sut.expiresSoon, mockTokens.expiresSoon);
-            },
-          );
+          test('Must return a valid expires soon value', () {
+            expect(sut.expiresSoon, mockTokens.expiresSoon);
+          });
         });
       });
 
       group('when [reauthenticate] is called', () {
         group('and the token is not restored', () {
-          test(
-            'Must throw an [AuthenticatorException.noRefreshToken]',
-            () async {
-              when(() => storage.clear()).thenAnswer((_) => Future.value());
+          test('Must throw an [AuthenticatorException.noRefreshToken]',
+              () async {
+            when(() => storage.clear()).thenAnswer((_) => Future.value());
 
-              expect(
-                () => sut.reauthenticate(
-                  RequestOptions(path: apiConfig.apiUrl),
-                ),
-                throwsA(const AuthenticatorException.noRefreshToken()),
-              );
+            expect(
+              () => sut.reauthenticate(
+                RequestOptions(path: apiConfig.apiUrl),
+              ),
+              throwsA(const AuthenticatorException.noRefreshToken()),
+            );
 
-              await untilCalled(() => storage.clear());
+            await untilCalled(() => storage.clear());
 
-              verify(() => storage.clear());
+            verify(() => storage.clear());
 
-              verifyNoMoreInteractions(storage);
-              verifyNoMoreInteractions(client);
-            },
-          );
+            verifyNoMoreInteractions(storage);
+            verifyNoMoreInteractions(client);
+          });
         });
 
         group('and the token is restored', () {
