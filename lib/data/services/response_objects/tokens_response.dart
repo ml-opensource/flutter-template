@@ -35,6 +35,8 @@ class TokensResponse with _$TokensResponse {
       refreshToken: refreshToken,
       tokenType: tokenType,
       expiresIn: expiresIn,
+      expiresAt:
+          DateTime.now().toUtc().add(Duration(milliseconds: expiresIn.toInt())),
     );
   }
 }
