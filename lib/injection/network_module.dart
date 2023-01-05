@@ -1,8 +1,8 @@
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_template/data/api/api_config.dart';
-import 'package:flutter_template/data/api/new/authenticator/authenticator.dart';
-import 'package:flutter_template/data/api/new/interceptor/api_auth_interceptor.dart';
+import 'package:flutter_template/data/api/authenticator/authenticator.dart';
+import 'package:flutter_template/data/api/interceptors/api_auth_interceptor.dart';
 import 'package:flutter_template/data/services/http_client/dio_http_client.dart';
 import 'package:flutter_template/injection/injector.dart';
 import 'package:injectable/injectable.dart';

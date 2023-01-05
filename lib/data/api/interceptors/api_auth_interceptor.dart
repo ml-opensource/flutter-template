@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_template/data/api/authenticator/authenticator.dart';
 import 'package:flutter_template/data/api/exceptions/token_unauthorized_exception.dart';
-import 'package:flutter_template/data/api/new/authenticator/authenticator.dart';
 import 'package:flutter_template/injection/network_module.dart';
 import 'package:injectable/injectable.dart';
 

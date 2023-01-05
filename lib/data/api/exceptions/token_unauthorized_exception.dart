@@ -1,4 +1,4 @@
-import 'package:flutter_template/data/api/new/interceptor/api_auth_interceptor.dart';
+import 'package:flutter_template/data/api/interceptors/api_auth_interceptor.dart';
 
 /// An exception indicating that token was invalid even after reauthentication.
 /// See [ApiAuthInterceptor].

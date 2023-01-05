@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_template/data/api/api_config.dart';
+import 'package:flutter_template/data/api/auth_token_storage/auth_token_storage.dart';
 import 'package:flutter_template/data/api/exceptions/authenticator_exception.dart';
-import 'package:flutter_template/data/api/new/auth_token_storage/auth_token_storage.dart';
-import 'package:flutter_template/data/api/new/interceptor/api_auth_interceptor.dart';
-import 'package:flutter_template/data/interceptor/meta_interceptor.dart';
+import 'package:flutter_template/data/api/interceptors/api_auth_interceptor.dart';
+import 'package:flutter_template/data/api/interceptors/meta_interceptor.dart';
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
 import 'package:flutter_template/data/services/http_client/dio_http_client.dart';
 import 'package:flutter_template/data/services/response_objects/tokens_response.dart';

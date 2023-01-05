@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_template/data/api/new/auth_token_storage/auth_token_storage.dart';
+import 'package:flutter_template/data/api/auth_token_storage/auth_token_storage.dart';
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
 import 'package:injectable/injectable.dart';
 
