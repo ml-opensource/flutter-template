@@ -9,7 +9,7 @@ abstract class ConfigModule {
   /// Can't use injectable with preresolve as it fails with a stack overflow exception
   /// because here we depend on the flutter/services package.
   static Future<void> inject(AppFlavor flavor) async {
-    const basePath = 'assets/configuration/application_configuration';
+    const basePath = 'assets/configuration/application-configuration';
     final configPath = '$basePath.${flavor.name}.json';
 
     final configContent = await rootBundle.loadString(configPath, cache: false);
