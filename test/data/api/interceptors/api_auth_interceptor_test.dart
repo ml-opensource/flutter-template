@@ -4,8 +4,6 @@ import 'package:flutter_template/data/api/exceptions/token_unauthorized_exceptio
 import 'package:flutter_template/data/api/interceptors/api_auth_interceptor.dart';
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
 import 'package:flutter_test/flutter_test.dart';
-// import 'package:husl/data/preferences/auth_preferences.dart';
-// import 'package:husl/domain/usecases/authorization/authorization_use_case.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockDio extends Mock implements Dio {}
