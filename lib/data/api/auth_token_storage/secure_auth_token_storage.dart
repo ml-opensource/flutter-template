@@ -13,9 +13,8 @@ class SecureAuthTokenStorage extends AuthTokenStorage {
 
   final FlutterSecureStorage _storage;
 
-  static const String _prefix = 'auth';
   @visibleForTesting
-  static const String tokenKey = '${_prefix}_token';
+  static const String tokenKey = 'auth_token';
 
   @override
   Future<AuthTokens?> get() async {
