@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:flutter_template/data/services/response_error.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -55,8 +55,8 @@ extension ErrorResponseExtensions on ErrorResponse {
 }
 
 extension ErrorNameExtensions on ErrorName {
-  String getErrorMessage(BuildContext context) {
-    final _localization = context.localization.error;
+  String getErrorMessage(Localization l10n) {
+    final _localization = l10n.error;
 
     switch (this) {
       //Handle error enum and return mapped nstack vlaue

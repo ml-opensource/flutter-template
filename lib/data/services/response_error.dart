@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:flutter_template/data/services/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -85,8 +85,8 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
 }
 
 extension ResponseErrorExtensions on ResponseError {
-  String getErrorMessage(BuildContext context) {
-    final _localization = context.localization.error;
+  String getErrorMessage(Localization l10n) {
+    final _localization = l10n.error;
 
     //TODO: create error module for errors and set value accordingly
     return when<String>(
@@ -94,7 +94,7 @@ extension ResponseErrorExtensions on ResponseError {
       sendTimeout: () => _localization.authenticationError,
       connectTimeout: () => _localization.authenticationError,
       receiveTimeout: () => _localization.authenticationError,
-      badRequest: (message) => message.getErrorMessage(context),
+      badRequest: (message) => message.getErrorMessage(l10n),
       notFound: () => _localization.authenticationError,
       tooManyRequests: () => _localization.authenticationError,
       unprocessableEntity: () => _localization.authenticationError,
