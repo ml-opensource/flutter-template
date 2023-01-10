@@ -46,7 +46,7 @@ dependencies:
   # Architecture
   freezed_annotation: 2.0.1
   json_annotation: ^4.4.0
-  injectable: 1.5.3
+  injectable: ^1.5.4
   get_it: ^7.2.0
   auto_route: ^3.2.4
   flutter_bloc: ^8.0.1
