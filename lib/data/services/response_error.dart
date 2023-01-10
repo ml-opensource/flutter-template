@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_template/data/services/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,6 +14,7 @@ part 'response_error.freezed.dart';
 @freezed
 class ResponseError<T> with _$ResponseError<T> implements Exception {
   const ResponseError._();
+
   const factory ResponseError.noInternetConnection() = _NoInternetConnection;
   const factory ResponseError.sendTimeout() = _SendTimeout;
   const factory ResponseError.connectTimeout() = _ConnectTimeout;
@@ -78,15 +77,15 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
           }
       }
     } else if (error is TypeError) {
-      debugPrint(error.toString());
+      // TODO: Log it
     }
     return const ResponseError.unexpectedError();
   }
 }
 
 extension ResponseErrorExtensions on ResponseError {
-  String getErrorMessage(BuildContext context) {
-    final _localization = context.localization.error;
+  String getErrorMessage(Localization l10n) {
+    final _localization = l10n.error;
 
     //TODO: create error module for errors and set value accordingly
     return when<String>(
@@ -94,7 +93,7 @@ extension ResponseErrorExtensions on ResponseError {
       sendTimeout: () => _localization.authenticationError,
       connectTimeout: () => _localization.authenticationError,
       receiveTimeout: () => _localization.authenticationError,
-      badRequest: (message) => message.getErrorMessage(context),
+      badRequest: (message) => message.getErrorMessage(l10n),
       notFound: () => _localization.authenticationError,
       tooManyRequests: () => _localization.authenticationError,
       unprocessableEntity: () => _localization.authenticationError,
