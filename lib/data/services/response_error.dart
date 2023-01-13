@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-// import 'package:flutter/material.dart';
 import 'package:flutter_template/data/services/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,6 +14,7 @@ part 'response_error.freezed.dart';
 @freezed
 class ResponseError<T> with _$ResponseError<T> implements Exception {
   const ResponseError._();
+
   const factory ResponseError.noInternetConnection() = _NoInternetConnection;
   const factory ResponseError.sendTimeout() = _SendTimeout;
   const factory ResponseError.connectTimeout() = _ConnectTimeout;
@@ -78,7 +77,7 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
           }
       }
     } else if (error is TypeError) {
-      debugPrint(error.toString());
+      // TODO: Log it
     }
     return const ResponseError.unexpectedError();
   }
