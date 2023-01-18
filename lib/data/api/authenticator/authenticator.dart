@@ -58,7 +58,7 @@ import 'package:injectable/injectable.dart';
 /// - [AuthenticatorException.noRefreshToken] if the refresh token is missing.
 /// - [AuthenticatorException.reauthenticationFailed] if the reauth response was null
 /// - [AuthenticatorException.unauthorized] if the reauth request ended up in a 401 response.
-@lazySingleton
+@singleton
 class Authenticator {
   Authenticator(
     this._storage,
@@ -143,11 +143,10 @@ class Authenticator {
     return _storage.clear();
   }
 
-  @preResolve
-  @lazySingleton
+  @factoryMethod
   static Future<Authenticator> restore(
     AuthTokenStorage storage,
-    DioHttpClient refreshDioClient,
+    @Named(authDioClient) DioHttpClient refreshDioClient,
     ApiConfig apiConfig,
   ) async {
     final tokens = await storage.get();
