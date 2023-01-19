@@ -103,7 +103,7 @@ class Authenticator {
       }
 
       final response = await _refreshTokenClient.get<Map<String, dynamic>>(
-        '${_apiConfig.apiUrl}/v1/auth/token',
+        _apiConfig.reauthUrl,
         headers: {
           'Authorization': 'Bearer $refreshToken',
           MetaInterceptor.nMetaHeaderKey:

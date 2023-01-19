@@ -8,4 +8,5 @@ class ApiConfig {
   ApiConfig(ApplicationConfig appConfig) : baseUrl = appConfig.apiUrl;
 
   String get apiUrl => '$baseUrl/api';
+  String get reauthUrl => '$baseUrl/api//v1/auth/token';
 }
