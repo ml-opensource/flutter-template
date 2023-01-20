@@ -38,7 +38,7 @@ void main() {
   late Authenticator sut;
   late var apiConfig = mockApiConfig;
 
-  final tokenRefreshEndpoint = '${apiConfig.apiUrl}/v1/auth/token';
+  final tokenRefreshEndpoint = apiConfig.reauthUrl;
 
   setUpAll(() {
     registerFallbackValue(mockTokens);
