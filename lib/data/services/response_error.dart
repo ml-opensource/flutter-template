@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_template/data/services/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,6 +14,7 @@ part 'response_error.freezed.dart';
 @freezed
 class ResponseError<T> with _$ResponseError<T> implements Exception {
   const ResponseError._();
+
   const factory ResponseError.noInternetConnection() = _NoInternetConnection;
   const factory ResponseError.sendTimeout() = _SendTimeout;
   const factory ResponseError.connectTimeout() = _ConnectTimeout;
@@ -78,35 +77,33 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
           }
       }
     } else if (error is TypeError) {
-      debugPrint(error.toString());
+      // TODO: Log it
     }
     return const ResponseError.unexpectedError();
   }
 }
 
 extension ResponseErrorExtensions on ResponseError {
-  String getErrorMessage(BuildContext context) {
-    final localization = context.localization.error;
-
+  String getErrorMessage(Localization l10n) {
     //TODO: create error module for errors and set value accordingly
     return when<String>(
-      noInternetConnection: () => localization.connectionError,
-      sendTimeout: () => localization.authenticationError,
-      connectTimeout: () => localization.authenticationError,
-      receiveTimeout: () => localization.authenticationError,
-      badRequest: (message) => message.getErrorMessage(context),
-      notFound: () => localization.authenticationError,
-      tooManyRequests: () => localization.authenticationError,
-      unprocessableEntity: () => localization.authenticationError,
-      internalServerError: () => localization.authenticationError,
-      unexpectedError: () => localization.authenticationError,
-      requestCancelled: () => localization.authenticationError,
-      conflict: () => localization.authenticationError,
-      unauthorized: () => localization.authenticationError,
-      invalidPassword: () => localization.authenticationError,
-      invalidEmail: () => localization.authenticationError,
-      invalidSearhTerm: () => localization.authenticationError,
-      invalidLoginCredentials: () => localization.authenticationError,
+      noInternetConnection: () => l10n.error.connectionError,
+      sendTimeout: () => l10n.error.authenticationError,
+      connectTimeout: () => l10n.error.authenticationError,
+      receiveTimeout: () => l10n.error.authenticationError,
+      badRequest: (message) => message.getErrorMessage(l10n),
+      notFound: () => l10n.error.authenticationError,
+      tooManyRequests: () => l10n.error.authenticationError,
+      unprocessableEntity: () => l10n.error.authenticationError,
+      internalServerError: () => l10n.error.authenticationError,
+      unexpectedError: () => l10n.error.authenticationError,
+      requestCancelled: () => l10n.error.authenticationError,
+      conflict: () => l10n.error.authenticationError,
+      unauthorized: () => l10n.error.authenticationError,
+      invalidPassword: () => l10n.error.authenticationError,
+      invalidEmail: () => l10n.error.authenticationError,
+      invalidSearhTerm: () => l10n.error.authenticationError,
+      invalidLoginCredentials: () => l10n.error.authenticationError,
     );
   }
 }

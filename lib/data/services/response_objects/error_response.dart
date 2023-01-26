@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_template/data/services/response_error.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -6,11 +5,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'error_response.freezed.dart';
 part 'error_response.g.dart';
 
-@freezed
-
 ///The BE should provide one unique code for each error, in this case the
 ///error is being provided through errorName so we create an Enum for each
 ///code we are aware of with a default value to unknown
+@freezed
 class APIError with _$APIError {
   const factory APIError({
     required String? requestId,
@@ -55,13 +53,11 @@ extension ErrorResponseExtensions on ErrorResponse {
 }
 
 extension ErrorNameExtensions on ErrorName {
-  String getErrorMessage(BuildContext context) {
-    final localization = context.localization.error;
-
+  String getErrorMessage(Localization l10n) {
     switch (this) {
       //Handle error enum and return mapped nstack vlaue
       case ErrorName.errorExample:
-        return localization.authenticationError;
+        return l10n.error.authenticationError;
       default:
         return '';
     }
