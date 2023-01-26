@@ -56,12 +56,12 @@ extension ErrorResponseExtensions on ErrorResponse {
 
 extension ErrorNameExtensions on ErrorName {
   String getErrorMessage(BuildContext context) {
-    final _localization = context.localization.error;
+    final localization = context.localization.error;
 
     switch (this) {
       //Handle error enum and return mapped nstack vlaue
       case ErrorName.errorExample:
-        return _localization.authenticationError;
+        return localization.authenticationError;
       default:
         return '';
     }

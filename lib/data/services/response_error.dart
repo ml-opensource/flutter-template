@@ -86,27 +86,27 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
 
 extension ResponseErrorExtensions on ResponseError {
   String getErrorMessage(BuildContext context) {
-    final _localization = context.localization.error;
+    final localization = context.localization.error;
 
     //TODO: create error module for errors and set value accordingly
     return when<String>(
-      noInternetConnection: () => _localization.connectionError,
-      sendTimeout: () => _localization.authenticationError,
-      connectTimeout: () => _localization.authenticationError,
-      receiveTimeout: () => _localization.authenticationError,
+      noInternetConnection: () => localization.connectionError,
+      sendTimeout: () => localization.authenticationError,
+      connectTimeout: () => localization.authenticationError,
+      receiveTimeout: () => localization.authenticationError,
       badRequest: (message) => message.getErrorMessage(context),
-      notFound: () => _localization.authenticationError,
-      tooManyRequests: () => _localization.authenticationError,
-      unprocessableEntity: () => _localization.authenticationError,
-      internalServerError: () => _localization.authenticationError,
-      unexpectedError: () => _localization.authenticationError,
-      requestCancelled: () => _localization.authenticationError,
-      conflict: () => _localization.authenticationError,
-      unauthorized: () => _localization.authenticationError,
-      invalidPassword: () => _localization.authenticationError,
-      invalidEmail: () => _localization.authenticationError,
-      invalidSearhTerm: () => _localization.authenticationError,
-      invalidLoginCredentials: () => _localization.authenticationError,
+      notFound: () => localization.authenticationError,
+      tooManyRequests: () => localization.authenticationError,
+      unprocessableEntity: () => localization.authenticationError,
+      internalServerError: () => localization.authenticationError,
+      unexpectedError: () => localization.authenticationError,
+      requestCancelled: () => localization.authenticationError,
+      conflict: () => localization.authenticationError,
+      unauthorized: () => localization.authenticationError,
+      invalidPassword: () => localization.authenticationError,
+      invalidEmail: () => localization.authenticationError,
+      invalidSearhTerm: () => localization.authenticationError,
+      invalidLoginCredentials: () => localization.authenticationError,
     );
   }
 }
