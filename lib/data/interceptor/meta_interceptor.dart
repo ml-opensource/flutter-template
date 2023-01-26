@@ -12,8 +12,10 @@ class MetaInterceptor extends InterceptorsWrapper {
   final AppFlavor flavor;
 
   @override
-  void onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+  Future<void> onRequest(
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     if (options.headers['Accept'] == null) {
       options.headers['Accept'] = 'application/json; charset=UTF-8';
     }

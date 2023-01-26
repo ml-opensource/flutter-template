@@ -13,11 +13,12 @@ class ProfileCubit extends Cubit<ProfileState> {
     @factoryParam ProfileState? state,
   }) : super(state ?? ProfileState.initial());
 
-  void load() async {
+  Future<void> load() async {
     if (state.isLoading) return;
 
     emit(state.copyWith(isLoading: true));
-    await profileService
+
+    return profileService
         .getProfileName()
         .then(
           (value) => emit(
