@@ -33,6 +33,8 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
   const factory ResponseError.invalidLoginCredentials() =
       _InvalidLoginCredentials;
   const factory ResponseError.invalidSearhTerm() = _InvalidSearchTermError;
+  const factory ResponseError.badCertificate() = _BadCertificateError;
+  const factory ResponseError.unknown() = _UnknownError;
 
   static ResponseError from(Object error) {
     if (error is ResponseError) {
@@ -43,15 +45,19 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
       switch (error.type) {
         case DioErrorType.sendTimeout:
           return const ResponseError.sendTimeout();
-        case DioErrorType.connectTimeout:
+        case DioErrorType.connectionTimeout:
           return const ResponseError.connectTimeout();
         case DioErrorType.receiveTimeout:
           return const ResponseError.receiveTimeout();
-        case DioErrorType.other:
+        case DioErrorType.connectionError:
           return const ResponseError.noInternetConnection();
+        case DioErrorType.badCertificate:
+          return const ResponseError.badCertificate();
+        case DioErrorType.unknown:
+          return const ResponseError.unknown();
         case DioErrorType.cancel:
           return const ResponseError.requestCancelled();
-        case DioErrorType.response:
+        case DioErrorType.badResponse:
           switch (error.response!.statusCode) {
             case 400:
               return ErrorResponse.fromJson(error.response!.data)
@@ -104,6 +110,10 @@ extension ResponseErrorExtensions on ResponseError {
       invalidEmail: () => l10n.error.authenticationError,
       invalidSearhTerm: () => l10n.error.authenticationError,
       invalidLoginCredentials: () => l10n.error.authenticationError,
+      // TODO: add in nstack
+      badCertificate: () => 'Bad Certificate Error',
+      // TODO: add in nstack
+      unknown: () => 'Unknown Error',
     );
   }
 }

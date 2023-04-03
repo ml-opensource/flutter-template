@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/feature/home/home_screen_tab.dart';
 import 'package:flutter_template/presentation/feature/news/news_page.dart';
 import 'package:flutter_template/presentation/feature/profile/profile_page.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
+@RoutePage()
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     Key? key,

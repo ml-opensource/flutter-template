@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tokens_response.dart';
 
@@ -35,7 +35,8 @@ mixin _$TokensResponse {
 abstract class $TokensResponseCopyWith<$Res> {
   factory $TokensResponseCopyWith(
           TokensResponse value, $Res Function(TokensResponse) then) =
-      _$TokensResponseCopyWithImpl<$Res>;
+      _$TokensResponseCopyWithImpl<$Res, TokensResponse>;
+  @useResult
   $Res call(
       {String accessToken,
       String refreshToken,
@@ -44,49 +45,52 @@ abstract class $TokensResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TokensResponseCopyWithImpl<$Res>
+class _$TokensResponseCopyWithImpl<$Res, $Val extends TokensResponse>
     implements $TokensResponseCopyWith<$Res> {
   _$TokensResponseCopyWithImpl(this._value, this._then);
 
-  final TokensResponse _value;
   // ignore: unused_field
-  final $Res Function(TokensResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? accessToken = freezed,
-    Object? refreshToken = freezed,
-    Object? tokenType = freezed,
-    Object? expiresIn = freezed,
+    Object? accessToken = null,
+    Object? refreshToken = null,
+    Object? tokenType = null,
+    Object? expiresIn = null,
   }) {
     return _then(_value.copyWith(
-      accessToken: accessToken == freezed
+      accessToken: null == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
-      refreshToken: refreshToken == freezed
+      refreshToken: null == refreshToken
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
-      tokenType: tokenType == freezed
+      tokenType: null == tokenType
           ? _value.tokenType
           : tokenType // ignore: cast_nullable_to_non_nullable
               as String,
-      expiresIn: expiresIn == freezed
+      expiresIn: null == expiresIn
           ? _value.expiresIn
           : expiresIn // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TokensResponseCopyWith<$Res>
+abstract class _$$_TokensResponseCopyWith<$Res>
     implements $TokensResponseCopyWith<$Res> {
-  factory _$TokensResponseCopyWith(
-          _TokensResponse value, $Res Function(_TokensResponse) then) =
-      __$TokensResponseCopyWithImpl<$Res>;
+  factory _$$_TokensResponseCopyWith(
+          _$_TokensResponse value, $Res Function(_$_TokensResponse) then) =
+      __$$_TokensResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String accessToken,
       String refreshToken,
@@ -95,37 +99,35 @@ abstract class _$TokensResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TokensResponseCopyWithImpl<$Res>
-    extends _$TokensResponseCopyWithImpl<$Res>
-    implements _$TokensResponseCopyWith<$Res> {
-  __$TokensResponseCopyWithImpl(
-      _TokensResponse _value, $Res Function(_TokensResponse) _then)
-      : super(_value, (v) => _then(v as _TokensResponse));
+class __$$_TokensResponseCopyWithImpl<$Res>
+    extends _$TokensResponseCopyWithImpl<$Res, _$_TokensResponse>
+    implements _$$_TokensResponseCopyWith<$Res> {
+  __$$_TokensResponseCopyWithImpl(
+      _$_TokensResponse _value, $Res Function(_$_TokensResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _TokensResponse get _value => super._value as _TokensResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? accessToken = freezed,
-    Object? refreshToken = freezed,
-    Object? tokenType = freezed,
-    Object? expiresIn = freezed,
+    Object? accessToken = null,
+    Object? refreshToken = null,
+    Object? tokenType = null,
+    Object? expiresIn = null,
   }) {
-    return _then(_TokensResponse(
-      accessToken: accessToken == freezed
+    return _then(_$_TokensResponse(
+      accessToken: null == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
-      refreshToken: refreshToken == freezed
+      refreshToken: null == refreshToken
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
-      tokenType: tokenType == freezed
+      tokenType: null == tokenType
           ? _value.tokenType
           : tokenType // ignore: cast_nullable_to_non_nullable
               as String,
-      expiresIn: expiresIn == freezed
+      expiresIn: null == expiresIn
           ? _value.expiresIn
           : expiresIn // ignore: cast_nullable_to_non_nullable
               as double,
@@ -164,32 +166,33 @@ class _$_TokensResponse extends _TokensResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TokensResponse &&
-            const DeepCollectionEquality()
-                .equals(other.accessToken, accessToken) &&
-            const DeepCollectionEquality()
-                .equals(other.refreshToken, refreshToken) &&
-            const DeepCollectionEquality().equals(other.tokenType, tokenType) &&
-            const DeepCollectionEquality().equals(other.expiresIn, expiresIn));
+            other is _$_TokensResponse &&
+            (identical(other.accessToken, accessToken) ||
+                other.accessToken == accessToken) &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken) &&
+            (identical(other.tokenType, tokenType) ||
+                other.tokenType == tokenType) &&
+            (identical(other.expiresIn, expiresIn) ||
+                other.expiresIn == expiresIn));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(accessToken),
-      const DeepCollectionEquality().hash(refreshToken),
-      const DeepCollectionEquality().hash(tokenType),
-      const DeepCollectionEquality().hash(expiresIn));
+  int get hashCode =>
+      Object.hash(runtimeType, accessToken, refreshToken, tokenType, expiresIn);
 
   @JsonKey(ignore: true)
   @override
-  _$TokensResponseCopyWith<_TokensResponse> get copyWith =>
-      __$TokensResponseCopyWithImpl<_TokensResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_TokensResponseCopyWith<_$_TokensResponse> get copyWith =>
+      __$$_TokensResponseCopyWithImpl<_$_TokensResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TokensResponseToJson(this);
+    return _$$_TokensResponseToJson(
+      this,
+    );
   }
 }
 
@@ -205,15 +208,15 @@ abstract class _TokensResponse extends TokensResponse {
       _$_TokensResponse.fromJson;
 
   @override
-  String get accessToken => throw _privateConstructorUsedError;
+  String get accessToken;
   @override
-  String get refreshToken => throw _privateConstructorUsedError;
+  String get refreshToken;
   @override
-  String get tokenType => throw _privateConstructorUsedError;
+  String get tokenType;
   @override
-  double get expiresIn => throw _privateConstructorUsedError;
+  double get expiresIn;
   @override
   @JsonKey(ignore: true)
-  _$TokensResponseCopyWith<_TokensResponse> get copyWith =>
+  _$$_TokensResponseCopyWith<_$_TokensResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
