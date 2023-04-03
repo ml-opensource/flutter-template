@@ -41,7 +41,7 @@ dependencies:
   package_info_plus: ^1.4.2
 
   # Persistence
-  shared_preferences: ^2.0.13
+  shared_preferences: ^2.1.0
 
   # Architecture
   freezed_annotation: ^2.2.0
