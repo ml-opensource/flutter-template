@@ -42,9 +42,9 @@ class DioHttpClientBuilder {
 
     final options = BaseOptions()
       ..baseUrl = _baseUrl
-      ..connectTimeout = _connectTimeout
-      ..receiveTimeout = _receiveTimeout
-      ..sendTimeout = _sendTimeout;
+      ..connectTimeout = Duration(milliseconds: _connectTimeout)
+      ..receiveTimeout = Duration(milliseconds: _receiveTimeout)
+      ..sendTimeout = Duration(milliseconds: _sendTimeout);
 
     final dio = Dio(options);
     dio.interceptors.addAll(_interceptors);

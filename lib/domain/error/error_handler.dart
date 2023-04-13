@@ -6,7 +6,7 @@ class ErrorHandler {
     final result = <Error>[];
 
     if (error is DioError) {
-      if (error.type != DioErrorType.response) {
+      if (error.type != DioErrorType.badResponse) {
         result.add(Error.connection);
         return result;
       }

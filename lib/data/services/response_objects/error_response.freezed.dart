@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'error_response.dart';
 
@@ -38,7 +38,8 @@ mixin _$APIError {
 /// @nodoc
 abstract class $APIErrorCopyWith<$Res> {
   factory $APIErrorCopyWith(APIError value, $Res Function(APIError) then) =
-      _$APIErrorCopyWithImpl<$Res>;
+      _$APIErrorCopyWithImpl<$Res, APIError>;
+  @useResult
   $Res call(
       {String? requestId,
       String? timestamp,
@@ -50,61 +51,66 @@ abstract class $APIErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$APIErrorCopyWithImpl<$Res> implements $APIErrorCopyWith<$Res> {
+class _$APIErrorCopyWithImpl<$Res, $Val extends APIError>
+    implements $APIErrorCopyWith<$Res> {
   _$APIErrorCopyWithImpl(this._value, this._then);
 
-  final APIError _value;
   // ignore: unused_field
-  final $Res Function(APIError) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? requestId = freezed,
     Object? timestamp = freezed,
-    Object? statusCode = freezed,
-    Object? message = freezed,
-    Object? localizedMessage = freezed,
-    Object? errorName = freezed,
+    Object? statusCode = null,
+    Object? message = null,
+    Object? localizedMessage = null,
+    Object? errorName = null,
     Object? path = freezed,
   }) {
     return _then(_value.copyWith(
-      requestId: requestId == freezed
+      requestId: freezed == requestId
           ? _value.requestId
           : requestId // ignore: cast_nullable_to_non_nullable
               as String?,
-      timestamp: timestamp == freezed
+      timestamp: freezed == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as String?,
-      statusCode: statusCode == freezed
+      statusCode: null == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedMessage: localizedMessage == freezed
+      localizedMessage: null == localizedMessage
           ? _value.localizedMessage
           : localizedMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      errorName: errorName == freezed
+      errorName: null == errorName
           ? _value.errorName
           : errorName // ignore: cast_nullable_to_non_nullable
               as ErrorName,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$APIErrorCopyWith<$Res> implements $APIErrorCopyWith<$Res> {
-  factory _$APIErrorCopyWith(_APIError value, $Res Function(_APIError) then) =
-      __$APIErrorCopyWithImpl<$Res>;
+abstract class _$$_APIErrorCopyWith<$Res> implements $APIErrorCopyWith<$Res> {
+  factory _$$_APIErrorCopyWith(
+          _$_APIError value, $Res Function(_$_APIError) then) =
+      __$$_APIErrorCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? requestId,
       String? timestamp,
@@ -116,50 +122,50 @@ abstract class _$APIErrorCopyWith<$Res> implements $APIErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$APIErrorCopyWithImpl<$Res> extends _$APIErrorCopyWithImpl<$Res>
-    implements _$APIErrorCopyWith<$Res> {
-  __$APIErrorCopyWithImpl(_APIError _value, $Res Function(_APIError) _then)
-      : super(_value, (v) => _then(v as _APIError));
+class __$$_APIErrorCopyWithImpl<$Res>
+    extends _$APIErrorCopyWithImpl<$Res, _$_APIError>
+    implements _$$_APIErrorCopyWith<$Res> {
+  __$$_APIErrorCopyWithImpl(
+      _$_APIError _value, $Res Function(_$_APIError) _then)
+      : super(_value, _then);
 
-  @override
-  _APIError get _value => super._value as _APIError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? requestId = freezed,
     Object? timestamp = freezed,
-    Object? statusCode = freezed,
-    Object? message = freezed,
-    Object? localizedMessage = freezed,
-    Object? errorName = freezed,
+    Object? statusCode = null,
+    Object? message = null,
+    Object? localizedMessage = null,
+    Object? errorName = null,
     Object? path = freezed,
   }) {
-    return _then(_APIError(
-      requestId: requestId == freezed
+    return _then(_$_APIError(
+      requestId: freezed == requestId
           ? _value.requestId
           : requestId // ignore: cast_nullable_to_non_nullable
               as String?,
-      timestamp: timestamp == freezed
+      timestamp: freezed == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as String?,
-      statusCode: statusCode == freezed
+      statusCode: null == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedMessage: localizedMessage == freezed
+      localizedMessage: null == localizedMessage
           ? _value.localizedMessage
           : localizedMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      errorName: errorName == freezed
+      errorName: null == errorName
           ? _value.errorName
           : errorName // ignore: cast_nullable_to_non_nullable
               as ErrorName,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -207,38 +213,37 @@ class _$_APIError implements _APIError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _APIError &&
-            const DeepCollectionEquality().equals(other.requestId, requestId) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
-            const DeepCollectionEquality()
-                .equals(other.statusCode, statusCode) &&
-            const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality()
-                .equals(other.localizedMessage, localizedMessage) &&
-            const DeepCollectionEquality().equals(other.errorName, errorName) &&
-            const DeepCollectionEquality().equals(other.path, path));
+            other is _$_APIError &&
+            (identical(other.requestId, requestId) ||
+                other.requestId == requestId) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.statusCode, statusCode) ||
+                other.statusCode == statusCode) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.localizedMessage, localizedMessage) ||
+                other.localizedMessage == localizedMessage) &&
+            (identical(other.errorName, errorName) ||
+                other.errorName == errorName) &&
+            (identical(other.path, path) || other.path == path));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(requestId),
-      const DeepCollectionEquality().hash(timestamp),
-      const DeepCollectionEquality().hash(statusCode),
-      const DeepCollectionEquality().hash(message),
-      const DeepCollectionEquality().hash(localizedMessage),
-      const DeepCollectionEquality().hash(errorName),
-      const DeepCollectionEquality().hash(path));
+  int get hashCode => Object.hash(runtimeType, requestId, timestamp, statusCode,
+      message, localizedMessage, errorName, path);
 
   @JsonKey(ignore: true)
   @override
-  _$APIErrorCopyWith<_APIError> get copyWith =>
-      __$APIErrorCopyWithImpl<_APIError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_APIErrorCopyWith<_$_APIError> get copyWith =>
+      __$$_APIErrorCopyWithImpl<_$_APIError>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_APIErrorToJson(this);
+    return _$$_APIErrorToJson(
+      this,
+    );
   }
 }
 
@@ -256,23 +261,23 @@ abstract class _APIError implements APIError {
   factory _APIError.fromJson(Map<String, dynamic> json) = _$_APIError.fromJson;
 
   @override
-  String? get requestId => throw _privateConstructorUsedError;
+  String? get requestId;
   @override
-  String? get timestamp => throw _privateConstructorUsedError;
+  String? get timestamp;
   @override
-  int get statusCode => throw _privateConstructorUsedError;
+  int get statusCode;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
-  String get localizedMessage => throw _privateConstructorUsedError;
+  String get localizedMessage;
   @override
   @JsonKey(unknownEnumValue: ErrorName.unknown)
-  ErrorName get errorName => throw _privateConstructorUsedError;
+  ErrorName get errorName;
   @override
-  String? get path => throw _privateConstructorUsedError;
+  String? get path;
   @override
   @JsonKey(ignore: true)
-  _$APIErrorCopyWith<_APIError> get copyWith =>
+  _$$_APIErrorCopyWith<_$_APIError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -297,48 +302,53 @@ mixin _$ErrorResponse {
 abstract class $ErrorResponseCopyWith<$Res> {
   factory $ErrorResponseCopyWith(
           ErrorResponse value, $Res Function(ErrorResponse) then) =
-      _$ErrorResponseCopyWithImpl<$Res>;
+      _$ErrorResponseCopyWithImpl<$Res, ErrorResponse>;
+  @useResult
   $Res call({APIError error});
 
   $APIErrorCopyWith<$Res> get error;
 }
 
 /// @nodoc
-class _$ErrorResponseCopyWithImpl<$Res>
+class _$ErrorResponseCopyWithImpl<$Res, $Val extends ErrorResponse>
     implements $ErrorResponseCopyWith<$Res> {
   _$ErrorResponseCopyWithImpl(this._value, this._then);
 
-  final ErrorResponse _value;
   // ignore: unused_field
-  final $Res Function(ErrorResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
     return _then(_value.copyWith(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as APIError,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $APIErrorCopyWith<$Res> get error {
     return $APIErrorCopyWith<$Res>(_value.error, (value) {
-      return _then(_value.copyWith(error: value));
+      return _then(_value.copyWith(error: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ErrorResponseCopyWith<$Res>
+abstract class _$$_ErrorResponseCopyWith<$Res>
     implements $ErrorResponseCopyWith<$Res> {
-  factory _$ErrorResponseCopyWith(
-          _ErrorResponse value, $Res Function(_ErrorResponse) then) =
-      __$ErrorResponseCopyWithImpl<$Res>;
+  factory _$$_ErrorResponseCopyWith(
+          _$_ErrorResponse value, $Res Function(_$_ErrorResponse) then) =
+      __$$_ErrorResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({APIError error});
 
   @override
@@ -346,22 +356,20 @@ abstract class _$ErrorResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ErrorResponseCopyWithImpl<$Res>
-    extends _$ErrorResponseCopyWithImpl<$Res>
-    implements _$ErrorResponseCopyWith<$Res> {
-  __$ErrorResponseCopyWithImpl(
-      _ErrorResponse _value, $Res Function(_ErrorResponse) _then)
-      : super(_value, (v) => _then(v as _ErrorResponse));
+class __$$_ErrorResponseCopyWithImpl<$Res>
+    extends _$ErrorResponseCopyWithImpl<$Res, _$_ErrorResponse>
+    implements _$$_ErrorResponseCopyWith<$Res> {
+  __$$_ErrorResponseCopyWithImpl(
+      _$_ErrorResponse _value, $Res Function(_$_ErrorResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _ErrorResponse get _value => super._value as _ErrorResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
-    return _then(_ErrorResponse(
-      error: error == freezed
+    return _then(_$_ErrorResponse(
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as APIError,
@@ -392,23 +400,25 @@ class _$_ErrorResponse implements _ErrorResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ErrorResponse &&
-            const DeepCollectionEquality().equals(other.error, error));
+            other is _$_ErrorResponse &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorResponseCopyWith<_ErrorResponse> get copyWith =>
-      __$ErrorResponseCopyWithImpl<_ErrorResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ErrorResponseCopyWith<_$_ErrorResponse> get copyWith =>
+      __$$_ErrorResponseCopyWithImpl<_$_ErrorResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ErrorResponseToJson(this);
+    return _$$_ErrorResponseToJson(
+      this,
+    );
   }
 }
 
@@ -422,9 +432,9 @@ abstract class _ErrorResponse implements ErrorResponse {
   @override //TODO: name this according to the map key from the error response
 //if no map key exists then just create this factory with the APIError values
 //and remove APIError,
-  APIError get error => throw _privateConstructorUsedError;
+  APIError get error;
   @override
   @JsonKey(ignore: true)
-  _$ErrorResponseCopyWith<_ErrorResponse> get copyWith =>
+  _$$_ErrorResponseCopyWith<_$_ErrorResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

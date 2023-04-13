@@ -24,7 +24,7 @@ Map<String, dynamic> _$$_APIErrorToJson(_$_APIError instance) =>
       'statusCode': instance.statusCode,
       'message': instance.message,
       'localizedMessage': instance.localizedMessage,
-      'errorName': _$ErrorNameEnumMap[instance.errorName],
+      'errorName': _$ErrorNameEnumMap[instance.errorName]!,
       'path': instance.path,
     };
 
