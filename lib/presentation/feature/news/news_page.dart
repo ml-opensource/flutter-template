@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
-import 'package:flutter_template/presentation/widgets/app_textfield.dart';
+import 'package:flutter_template/presentation/widgets/app_text_field.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({Key? key}) : super(key: key);
