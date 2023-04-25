@@ -2,12 +2,22 @@ import 'package:flutter/material.dart';
 
 enum TextFieldType { normal, password }
 
+/// A customizable text input field widget that can be used to display normal
+/// or password fields.
 class AppTextField extends StatefulWidget {
+  /// The type of text field to display, either normal or password.
   final TextFieldType type;
+
+  /// The hint text to display in the text field.
   final String hintText;
+
+  /// The error text to display if the user input is invalid.
   final String? errorText;
+
+  /// The text controller for the text field.
   final TextEditingController? controller;
 
+  /// Creates a new [AppTextField] instance.
   const AppTextField({
     Key? key,
     required this.type,
@@ -16,6 +26,7 @@ class AppTextField extends StatefulWidget {
     this.errorText,
   }) : super(key: key);
 
+  /// A factory constructor for creating password text fields.
   factory AppTextField.password({
     required String hintText,
     TextEditingController? controller,
@@ -29,6 +40,7 @@ class AppTextField extends StatefulWidget {
     );
   }
 
+  /// A factory constructor for creating normal text fields.
   factory AppTextField.normal({
     required String hintText,
     TextEditingController? controller,
@@ -54,26 +66,29 @@ class _AppTextFieldState extends State<AppTextField> {
     return TextFormField(
       obscureText: widget.type == TextFieldType.password && _isObscureText,
       decoration: InputDecoration(
-          hintText: widget.hintText,
-          labelText: widget.hintText,
-          suffixIcon: _buildSuffixIcon(),
-          errorText: widget.errorText),
-      // controller: controller,
+        hintText: widget.hintText,
+        labelText: widget.hintText,
+        suffixIcon: _buildSuffixIcon(),
+        errorText: widget.errorText,
+      ),
+      controller: widget.controller,
     );
   }
 
+  /// Builds a suffix icon for password text fields that toggles the text
+  /// visibility.
   Widget? _buildSuffixIcon() {
     return widget.type == TextFieldType.password
         ? GestureDetector(
-            onTap: () {
-              setState(() {
-                _isObscureText = !_isObscureText;
-              });
-            },
-            child: _isObscureText
-                ? const Icon(Icons.visibility)
-                : const Icon(Icons.visibility_off),
-          )
+      onTap: () {
+        setState(() {
+          _isObscureText = !_isObscureText;
+        });
+      },
+      child: _isObscureText
+          ? const Icon(Icons.visibility)
+          : const Icon(Icons.visibility_off),
+    )
         : null;
   }
 }
