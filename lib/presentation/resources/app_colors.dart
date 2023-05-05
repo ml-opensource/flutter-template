@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  final Color primary;
   final Color background;
   final Color surface;
   final Color accent;
   final Color text;
 
   const AppColors({
+    required this.primary,
     required this.background,
     required this.surface,
     required this.accent,
@@ -15,6 +17,7 @@ class AppColors {
 }
 
 const colorsLight = AppColors(
+  primary: Colors.purple,
   background: Colors.white,
   surface: Colors.white,
   accent: Colors.blueAccent,
@@ -22,6 +25,7 @@ const colorsLight = AppColors(
 );
 
 const colorsDark = AppColors(
+  primary: Colors.purple,
   background: Colors.black54,
   surface: Color(0xFF222222),
   accent: Colors.lightBlueAccent,
