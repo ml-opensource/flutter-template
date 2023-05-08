@@ -37,7 +37,7 @@ dependencies:
   jaguar_jwt: ^3.0.0
 
   # Utility
-  device_info_plus: ^3.2.3
+  device_info_plus: ^8.2.2
   package_info_plus: ^1.4.2
 
   # Persistence
