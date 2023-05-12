@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 import 'package:flutter_template/presentation/routes/router.gr.dart';
 
+@RoutePage()
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     _timer = Timer(const Duration(seconds: 2), () {
-      context.router.navigate(HomeScreenRoute());
+      context.router.navigate(HomeRoute());
     });
     super.initState();
   }

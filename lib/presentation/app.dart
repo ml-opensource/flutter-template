@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/injection/injector.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
-import 'package:flutter_template/presentation/routes/router.gr.dart';
+import 'package:flutter_template/presentation/routes/router.dart';
 import '../../nstack/nstack.dart';
 
 class App extends StatelessWidget {

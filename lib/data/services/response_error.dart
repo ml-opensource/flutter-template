@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_template/data/services/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -26,6 +27,8 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
   const factory ResponseError.internalServerError() = _InternalServerError;
   const factory ResponseError.unexpectedError() = _UnexpectedError;
   const factory ResponseError.requestCancelled() = _RequestCancelled;
+  const factory ResponseError.badCertificate() = _BedCertificate;
+  const factory ResponseError.connectionError() = _ConnectionError;
   const factory ResponseError.conflict() = _Conflict;
   const factory ResponseError.unauthorized() = _Unauthorized;
   const factory ResponseError.invalidPassword() = _InvalidPasswordError;
@@ -43,15 +46,19 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
       switch (error.type) {
         case DioErrorType.sendTimeout:
           return const ResponseError.sendTimeout();
-        case DioErrorType.connectTimeout:
+        case DioErrorType.connectionTimeout:
           return const ResponseError.connectTimeout();
         case DioErrorType.receiveTimeout:
           return const ResponseError.receiveTimeout();
-        case DioErrorType.other:
+        case DioErrorType.unknown:
           return const ResponseError.noInternetConnection();
         case DioErrorType.cancel:
           return const ResponseError.requestCancelled();
-        case DioErrorType.response:
+        case DioErrorType.badCertificate:
+          return const ResponseError.badCertificate();
+        case DioErrorType.connectionError:
+          return const ResponseError.connectionError();
+        case DioErrorType.badResponse:
           switch (error.response!.statusCode) {
             case 400:
               return ErrorResponse.fromJson(error.response!.data)
@@ -104,6 +111,8 @@ extension ResponseErrorExtensions on ResponseError {
       invalidEmail: () => l10n.error.authenticationError,
       invalidSearhTerm: () => l10n.error.authenticationError,
       invalidLoginCredentials: () => l10n.error.authenticationError,
+      badCertificate: () => l10n.error.authenticationError,
+      connectionError: () => l10n.error.connectionError,
     );
   }
 }
