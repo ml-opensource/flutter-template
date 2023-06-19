@@ -33,7 +33,7 @@ dependencies:
       ref: v0.5.1
 
   # Net
-  dio: ^4.0.6
+  dio: ^5.2.1+1
   jaguar_jwt: ^3.0.0
 
   # Utility
