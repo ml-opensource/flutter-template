@@ -255,7 +255,7 @@ abstract class _APIError implements APIError {
       required final String message,
       required final String localizedMessage,
       @JsonKey(unknownEnumValue: ErrorName.unknown)
-          required final ErrorName errorName,
+      required final ErrorName errorName,
       required final String? path}) = _$_APIError;
 
   factory _APIError.fromJson(Map<String, dynamic> json) = _$_APIError.fromJson;

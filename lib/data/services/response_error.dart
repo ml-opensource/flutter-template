@@ -42,23 +42,23 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
       return error;
     } else if (error is SocketException) {
       return const ResponseError.noInternetConnection();
-    } else if (error is DioError) {
+    } else if (error is DioException) {
       switch (error.type) {
-        case DioErrorType.sendTimeout:
+        case DioExceptionType.sendTimeout:
           return const ResponseError.sendTimeout();
-        case DioErrorType.connectionTimeout:
+        case DioExceptionType.connectionTimeout:
           return const ResponseError.connectTimeout();
-        case DioErrorType.receiveTimeout:
+        case DioExceptionType.receiveTimeout:
           return const ResponseError.receiveTimeout();
-        case DioErrorType.unknown:
+        case DioExceptionType.unknown:
           return const ResponseError.noInternetConnection();
-        case DioErrorType.cancel:
+        case DioExceptionType.cancel:
           return const ResponseError.requestCancelled();
-        case DioErrorType.badCertificate:
+        case DioExceptionType.badCertificate:
           return const ResponseError.badCertificate();
-        case DioErrorType.connectionError:
+        case DioExceptionType.connectionError:
           return const ResponseError.connectionError();
-        case DioErrorType.badResponse:
+        case DioExceptionType.badResponse:
           switch (error.response!.statusCode) {
             case 400:
               return ErrorResponse.fromJson(error.response!.data)

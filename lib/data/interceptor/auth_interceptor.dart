@@ -42,10 +42,10 @@ class AuthInterceptor extends InterceptorsWrapper {
   }
 
   _TokenRefreshStatus _tokenRefreshState = _TokenRefreshStatus.none;
-  DioError? _tokenRefreshDioError;
+  DioException? _tokenRefreshDioException;
 
   @override
-  Future onError(DioError err, ErrorInterceptorHandler handler) async {
+  Future onError(DioException err, ErrorInterceptorHandler handler) async {
     final requestOptions = err.requestOptions;
 
     // If it is not an authenticated path or it is
@@ -59,7 +59,7 @@ class AuthInterceptor extends InterceptorsWrapper {
       handler.reject(err);
       return;
     } else if (_tokenRefreshState.hasFailed) {
-      handler.reject(_tokenRefreshDioError!);
+      handler.reject(_tokenRefreshDioException!);
       return;
     }
 
@@ -83,9 +83,9 @@ class AuthInterceptor extends InterceptorsWrapper {
     } on ResponseError {
       _tokenRefreshState = _TokenRefreshStatus.expired;
       await _clearUserSessionAndNotifyCallback();
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       _tokenRefreshState = _TokenRefreshStatus.failed;
-      _tokenRefreshDioError = e;
+      _tokenRefreshDioException = e;
       handler.reject(e);
     }
   }
@@ -125,7 +125,7 @@ class AuthInterceptor extends InterceptorsWrapper {
       }
 
       return TokensResponse.fromJson(response['data']).getEntity();
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       if (e.response?.statusCode == 401) {
         throw const ResponseError.unauthorized();
       }
