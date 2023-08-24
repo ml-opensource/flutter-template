@@ -1,4 +1,3 @@
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_template/data/api/api_config.dart';
 import 'package:flutter_template/data/interceptor/auth_interceptor.dart';
@@ -13,7 +12,7 @@ abstract class DataModule {
 
   Dio getDio(ApiConfig apiConfig) {
     final dio = Dio();
-    dio.httpClientAdapter = DefaultHttpClientAdapter();
+    dio.httpClientAdapter = HttpClientAdapter();
     dio.options.baseUrl = apiConfig.apiUrl;
     dio.interceptors.add(
       AuthInterceptor(

@@ -1,5 +1,5 @@
 import 'package:flutter_template/presentation/app_flavor.dart';
-import 'package:flutter_template/presentation/routes/router.gr.dart';
+import 'package:flutter_template/presentation/routes/router.dart';
 
 import 'injector.dart';
 

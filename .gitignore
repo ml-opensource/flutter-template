@@ -46,3 +46,7 @@ app.*.map.json
 nstack.dart
 *.gr.dart
 *.config.dart
+lib/gen/**
+
+# Dependencies
+**.lock
