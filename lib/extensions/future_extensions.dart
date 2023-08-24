@@ -9,9 +9,9 @@ extension FutureExtensions<T> on Future<T> {
         debugPrint(s.toString());
       }
 
-      final _error = ResponseError.from(e);
+      final error = ResponseError.from(e);
 
-      onError.call(_error, s);
+      onError.call(error, s);
     });
   }
 }

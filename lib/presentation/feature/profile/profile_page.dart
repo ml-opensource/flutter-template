@@ -9,7 +9,7 @@ class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
@@ -30,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
         title: BlocBuilder<ProfileCubit, ProfileState>(
           bloc: _profilePresenter,
           builder: (context, state) {
-            return Text(state.isLoading ? 'Profile' : 'Profile: ' + state.name);
+            return Text(state.isLoading ? 'Profile' : 'Profile: ${state.name}');
           },
         ),
       ),

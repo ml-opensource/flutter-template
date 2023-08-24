@@ -1,0 +1,22 @@
+{
+    "Freezed Class": {
+        "prefix": "freezed",
+        "body": [
+            "import 'package:freezed_annotation/freezed_annotation.dart';",
+            "",
+            "part '${1:file}.freezed.dart';",
+            "part '${1:file}.g.dart';",
+            "",
+            "@freezed",
+            "class ${2:ClassName} with _$${2:ClassName} {",
+            "  const factory ${2:ClassName}({",
+            "    required ${0:param},",
+            "  }) = _${2:ClassName};",
+            "",
+            "  factory ${2:ClassName}.fromJson(Map<String, dynamic> json) =>",
+            "      _$${2:ClassName}FromJson(json);",
+            "}"
+        ],
+        "description": "Creates basement for a freezed class."
+    },
+}

@@ -21,3 +21,4 @@ This project serves as a template project for Flutter applications. You can gene
 - [OpenAPI Specification](https://TODO)
 - [NStack](https://TODO)
 - [Figma Design](https://TODO)
+- [UI Manifesto](https://github.com/monstar-lab-oss/ui-manifesto)

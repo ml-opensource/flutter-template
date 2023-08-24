@@ -10,7 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = injector.get<AppRouter>();
+    final appRouter = injector.get<AppRouter>();
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: getAppTheme(Brightness.light),
@@ -24,9 +24,9 @@ class App extends StatelessWidget {
         );
       },
       routerDelegate: AutoRouterDelegate(
-        _appRouter,
+        appRouter,
       ),
-      routeInformationParser: _appRouter.defaultRouteParser(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

@@ -1,15 +1,15 @@
 import 'dart:async';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/injection/injector.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
-import 'package:flutter_template/presentation/routes/app_navigator.dart';
+import 'package:flutter_template/presentation/routes/router.gr.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     _timer = Timer(const Duration(seconds: 2), () {
-      injector.get<AppNavigator>().navigateToHome();
+      context.router.navigate(HomeScreenRoute());
     });
     super.initState();
   }

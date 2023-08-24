@@ -39,3 +39,10 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# Flutter code generation
+*.freezed.dart
+*.g.dart
+nstack.dart
+*.gr.dart
+*.config.dart
