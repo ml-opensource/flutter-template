@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_template/data/services/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -26,6 +27,8 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
   const factory ResponseError.internalServerError() = _InternalServerError;
   const factory ResponseError.unexpectedError() = _UnexpectedError;
   const factory ResponseError.requestCancelled() = _RequestCancelled;
+  const factory ResponseError.badCertificate() = _BedCertificate;
+  const factory ResponseError.connectionError() = _ConnectionError;
   const factory ResponseError.conflict() = _Conflict;
   const factory ResponseError.unauthorized() = _Unauthorized;
   const factory ResponseError.invalidPassword() = _InvalidPasswordError;
@@ -39,19 +42,23 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
       return error;
     } else if (error is SocketException) {
       return const ResponseError.noInternetConnection();
-    } else if (error is DioError) {
+    } else if (error is DioException) {
       switch (error.type) {
-        case DioErrorType.sendTimeout:
+        case DioExceptionType.sendTimeout:
           return const ResponseError.sendTimeout();
-        case DioErrorType.connectTimeout:
+        case DioExceptionType.connectionTimeout:
           return const ResponseError.connectTimeout();
-        case DioErrorType.receiveTimeout:
+        case DioExceptionType.receiveTimeout:
           return const ResponseError.receiveTimeout();
-        case DioErrorType.other:
+        case DioExceptionType.unknown:
           return const ResponseError.noInternetConnection();
-        case DioErrorType.cancel:
+        case DioExceptionType.cancel:
           return const ResponseError.requestCancelled();
-        case DioErrorType.response:
+        case DioExceptionType.badCertificate:
+          return const ResponseError.badCertificate();
+        case DioExceptionType.connectionError:
+          return const ResponseError.connectionError();
+        case DioExceptionType.badResponse:
           switch (error.response!.statusCode) {
             case 400:
               return ErrorResponse.fromJson(error.response!.data)
@@ -85,27 +92,27 @@ class ResponseError<T> with _$ResponseError<T> implements Exception {
 
 extension ResponseErrorExtensions on ResponseError {
   String getErrorMessage(Localization l10n) {
-    final _localization = l10n.error;
-
     //TODO: create error module for errors and set value accordingly
     return when<String>(
-      noInternetConnection: () => _localization.connectionError,
-      sendTimeout: () => _localization.authenticationError,
-      connectTimeout: () => _localization.authenticationError,
-      receiveTimeout: () => _localization.authenticationError,
+      noInternetConnection: () => l10n.error.connectionError,
+      sendTimeout: () => l10n.error.authenticationError,
+      connectTimeout: () => l10n.error.authenticationError,
+      receiveTimeout: () => l10n.error.authenticationError,
       badRequest: (message) => message.getErrorMessage(l10n),
-      notFound: () => _localization.authenticationError,
-      tooManyRequests: () => _localization.authenticationError,
-      unprocessableEntity: () => _localization.authenticationError,
-      internalServerError: () => _localization.authenticationError,
-      unexpectedError: () => _localization.authenticationError,
-      requestCancelled: () => _localization.authenticationError,
-      conflict: () => _localization.authenticationError,
-      unauthorized: () => _localization.authenticationError,
-      invalidPassword: () => _localization.authenticationError,
-      invalidEmail: () => _localization.authenticationError,
-      invalidSearhTerm: () => _localization.authenticationError,
-      invalidLoginCredentials: () => _localization.authenticationError,
+      notFound: () => l10n.error.authenticationError,
+      tooManyRequests: () => l10n.error.authenticationError,
+      unprocessableEntity: () => l10n.error.authenticationError,
+      internalServerError: () => l10n.error.authenticationError,
+      unexpectedError: () => l10n.error.authenticationError,
+      requestCancelled: () => l10n.error.authenticationError,
+      conflict: () => l10n.error.authenticationError,
+      unauthorized: () => l10n.error.authenticationError,
+      invalidPassword: () => l10n.error.authenticationError,
+      invalidEmail: () => l10n.error.authenticationError,
+      invalidSearhTerm: () => l10n.error.authenticationError,
+      invalidLoginCredentials: () => l10n.error.authenticationError,
+      badCertificate: () => l10n.error.authenticationError,
+      connectionError: () => l10n.error.connectionError,
     );
   }
 }

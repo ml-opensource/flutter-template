@@ -5,14 +5,14 @@ import 'package:flutter_template/data/services/response_error.dart';
 /// Abstraction of the Dio http client class.
 
 class DioHttpClient extends HttpClient {
-  DioHttpClient(this._dio);
+  DioHttpClient(this.dio);
 
-  final Dio _dio;
+  final Dio dio;
 
   @override
-  Map<String, dynamic> get headers => _dio.options.headers;
+  Map<String, dynamic> get headers => dio.options.headers;
 
-  Interceptors get interceptors => _dio.interceptors;
+  Interceptors get interceptors => dio.interceptors;
 
   /// Invoke the get method in the provided [Dio] instance.
   ///
@@ -29,14 +29,14 @@ class DioHttpClient extends HttpClient {
     CancelToken? cancelToken,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _options = (options ?? Options()).copyWith(
+    final optionsFallback = (options ?? Options()).copyWith(
       headers: headers,
     );
 
     try {
-      final response = await _dio.get<T>(
+      final response = await dio.get<T>(
         path,
-        options: _options,
+        options: optionsFallback,
         cancelToken: cancelToken,
         queryParameters: queryParameters,
         onReceiveProgress: onReceiveProgress,
@@ -64,7 +64,7 @@ class DioHttpClient extends HttpClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.post<T>(
+      final response = await dio.post<T>(
         path,
         data: data,
         options: options,
@@ -96,7 +96,7 @@ class DioHttpClient extends HttpClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.put<T>(
+      final response = await dio.put<T>(
         path,
         data: data,
         options: options,
@@ -114,7 +114,7 @@ class DioHttpClient extends HttpClient {
 
   Future<Response<T>> fetch<T>(RequestOptions options) async {
     try {
-      return _dio.fetch<T>(options);
+      return dio.fetch<T>(options);
     } catch (e) {
       throw ResponseError.from(e);
     }

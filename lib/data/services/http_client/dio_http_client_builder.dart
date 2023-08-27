@@ -5,9 +5,9 @@ DioHttpClient? _dioClient;
 
 class DioHttpClientBuilder {
   late String _baseUrl;
-  late int _sendTimeout;
-  late int _connectTimeout;
-  late int _receiveTimeout;
+  late Duration _sendTimeout;
+  late Duration _connectTimeout;
+  late Duration _receiveTimeout;
   final List<Interceptor> _interceptors = [];
 
   DioHttpClientBuilder setBaseUrl(String url) {
@@ -15,17 +15,17 @@ class DioHttpClientBuilder {
     return this;
   }
 
-  DioHttpClientBuilder setConnectTimeout(int connectTimeout) {
+  DioHttpClientBuilder setConnectTimeout(Duration connectTimeout) {
     _connectTimeout = connectTimeout;
     return this;
   }
 
-  DioHttpClientBuilder setReceiveTimeout(int receiveTimeout) {
+  DioHttpClientBuilder setReceiveTimeout(Duration receiveTimeout) {
     _receiveTimeout = receiveTimeout;
     return this;
   }
 
-  DioHttpClientBuilder setSendTimeout(int sendTimeout) {
+  DioHttpClientBuilder setSendTimeout(Duration sendTimeout) {
     _sendTimeout = sendTimeout;
     return this;
   }

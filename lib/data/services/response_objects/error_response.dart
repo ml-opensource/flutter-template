@@ -54,12 +54,10 @@ extension ErrorResponseExtensions on ErrorResponse {
 
 extension ErrorNameExtensions on ErrorName {
   String getErrorMessage(Localization l10n) {
-    final _localization = l10n.error;
-
     switch (this) {
       //Handle error enum and return mapped nstack vlaue
       case ErrorName.errorExample:
-        return _localization.authenticationError;
+        return l10n.error.authenticationError;
       default:
         return '';
     }

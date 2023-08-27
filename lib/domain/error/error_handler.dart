@@ -5,8 +5,8 @@ class ErrorHandler {
   static List<Error> obtainAll(dynamic error) {
     final result = <Error>[];
 
-    if (error is DioError) {
-      if (error.type != DioErrorType.response) {
+    if (error is DioException) {
+      if (error.type != DioExceptionType.badResponse) {
         result.add(Error.connection);
         return result;
       }

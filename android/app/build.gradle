@@ -57,6 +57,34 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    //TODO: Change resValue application name
+    flavorDimensions "flavor-type"
+
+    productFlavors {
+        development {
+            dimension "flavor-type"
+            applicationIdSuffix ".development"
+            versionNameSuffix "-development"
+            resValue "string", "app_name", "Application Name Development"
+            signingConfig signingConfigs.debug
+        }
+        staging {
+            dimension "flavor-type"
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+            resValue "string", "app_name", "Application Name Staging"
+            signingConfig signingConfigs.debug
+        }
+        production {
+            dimension "flavor-type"
+            resValue "string", "app_name", "Application Name"
+            // TODO: After adding your own signing config for the release build.
+            // Change this to signingConfigs.release
+            signingConfig signingConfigs.debug
+        }
+
+    }
 }
 
 flutter {

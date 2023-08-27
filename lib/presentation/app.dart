@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/injection/injector.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
-import 'package:flutter_template/presentation/routes/router.gr.dart';
+import 'package:flutter_template/presentation/routes/router.dart';
 import '../../nstack/nstack.dart';
 
 class App extends StatelessWidget {
@@ -10,7 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = injector.get<AppRouter>();
+    final appRouter = injector.get<AppRouter>();
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: getAppTheme(Brightness.light),
@@ -24,9 +24,9 @@ class App extends StatelessWidget {
         );
       },
       routerDelegate: AutoRouterDelegate(
-        _appRouter,
+        appRouter,
       ),
-      routeInformationParser: _appRouter.defaultRouteParser(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

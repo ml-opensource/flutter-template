@@ -1,4 +1,3 @@
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_template/data/api/api_config.dart';
 import 'package:flutter_template/data/api/authenticator/authenticator.dart';
@@ -13,7 +12,7 @@ const authDioClient = 'AUTHDIOCLIENT';
 
 Dio _createBaseDio(ApiConfig apiConfig) {
   final dio = Dio()
-    ..httpClientAdapter = DefaultHttpClientAdapter()
+    ..httpClientAdapter = HttpClientAdapter()
     ..options.baseUrl = apiConfig.apiUrl;
 
   return dio;
