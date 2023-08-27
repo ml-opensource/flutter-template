@@ -122,7 +122,7 @@ class Authenticator {
       await _storage.set(newAuthTokens);
 
       return newAuthTokens;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       if (e.response?.statusCode == 401) {
         await _clearTokensAndNotify();
         throw const AuthenticatorException.unauthorized();

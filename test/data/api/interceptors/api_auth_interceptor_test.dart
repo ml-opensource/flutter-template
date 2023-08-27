@@ -16,7 +16,7 @@ class MockAuthenticator extends Mock implements Authenticator {}
 
 void main() {
   late Dio dio;
-  late Authenticator _authenticator;
+  late Authenticator authenticator;
   late RequestInterceptorHandler requestHandler;
   late ErrorInterceptorHandler errorHandler;
   late ApiAuthInterceptor sut;
@@ -32,18 +32,18 @@ void main() {
 
   setUpAll(() {
     registerFallbackValue(RequestOptions(path: 'example.com'));
-    registerFallbackValue(DioError(requestOptions: getMockOptions()));
+    registerFallbackValue(DioException(requestOptions: getMockOptions()));
   });
 
   setUp(() {
     dio = MockDio();
     requestHandler = MockRequestHandler();
     errorHandler = MockErrorHandler();
-    _authenticator = MockAuthenticator();
+    authenticator = MockAuthenticator();
 
     sut = ApiAuthInterceptor(
       dio,
-      _authenticator,
+      authenticator,
     );
   });
 
@@ -64,22 +64,22 @@ void main() {
           test('the handler must call [reject]', () async {
             final thrownException = Exception();
 
-            when(() => _authenticator.expiresSoon).thenReturn(true);
-            when(() => _authenticator.reauthenticate(any()))
+            when(() => authenticator.expiresSoon).thenReturn(true);
+            when(() => authenticator.reauthenticate(any()))
                 .thenThrow(thrownException);
 
             await sut.onRequest(mockOptions, requestHandler);
 
-            verify(() => _authenticator.expiresSoon);
-            verify(() => _authenticator.reauthenticate(mockOptions));
-            verifyNever(() => _authenticator.accessToken);
+            verify(() => authenticator.expiresSoon);
+            verify(() => authenticator.reauthenticate(mockOptions));
+            verifyNever(() => authenticator.accessToken);
 
-            verifyNoMoreInteractions(_authenticator);
+            verifyNoMoreInteractions(authenticator);
             verify(
               () => requestHandler.reject(
                 captureAny(
                   that: predicate((error) {
-                    if (error is! DioError) {
+                    if (error is! DioException) {
                       return false;
                     }
 
@@ -96,24 +96,24 @@ void main() {
 
         test('must reauthenticaticate, set new header and continue execution',
             () async {
-          when(() => _authenticator.expiresSoon).thenReturn(true);
-          when(() => _authenticator.reauthenticate(any()))
+          when(() => authenticator.expiresSoon).thenReturn(true);
+          when(() => authenticator.reauthenticate(any()))
               .thenAnswer((_) => Future.value(mockAuthTokens));
-          when(() => _authenticator.accessToken)
+          when(() => authenticator.accessToken)
               .thenReturn(mockAuthTokens.accessToken);
 
           await sut.onRequest(mockOptions, requestHandler);
 
-          verify(() => _authenticator.expiresSoon);
-          verify(() => _authenticator.reauthenticate(mockOptions));
-          verify(() => _authenticator.accessToken);
+          verify(() => authenticator.expiresSoon);
+          verify(() => authenticator.reauthenticate(mockOptions));
+          verify(() => authenticator.accessToken);
 
-          verifyNoMoreInteractions(_authenticator);
+          verifyNoMoreInteractions(authenticator);
 
           verify(() => requestHandler.next(mockOptions));
           expect(
             mockOptions.headers['Authorization'],
-            'Bearer ${_authenticator.accessToken}',
+            'Bearer ${authenticator.accessToken}',
           );
 
           verifyNoMoreInteractions(requestHandler);
@@ -124,7 +124,7 @@ void main() {
     group('When [onError] called', () {
       group("and the error's status code is not 401", () {
         test('the handler must call [next]', () async {
-          final dioError404 = DioError(
+          final dioException404 = DioException(
             requestOptions: mockOptions,
             response: Response(
               requestOptions: mockOptions,
@@ -132,7 +132,7 @@ void main() {
             ),
           );
 
-          final dioError500 = DioError(
+          final dioException500 = DioException(
             requestOptions: mockOptions,
             response: Response(
               requestOptions: mockOptions,
@@ -140,13 +140,13 @@ void main() {
             ),
           );
 
-          await sut.onError(dioError404, errorHandler);
-          await sut.onError(dioError500, errorHandler);
+          await sut.onError(dioException404, errorHandler);
+          await sut.onError(dioException500, errorHandler);
 
-          verify(() => errorHandler.next(dioError404));
-          verify(() => errorHandler.next(dioError500));
+          verify(() => errorHandler.next(dioException404));
+          verify(() => errorHandler.next(dioException500));
 
-          verifyNoMoreInteractions(_authenticator);
+          verifyNoMoreInteractions(authenticator);
           verifyNoMoreInteractions(errorHandler);
         });
       });
@@ -156,7 +156,7 @@ void main() {
           test('the handler must call next', () async {
             final reauthException = Exception();
 
-            final dioError401 = DioError(
+            final dioException401 = DioException(
               requestOptions: mockOptions,
               response: Response(
                 requestOptions: mockOptions,
@@ -164,18 +164,18 @@ void main() {
               ),
             );
 
-            when(() => _authenticator.reauthenticate(any()))
+            when(() => authenticator.reauthenticate(any()))
                 .thenThrow(reauthException);
 
-            await sut.onError(dioError401, errorHandler);
+            await sut.onError(dioException401, errorHandler);
 
-            verify(() => _authenticator.reauthenticate(mockOptions));
+            verify(() => authenticator.reauthenticate(mockOptions));
 
             verify(
               () => errorHandler.reject(
                 captureAny(
                   that: predicate((error) {
-                    return error is DioError &&
+                    return error is DioException &&
                         error.error == reauthException &&
                         error.requestOptions == mockOptions;
                   }),
@@ -183,7 +183,7 @@ void main() {
               ),
             );
 
-            verifyNoMoreInteractions(_authenticator);
+            verifyNoMoreInteractions(authenticator);
             verifyNoMoreInteractions(errorHandler);
           });
         });
@@ -193,7 +193,7 @@ void main() {
             group('and it throws a 401 error', () {
               test('the auth header must be set, the handler must call [next]',
                   () async {
-                final retryDioError = DioError(
+                final retryDioException = DioException(
                   requestOptions: mockOptions,
                   response: Response(
                     requestOptions: mockOptions,
@@ -201,7 +201,7 @@ void main() {
                   ),
                 );
 
-                final initialDioError401 = DioError(
+                final initialDioException401 = DioException(
                   requestOptions: mockOptions,
                   response: Response(
                     requestOptions: mockOptions,
@@ -209,20 +209,20 @@ void main() {
                   ),
                 );
 
-                when(() => _authenticator.reauthenticate(any()))
+                when(() => authenticator.reauthenticate(any()))
                     .thenAnswer((_) async => mockAuthTokens);
-                when(() => _authenticator.accessToken)
+                when(() => authenticator.accessToken)
                     .thenReturn(mockAuthTokens.accessToken);
-                when(() => dio.fetch(any())).thenThrow(retryDioError);
+                when(() => dio.fetch(any())).thenThrow(retryDioException);
 
-                await sut.onError(initialDioError401, errorHandler);
+                await sut.onError(initialDioException401, errorHandler);
 
-                verify(() => _authenticator.reauthenticate(mockOptions));
-                verify(() => _authenticator.accessToken);
+                verify(() => authenticator.reauthenticate(mockOptions));
+                verify(() => authenticator.accessToken);
                 verify(() => errorHandler.reject(
                       any(
                         that: predicate((error) {
-                          return error is DioError &&
+                          return error is DioException &&
                               error.requestOptions == mockOptions &&
                               error.error == const TokenUnauthorizedException();
                         }),
@@ -234,7 +234,7 @@ void main() {
                   'Bearer ${mockAuthTokens.accessToken}',
                 );
 
-                verifyNoMoreInteractions(_authenticator);
+                verifyNoMoreInteractions(authenticator);
                 verifyNoMoreInteractions(errorHandler);
               });
             });
@@ -243,7 +243,7 @@ void main() {
               test(
                   "must reauthenticate, set the auth header, and call the handler's [next] method",
                   () async {
-                final retryDioError = DioError(
+                final retryDioException = DioException(
                   requestOptions: mockOptions,
                   response: Response(
                     requestOptions: mockOptions,
@@ -251,7 +251,7 @@ void main() {
                   ),
                 );
 
-                final initialDioError401 = DioError(
+                final initialDioException401 = DioException(
                   requestOptions: mockOptions,
                   response: Response(
                     requestOptions: mockOptions,
@@ -259,23 +259,23 @@ void main() {
                   ),
                 );
 
-                when(() => _authenticator.reauthenticate(any()))
+                when(() => authenticator.reauthenticate(any()))
                     .thenAnswer((_) async => mockAuthTokens);
-                when(() => _authenticator.accessToken)
+                when(() => authenticator.accessToken)
                     .thenReturn(mockAuthTokens.accessToken);
-                when(() => dio.fetch(any())).thenThrow(retryDioError);
+                when(() => dio.fetch(any())).thenThrow(retryDioException);
 
-                await sut.onError(initialDioError401, errorHandler);
+                await sut.onError(initialDioException401, errorHandler);
 
-                verify(() => _authenticator.reauthenticate(mockOptions));
-                verify(() => _authenticator.accessToken);
-                verify(() => errorHandler.next(retryDioError));
+                verify(() => authenticator.reauthenticate(mockOptions));
+                verify(() => authenticator.accessToken);
+                verify(() => errorHandler.next(retryDioException));
                 expect(
                   mockOptions.headers['Authorization'],
                   'Bearer ${mockAuthTokens.accessToken}',
                 );
 
-                verifyNoMoreInteractions(_authenticator);
+                verifyNoMoreInteractions(authenticator);
                 verifyNoMoreInteractions(errorHandler);
               });
             });
@@ -287,7 +287,7 @@ void main() {
                 () async {
               final retryResult = Response(requestOptions: mockOptions);
 
-              final initialDioError401 = DioError(
+              final initialDioException401 = DioException(
                 requestOptions: mockOptions,
                 response: Response(
                   requestOptions: mockOptions,
@@ -295,23 +295,23 @@ void main() {
                 ),
               );
 
-              when(() => _authenticator.reauthenticate(any()))
+              when(() => authenticator.reauthenticate(any()))
                   .thenAnswer((_) async => mockAuthTokens);
-              when(() => _authenticator.accessToken)
+              when(() => authenticator.accessToken)
                   .thenReturn(mockAuthTokens.accessToken);
               when(() => dio.fetch(any())).thenAnswer((_) async => retryResult);
 
-              await sut.onError(initialDioError401, errorHandler);
+              await sut.onError(initialDioException401, errorHandler);
 
-              verify(() => _authenticator.reauthenticate(mockOptions));
-              verify(() => _authenticator.accessToken);
+              verify(() => authenticator.reauthenticate(mockOptions));
+              verify(() => authenticator.accessToken);
               verify(() => errorHandler.resolve(retryResult));
               expect(
                 mockOptions.headers['Authorization'],
                 'Bearer ${mockAuthTokens.accessToken}',
               );
 
-              verifyNoMoreInteractions(_authenticator);
+              verifyNoMoreInteractions(authenticator);
               verifyNoMoreInteractions(errorHandler);
             });
           });

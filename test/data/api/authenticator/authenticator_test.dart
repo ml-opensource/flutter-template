@@ -201,7 +201,7 @@ void main() {
                 headers: {MetaInterceptor.nMetaHeaderKey: 'SomeHeader'},
               );
 
-              final dioError = DioError(
+              final dioException = DioException(
                 requestOptions: mockRequestOptions,
                 response: Response(
                   requestOptions: mockRequestOptions,
@@ -215,7 +215,7 @@ void main() {
               when(() => client.get<Map<String, dynamic>>(
                     any(),
                     headers: any(named: 'headers'),
-                  )).thenThrow(dioError);
+                  )).thenThrow(dioException);
               when(() => storage.clear()).thenAnswer((_) => Future.value());
 
               expect(
@@ -249,7 +249,7 @@ void main() {
                 headers: {MetaInterceptor.nMetaHeaderKey: 'SomeHeader'},
               );
 
-              final dioError = DioError(
+              final dioException = DioException(
                 requestOptions: mockRequestOptions,
                 response: Response(
                   requestOptions: mockRequestOptions,
@@ -261,11 +261,11 @@ void main() {
               when(() => client.get<Map<String, dynamic>>(
                     any(),
                     headers: any(named: 'headers'),
-                  )).thenThrow(dioError);
+                  )).thenThrow(dioException);
 
               expect(
                 () => sut.reauthenticate(mockRequestOptions),
-                throwsA(dioError),
+                throwsA(dioException),
               );
 
               verify(

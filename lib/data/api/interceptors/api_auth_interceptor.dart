@@ -36,7 +36,7 @@ class ApiAuthInterceptor extends QueuedInterceptor {
     try {
       await _reauthenticateIfNeeded(options);
     } on Exception catch (e) {
-      handler.reject(DioError(requestOptions: options, error: e));
+      handler.reject(DioException(requestOptions: options, error: e));
       return;
     }
 
@@ -47,7 +47,7 @@ class ApiAuthInterceptor extends QueuedInterceptor {
 
   @override
   Future<void> onError(
-    DioError err,
+    DioException err,
     ErrorInterceptorHandler handler,
   ) async {
     // The error is not a 401 error — so nothing to handle in this interceptor.
@@ -62,7 +62,7 @@ class ApiAuthInterceptor extends QueuedInterceptor {
       await _authenticator.reauthenticate(err.requestOptions);
     } on Exception catch (e) {
       handler.reject(
-        DioError(
+        DioException(
           requestOptions: err.requestOptions,
           error: e,
           response: err.response,
@@ -81,12 +81,12 @@ class ApiAuthInterceptor extends QueuedInterceptor {
     try {
       final response = await _dio.fetch(options);
       handler.resolve(response);
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       // As we've tried to handle the 401 error, seeing this error again
       // means that even with the new token we're unable to proceed any further.
       // We must log the user out.
       if (e.response?.statusCode == 401) {
-        final error = DioError(
+        final error = DioException(
           requestOptions: options,
           error: const TokenUnauthorizedException(),
           response: e.response,
