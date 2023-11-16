@@ -7,7 +7,7 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+include: package:monstarlab_lints/analysis_options.yaml
 
 linter:
   rules:
@@ -73,10 +73,9 @@ linter:
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
 
-
 analyzer:
   errors:
-    # Ignore invalid annotations since freezed annotation and json serializable required it 
+    # Ignore invalid annotations since freezed annotation and json serializable required it
     invalid_annotation_target: ignore
   exclude:
     # ignore DI
