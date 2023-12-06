@@ -23,8 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    _tabSelection = widget.tab;
     super.initState();
+    _tabSelection = widget.tab;
   }
 
   @override
