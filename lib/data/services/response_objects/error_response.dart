@@ -34,7 +34,7 @@ class ErrorResponse with _$ErrorResponse {
   }) = _ErrorResponse;
 
   factory ErrorResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_ErrorResponseFromJson(json);
+      _$ErrorResponseFromJson(json);
 }
 
 enum ErrorName {
