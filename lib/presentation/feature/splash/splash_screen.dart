@@ -18,10 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    _timer = Timer(const Duration(seconds: 2), () {
-      context.router.navigate(HomeRoute());
-    });
     super.initState();
+    _timer = Timer(const Duration(seconds: 2), () {
+      context.router.replace(HomeRoute());
+    });
   }
 
   @override
