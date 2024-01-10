@@ -1,1 +1,21 @@
+# Register bricks which can be consumed via the Mason CLI.
+# Run "mason get" to install all registered bricks.
+# To learn more, visit https://docs.brickhub.dev.
 bricks:
+  # service brick
+  service:
+    git:
+      url: "https://github.com/monstar-lab-oss/flutter-bricks.git"
+      path: bricks/service
+
+  # usecase brick
+  usecase:
+    git:
+      url: "https://github.com/monstar-lab-oss/flutter-bricks.git"
+      path: bricks/usecase
+  
+  # feature brick
+  feature:
+    git:
+      url: "https://github.com/monstar-lab-oss/flutter-bricks.git"
+      path: bricks/feature
