@@ -1,0 +1,34 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          explicit_to_json: true
+          # By deafult, field_rename: none, More options —
+          # snake, kebab, pascal, etc. To use, uncomment this below line —
+          # field_rename: snake
+        generate_for:
+          include:
+            # data layer:
+            - lib/data/model/**.dart
+            - lib/data/response_objects/**.dart
+
+            # domain layer:
+            # Note: We added domain layer? Why? Because some times, we may need 
+            # some freezed classes to be saved on storage where toJson() is required.
+            # we should not allow the entire /entities folder here, as entities don't need fromJson(), toJson(), etc.
+            # Specifying exact file will help build runner to run fast.
+            - lib/domain/entities/user.dart
+      freezed:freezed:
+        generate_for:
+          include:
+            # data layer:
+            - lib/data/model/**.dart
+            - lib/data/response_objects/**.dart
+
+            # domain layer:
+            - lib/domain/common/**.dart
+            - lib/domain/entities/**.dart
+
+            # presentation layer:
+            - lib/presentation/feature/**_state.dart

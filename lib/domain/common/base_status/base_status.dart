@@ -1,10 +1,10 @@
-import 'package:flutter_template/data/services/response_error.dart';
+import 'package:flutter_template/data/response_objects/response_error.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'base_status.freezed.dart';
 
 @freezed
-class BaseStatus<T> with _$BaseStatus<T> {
+sealed class BaseStatus<T> with _$BaseStatus<T> {
   const BaseStatus._();
 
   const factory BaseStatus.initial() = Initial<T>;

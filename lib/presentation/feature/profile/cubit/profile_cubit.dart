@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/data/services/response_error.dart';
+import 'package:flutter_template/data/response_objects/response_error.dart';
 import 'package:flutter_template/domain/common/base_status/base_status.dart';
 import 'package:flutter_template/domain/usecases/profile/get_profile_usecase.dart';
 
