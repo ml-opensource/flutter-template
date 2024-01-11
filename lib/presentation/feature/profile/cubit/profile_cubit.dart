@@ -7,7 +7,7 @@ import 'package:flutter_template/presentation/feature/profile/cubit/profile_stat
 import 'package:injectable/injectable.dart';
 
 @injectable
-class ProfileCubit extends Cubit<ProfileState> {
+final class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit(this._getProfileUseCase) : super(ProfileState.initial());
 
   final GetProfileUseCase _getProfileUseCase;
