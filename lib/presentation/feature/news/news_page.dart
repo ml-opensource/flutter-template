@@ -1,6 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_template/presentation/feature/news/ui/news_body.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
+@RoutePage()
 class NewsPage extends StatelessWidget {
   const NewsPage({Key? key}) : super(key: key);
 
@@ -12,6 +15,7 @@ class NewsPage extends StatelessWidget {
         backgroundColor: context.colors.accent,
         title: const Text('News'),
       ),
+      body: const NewsBody(),
     );
   }
 }
