@@ -66,5 +66,3 @@ targets:
             - lib/presentation/routes/router.dart
             - lib/presentation/features/**_screen.dart
             - lib/presentation/features/**_page.dart
-            
-      
