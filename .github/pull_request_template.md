@@ -1,11 +1,27 @@
-# Pull Request (PR) Checklist
+<!-- Please read the playbook to ensure your PR is good to be reviewed.
+https://github.com/monstar-lab-oss/flutter-template/blob/master/playbooks/organization/WorkingWithPullRequests.md
+-->
 
-- [ ] PR title includes Jira ticket reference -- if no ticket available create one if this PR is a fix or feat
-- [ ] Branch name includes Jira ticket reference (parent ticket and sub-task if available), e.g. 'feat/APP-XXX_Some_Feature' or feat/APP-XXX_APP-XXX_Some_Sub_Task or 'fix/APP-XXX_Some_Fix' or 'refactor/Some_Refactoring'
-- [ ] All PR checks pass and changes under /domain are covered with unit tests
-- [ ] Jira ticket provides testing infos for QA -- add a comment if needed e.q. for pre-requisites, order of API calls, ...
-- [ ] When merging this PR the commit message follows [conventional-commits](https://www.conventionalcommits.org/en/v1.0.0/#summary), e.g. 'feat(some optional epic): add some feature (APP-XXX) (#XXX)'
+### General
 
-## Related to other PRs
+- [Jira Ticket](#)
 
-## Notes for PR reviewers
+<!-- Provide a brief explanation of the changes introduced by this pull request.
+If applicable, describe the issue or feature that this pull request addresses.
+Attach screenshots in the "Showcase" section to visually demonstrate the modifications made.
+-->
+
+### Checklists
+
+- [ ] Platform specific changes (input, image picking etc) are tested on both of the platforms (Android and iOS)
+- [ ] It is tested that the UI changes are rendered correctly on different device sizes (such as long lists or expanded rows) with safe area conditions.
+- [ ] Edge cases, such as responses being empty or invalid, missing data, no internet connection etc, are tested and the app works as expected.
+
+### Showcase
+
+- [ ] Either showcase screenshots / videos are attached, or this PR does not require such any showcase.
+
+<!-- Template for attachments:
+<img width=265 src=""/>
+<video src=""/>
+-->
