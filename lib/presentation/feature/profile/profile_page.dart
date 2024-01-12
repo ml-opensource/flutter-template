@@ -41,14 +41,15 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 BlocBuilder<ProfileCubit, ProfileState>(
-                    bloc: _profilePresenter,
-                    builder: (context, state) {
-                      if (state.isLoading) {
-                        return const CircularProgressIndicator();
-                      } else {
-                        return Text('Hi ${state.name}!');
-                      }
-                    })
+                  bloc: _profilePresenter,
+                  builder: (context, state) {
+                    if (state.isLoading) {
+                      return const CircularProgressIndicator();
+                    } else {
+                      return Text('Hi ${state.name}!');
+                    }
+                  },
+                ),
               ],
             ),
           ),

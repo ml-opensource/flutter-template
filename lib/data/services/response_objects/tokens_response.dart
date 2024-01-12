@@ -22,7 +22,7 @@ class TokensResponse with _$TokensResponse {
       'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwY2MiO',
       'refreshToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwY2Mi',
       'tokenType': 'Bearer',
-      'expiresIn': 2592000
+      'expiresIn': 2592000,
     });
   }
 
