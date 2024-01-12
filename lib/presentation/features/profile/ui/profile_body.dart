@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/presentation/feature/profile/cubit/profile_cubit.dart';
+import 'package:flutter_template/presentation/features/profile/cubit/profile_cubit.dart';
 import 'package:flutter_template/presentation/widgets/loading_indicator/app_loading_indicator.dart';
 
 class ProfileBody extends StatelessWidget {

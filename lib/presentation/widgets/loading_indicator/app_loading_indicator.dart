@@ -10,14 +10,19 @@ class AppLoadingIndicator extends StatelessWidget {
   const AppLoadingIndicator({
     super.key,
     this.size = defaultSize,
+    this.strokeWidth = 4.0,
   });
 
   /// Determines both height and width of the loader.
   final double size;
 
+  /// The width of the material loader stroke.
+  final double strokeWidth;
+
   factory AppLoadingIndicator.small() {
     return const AppLoadingIndicator(
       size: defaultSmallSize,
+      strokeWidth: 2.0,
     );
   }
 
@@ -26,7 +31,9 @@ class AppLoadingIndicator extends StatelessWidget {
     return SizedBox(
       height: size,
       width: size,
-      child: const CircularProgressIndicator.adaptive(),
+      child: CircularProgressIndicator.adaptive(
+        strokeWidth: strokeWidth,
+      ),
     );
   }
 }

@@ -23,15 +23,26 @@ class AppRouter extends $AppRouter {
           path: '/main',
           children: [
             AutoRoute(
-              page: NewsRoute.page,
+              page: HomeRoute.page,
               path: 'news',
               initial: true,
+            ),
+            AutoRoute(
+              page: NewsRoute.page,
+              path: 'news',
             ),
             AutoRoute(
               page: ProfileRoute.page,
               path: 'profile',
             ),
           ],
+        ),
+
+        // Playground Screen: Keep it as the last item of this list.
+        AutoRoute(
+          page: PlaygroundRoute.page,
+          path: '/playground',
+          fullscreenDialog: true,
         ),
       ];
 }

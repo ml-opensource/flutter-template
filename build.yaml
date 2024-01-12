@@ -1,6 +1,7 @@
 targets:
   $default:
     builders:
+      # Serializer
       json_serializable:
         options:
           explicit_to_json: true
@@ -14,11 +15,13 @@ targets:
             - lib/data/response_objects/**.dart
 
             # domain layer:
-            # Note: We added domain layer? Why? Because some times, we may need 
+            # Note: We added domain layer? Why? Because sometimes, we may need 
             # some freezed classes to be saved on storage where toJson() is required.
-            # we should not allow the entire /entities folder here, as entities don't need fromJson(), toJson(), etc.
+            # We should not allow the entire `/entities` folder here, as entities don't need fromJson(), toJson(), etc.
             # Specifying exact file will help build runner to run fast.
             - lib/domain/entities/user.dart
+      
+      # Data Classes, Cloning
       freezed:freezed:
         generate_for:
           include:
@@ -31,4 +34,37 @@ targets:
             - lib/domain/entities/**.dart
 
             # presentation layer:
-            - lib/presentation/feature/**_state.dart
+            - lib/presentation/features/**_state.dart
+
+      # Dependency Injection
+      injectable_generator:injectable_config_builder:
+        generate_for:
+          include:
+            - lib/injection/injector.dart
+
+      injectable_generator:injectable_builder:
+        generate_for:
+          include:
+            - lib/injection/injector.dart
+        
+            # data
+            - lib/data/**_config.dart
+            - lib/data/services/**_service_impl.dart
+            - lib/data/services/**_remapper.dart
+            - lib/data/preferences/**_preferences.dart
+
+            # domain
+            - lib/domain/use_cases/**_use_case.dart
+
+            # presentation
+            - lib/presentation/features/**_cubit.dart
+     
+      # Routing     
+      auto_route_generator:
+        generate_for:
+          include:
+            - lib/presentation/routes/router.dart
+            - lib/presentation/features/**_screen.dart
+            - lib/presentation/features/**_page.dart
+            
+      

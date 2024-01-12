@@ -6,9 +6,11 @@ class AppBottomNavigationBar extends StatelessWidget {
   const AppBottomNavigationBar({
     super.key,
     required this.tabsRouter,
+    required this.bottomNavigationBarItemList,
   });
 
   final TabsRouter tabsRouter;
+  final List<BottomNavigationBarItem> bottomNavigationBarItemList;
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +19,7 @@ class AppBottomNavigationBar extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       currentIndex: tabsRouter.activeIndex,
       onTap: tabsRouter.setActiveIndex,
-      items: const [
-        BottomNavigationBarItem(
-          label: 'News',
-          icon: Icon(Icons.newspaper),
-        ),
-        BottomNavigationBarItem(
-          label: 'Profile',
-          icon: Icon(Icons.person),
-        ),
-      ],
+      items: bottomNavigationBarItemList,
     );
   }
 }
