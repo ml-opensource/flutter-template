@@ -116,7 +116,7 @@ class AuthInterceptor extends InterceptorsWrapper {
         headers: {
           'Authorization': 'Bearer ${authPreferences.refreshToken}',
           MetaInterceptor.nMetaHeaderKey:
-              requestOptions.headers[MetaInterceptor.nMetaHeaderKey]
+              requestOptions.headers[MetaInterceptor.nMetaHeaderKey],
         },
       );
 
