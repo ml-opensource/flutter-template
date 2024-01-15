@@ -40,7 +40,7 @@ class ProfileBody extends StatelessWidget {
                   TextButton(
                     onPressed: profileCubit.init,
                     child: const Text('Try again.'),
-                  )
+                  ),
                 ],
               );
             },

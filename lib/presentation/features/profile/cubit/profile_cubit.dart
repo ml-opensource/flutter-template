@@ -33,9 +33,11 @@ final class ProfileCubit extends Cubit<ProfileState> {
     } catch (e) {
       final responseError = ResponseError.from(e);
 
-      return emit(state.copyWith(
-        initializationStatus: BaseStatus.failure(responseError),
-      ));
+      return emit(
+        state.copyWith(
+          initializationStatus: BaseStatus.failure(responseError),
+        ),
+      );
     }
   }
 }
