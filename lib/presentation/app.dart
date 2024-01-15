@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/injection/injector.dart';
+import 'package:flutter_template/nstack/nstack.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 import 'package:flutter_template/presentation/routes/router.dart';
-import '../../nstack/nstack.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
