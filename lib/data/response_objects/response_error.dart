@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_template/data/services/response_objects/error_response.dart';
+import 'package:flutter_template/data/response_objects/error_response.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,7 +13,7 @@ part 'response_error.freezed.dart';
 ///
 /// We return those errors to get localized messages to display to the user.
 @freezed
-class ResponseError<T> with _$ResponseError<T> implements Exception {
+sealed class ResponseError<T> with _$ResponseError<T> implements Exception {
   const ResponseError._();
 
   const factory ResponseError.noInternetConnection() = _NoInternetConnection;

@@ -1,4 +1,4 @@
-import 'package:flutter_template/data/services/response_error.dart';
+import 'package:flutter_template/data/response_objects/response_error.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

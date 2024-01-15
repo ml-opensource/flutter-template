@@ -11,6 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appRouter = injector.get<AppRouter>();
+
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: getAppTheme(Brightness.light),
