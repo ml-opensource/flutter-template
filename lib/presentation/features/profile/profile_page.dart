@@ -5,6 +5,7 @@ import 'package:flutter_template/injection/injector.dart';
 import 'package:flutter_template/presentation/features/profile/cubit/profile_cubit.dart';
 import 'package:flutter_template/presentation/features/profile/ui/profile_body.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
+import 'package:flutter_template/presentation/widgets/app_bar/top_app_bar.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
@@ -16,9 +17,8 @@ class ProfilePage extends StatelessWidget {
       create: (context) => injector()..init(),
       child: Scaffold(
         backgroundColor: context.colors.background,
-        appBar: AppBar(
-          backgroundColor: context.colors.accent,
-          title: const Text('Profile'),
+        appBar: const TopAppBar(
+          label: 'Profile',
         ),
         body: const ProfileBody(),
       ),

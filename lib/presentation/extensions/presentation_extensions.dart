@@ -2,3 +2,4 @@
 library presentation_extensions;
 
 export 'string_presentation_extensions.dart';
+export 'scroll_controller_extensions.dart';

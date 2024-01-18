@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/features/home/ui/home_body.dart';
-import 'package:flutter_template/presentation/resources/resources.dart';
+import 'package:flutter_template/presentation/widgets/app_bar/top_app_bar.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -9,13 +9,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.colors.background,
-      appBar: AppBar(
-        backgroundColor: context.colors.accent,
-        title: const Text('Home'),
+    return const Scaffold(
+      appBar: TopAppBar(
+        label: 'Home',
       ),
-      body: const HomeBody(),
+      body: HomeBody(),
     );
   }
 }
