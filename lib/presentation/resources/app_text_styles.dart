@@ -59,7 +59,7 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
         fontFamily: AppFonts.activeFontFamily,
       ),
       buttonLabel: TextStyle(
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
         fontFamily: AppFonts.activeFontFamily,
       ),

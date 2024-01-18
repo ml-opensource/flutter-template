@@ -118,7 +118,7 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRaius = AppUiConstants.defaultBorderRadius;
+    final borderRadius = AppUiConstants.defaultBorderRadius;
 
     final _colors = context.colors;
 
@@ -130,7 +130,7 @@ class AppButton extends StatelessWidget {
         ? AppUiConstants.defaultSmallButtonTextStyle
         : AppUiConstants.defaultButtonTextStyle;
 
-    final shape = borderRaius == null
+    final shape = borderRadius == null
         ? null
         : MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(

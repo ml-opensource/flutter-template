@@ -10,4 +10,3 @@ GetIt injector = GetIt.instance;
   asExtension: false, // default
 )
 Future configureDependencies() async => $initGetIt(injector);
-
