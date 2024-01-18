@@ -9,8 +9,7 @@ class AppLoadingIndicator extends StatelessWidget {
 
   /// Determines the color of the loading indicator.
   ///
-  /// By default, on iOS, the loader will be colored in grey,
-  /// and on Android, it will follow the primary color of the current theme.
+  /// By default, It will follow the primary color of the current theme.
   final Color? indicatorColor;
 
   const AppLoadingIndicator({
