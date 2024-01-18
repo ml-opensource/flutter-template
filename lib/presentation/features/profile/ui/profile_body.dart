@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_template/presentation/features/profile/cubit/profile_cubit.dart';
+import 'package:flutter_template/presentation/widgets/button/app_button.dart';
 import 'package:flutter_template/presentation/widgets/loading_indicator/app_loading_indicator.dart';
+import 'package:flutter_template/presentation/widgets/text/app_text.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({
@@ -26,7 +28,7 @@ class ProfileBody extends StatelessWidget {
           padding: const EdgeInsets.all(32.0),
           child: status.maybeWhen(
             loading: () => AppLoadingIndicator.small(),
-            success: () => Text(
+            success: () => AppText.body(
               name,
               textAlign: TextAlign.center,
             ),
@@ -34,12 +36,13 @@ class ProfileBody extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
+                  AppText.body(
                     'Something went wrong.',
                   ),
-                  TextButton(
+                  AppButton.text(
+                    label: 'Try again',
+                    isSmall: true,
                     onPressed: profileCubit.init,
-                    child: const Text('Try again.'),
                   ),
                 ],
               );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/presentation/extensions/color_extensions.dart';
 import 'package:flutter_template/presentation/resources/app_colors.dart';
 import 'package:flutter_template/presentation/resources/app_ui_constants.dart';
 import 'package:flutter_template/presentation/widgets/loading_indicator/app_loading_indicator.dart';
+import 'package:flutter_template/presentation/widgets/text/app_text.dart';
 
 enum _AppButtonType {
   primary,
@@ -138,6 +140,8 @@ class AppButton extends StatelessWidget {
             ),
           );
 
+    final disableOnPressed = isLoading || isDisabled;
+
     return SizedBox(
       width: double.infinity,
       child: switch (buttonType) {
@@ -145,14 +149,13 @@ class AppButton extends StatelessWidget {
             style: TextButton.styleFrom(
               padding: _padding,
               textStyle: _textStyle,
-              backgroundColor: isDisabled
-                  ? _colors.primary.withOpacity(0.44)
-                  : _colors.primary,
+              backgroundColor:
+                  isDisabled ? _colors.primary.lowOpacity() : _colors.primary,
               foregroundColor: _colors.foregroundOnPrimary,
             ).copyWith(
               shape: shape,
             ),
-            onPressed: isDisabled ? null : onPressed,
+            onPressed: disableOnPressed ? null : onPressed,
             child: isLoading
                 ? AppLoadingIndicator.small(
                     indicatorColor: _colors.foregroundOnPrimary,
@@ -164,13 +167,13 @@ class AppButton extends StatelessWidget {
               padding: _padding,
               textStyle: _textStyle,
               backgroundColor: isDisabled
-                  ? _colors.secondary.withOpacity(0.44)
+                  ? _colors.secondary.lowOpacity()
                   : _colors.secondary,
               foregroundColor: _colors.foregroundOnSecondary,
             ).copyWith(
               shape: shape,
             ),
-            onPressed: isDisabled ? null : onPressed,
+            onPressed: disableOnPressed ? null : onPressed,
             child: isLoading
                 ? AppLoadingIndicator.small(
                     indicatorColor: _colors.foregroundOnSecondary,
@@ -184,7 +187,7 @@ class AppButton extends StatelessWidget {
             ).copyWith(
               shape: shape,
             ),
-            onPressed: isDisabled ? null : onPressed,
+            onPressed: disableOnPressed ? null : onPressed,
             child: isLoading
                 ? AppLoadingIndicator.small(
                     indicatorColor: _colors.foregroundOnBackground,
@@ -198,7 +201,7 @@ class AppButton extends StatelessWidget {
             ).copyWith(
               shape: shape,
             ),
-            onPressed: isDisabled ? null : onPressed,
+            onPressed: disableOnPressed ? null : onPressed,
             child: isLoading
                 ? AppLoadingIndicator.small(
                     indicatorColor: _colors.foregroundOnBackground,
@@ -209,12 +212,13 @@ class AppButton extends StatelessWidget {
             style: TextButton.styleFrom(
               padding: _padding,
               textStyle: _textStyle,
-              backgroundColor: _colors.danger,
+              backgroundColor:
+                  isDisabled ? _colors.danger.lowOpacity() : _colors.danger,
               foregroundColor: _colors.foregroundOnDanger,
             ).copyWith(
               shape: shape,
             ),
-            onPressed: isDisabled ? null : onPressed,
+            onPressed: disableOnPressed ? null : onPressed,
             child: isLoading
                 ? AppLoadingIndicator.small(
                     indicatorColor: _colors.foregroundOnDanger,
@@ -233,7 +237,7 @@ class _AppButtonLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return AppText.buttonLabel(
       label,
       maxLines: 1,
       overflow: TextOverflow.ellipsis,

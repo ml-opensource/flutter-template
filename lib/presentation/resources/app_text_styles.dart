@@ -3,23 +3,15 @@ import 'package:flutter_template/presentation/resources/app_colors.dart';
 import 'package:flutter_template/presentation/resources/app_fonts.dart';
 
 class AppTextStyles extends ThemeExtension<AppTextStyles> {
-  final TextStyle header1;
-  final TextStyle header2;
-  final TextStyle header3;
-  final TextStyle bodySmall;
-  final TextStyle body;
-  final TextStyle bodyLarge;
-  final TextStyle label;
-  final TextStyle underlineText;
-
   AppTextStyles({
     required this.header1,
     required this.header2,
     required this.header3,
+    required this.appBarTitle,
     required this.bodySmall,
     required this.body,
     required this.bodyLarge,
-    required this.label,
+    required this.buttonLabel,
     required this.underlineText,
   });
 
@@ -28,25 +20,28 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
 
     return AppTextStyles(
       header1: TextStyle(
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: FontWeight.w500,
-        color: _appColors.foregroundOnBackground,
         fontFamily: AppFonts.activeFontFamily,
       ),
       header2: TextStyle(
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
-        color: _appColors.foregroundOnBackground,
         fontFamily: AppFonts.activeFontFamily,
       ),
       header3: TextStyle(
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
-        color: _appColors.foregroundOnBackground,
+        fontFamily: AppFonts.activeFontFamily,
+      ),
+      appBarTitle: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        color: _appColors.foregroundOnAppBar,
         fontFamily: AppFonts.activeFontFamily,
       ),
       bodySmall: TextStyle(
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: FontWeight.w400,
         color: _appColors.foregroundOnBackground,
         fontFamily: AppFonts.activeFontFamily,
@@ -63,10 +58,9 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
         color: _appColors.foregroundOnBackground,
         fontFamily: AppFonts.activeFontFamily,
       ),
-      label: TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-        color: _appColors.foregroundOnBackground,
+      buttonLabel: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
         fontFamily: AppFonts.activeFontFamily,
       ),
       underlineText: TextStyle(
@@ -79,25 +73,37 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
     );
   }
 
+  final TextStyle header1;
+  final TextStyle header2;
+  final TextStyle header3;
+  final TextStyle appBarTitle;
+  final TextStyle bodySmall;
+  final TextStyle body;
+  final TextStyle bodyLarge;
+  final TextStyle buttonLabel;
+  final TextStyle underlineText;
+
   @override
   ThemeExtension<AppTextStyles> copyWith({
     TextStyle? header1,
     TextStyle? header2,
     TextStyle? header3,
+    TextStyle? appBarTitle,
     TextStyle? bodySmall,
     TextStyle? bodyLarge,
     TextStyle? body,
-    TextStyle? label,
+    TextStyle? buttonLabel,
     TextStyle? underlineText,
   }) {
     return AppTextStyles(
       header1: header1 ?? this.header1,
       header2: header2 ?? this.header2,
       header3: header3 ?? this.header3,
+      appBarTitle: appBarTitle ?? this.appBarTitle,
       bodySmall: bodySmall ?? this.bodySmall,
       body: body ?? this.body,
       bodyLarge: bodyLarge ?? this.bodyLarge,
-      label: label ?? this.label,
+      buttonLabel: buttonLabel ?? this.buttonLabel,
       underlineText: underlineText ?? this.underlineText,
     );
   }
@@ -115,10 +121,11 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
       header1: TextStyle.lerp(header1, other.header1, t)!,
       header2: TextStyle.lerp(header2, other.header2, t)!,
       header3: TextStyle.lerp(header3, other.header3, t)!,
+      appBarTitle: TextStyle.lerp(appBarTitle, other.appBarTitle, t)!,
       bodySmall: TextStyle.lerp(bodySmall, other.bodySmall, t)!,
       body: TextStyle.lerp(body, other.body, t)!,
       bodyLarge: TextStyle.lerp(bodyLarge, other.bodyLarge, t)!,
-      label: TextStyle.lerp(label, other.label, t)!,
+      buttonLabel: TextStyle.lerp(buttonLabel, other.buttonLabel, t)!,
       underlineText: TextStyle.lerp(underlineText, other.underlineText, t)!,
     );
   }

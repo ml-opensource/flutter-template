@@ -7,9 +7,9 @@ class AppColors extends ThemeExtension<AppColors> {
 
   const AppColors({
     required this.primary,
-    required this.primaryVarient,
+    required this.primaryVariant,
     required this.secondary,
-    required this.secondaryVarient,
+    required this.secondaryVariant,
     required this.background,
     required this.appBarBackground,
     required this.danger,
@@ -27,9 +27,9 @@ class AppColors extends ThemeExtension<AppColors> {
 
   // Core colors
   final Color primary;
-  final Color primaryVarient;
+  final Color primaryVariant;
   final Color secondary;
-  final Color secondaryVarient;
+  final Color secondaryVariant;
   final Color background;
   final Color appBarBackground;
   final Color danger;
@@ -54,12 +54,12 @@ class AppColors extends ThemeExtension<AppColors> {
 
   factory AppColors.light() {
     return const AppColors(
-      primary: AppColorPalette.occeanBlue,
-      primaryVarient: AppColorPalette.lightSkyBlue,
+      primary: AppColorPalette.oceanBlue,
+      primaryVariant: AppColorPalette.lightSkyBlue,
       secondary: AppColorPalette.ultraviolet,
-      secondaryVarient: AppColorPalette.lightLime,
+      secondaryVariant: AppColorPalette.lightLime,
       background: AppColorPalette.white,
-      appBarBackground: AppColorPalette.occeanBlue,
+      appBarBackground: AppColorPalette.oceanBlue,
       danger: AppColorPalette.red,
       foregroundOnBackground: AppColorPalette.black,
       foregroundLightOnBackground: AppColorPalette.graphite,
@@ -67,19 +67,19 @@ class AppColors extends ThemeExtension<AppColors> {
       foregroundOnSecondary: AppColorPalette.royalPurple,
       foregroundOnAppBar: AppColorPalette.white,
       foregroundOnDanger: AppColorPalette.white,
-      outline: AppColorPalette.occeanBlue,
+      outline: AppColorPalette.oceanBlue,
       transparant: AppColorPalette.alpha,
       splashColor: AppColorPalette.whisperingBlue,
-      disabledColor: AppColorPalette.whisperingGrey,
+      disabledColor: AppColorPalette.mutedGrey,
     );
   }
 
   factory AppColors.dark() {
     return const AppColors(
-      primary: AppColorPalette.keylime,
-      primaryVarient: AppColorPalette.lightLime,
+      primary: AppColorPalette.americanOrange,
+      primaryVariant: AppColorPalette.cantaloupe,
       secondary: AppColorPalette.keylime,
-      secondaryVarient: AppColorPalette.lightLime,
+      secondaryVariant: AppColorPalette.lightLime,
       background: AppColorPalette.blackLead,
       appBarBackground: AppColorPalette.darkGrey,
       danger: AppColorPalette.red,
@@ -89,19 +89,19 @@ class AppColors extends ThemeExtension<AppColors> {
       foregroundOnSecondary: AppColorPalette.black,
       foregroundOnAppBar: AppColorPalette.white,
       foregroundOnDanger: AppColorPalette.white,
-      outline: AppColorPalette.keylime,
+      outline: AppColorPalette.americanOrange,
       transparant: AppColorPalette.alpha,
       splashColor: AppColorPalette.darkGrey,
-      disabledColor: AppColorPalette.whisperingDeepGrey,
+      disabledColor: AppColorPalette.silverPolish,
     );
   }
 
   @override
   ThemeExtension<AppColors> copyWith({
     Color? primary,
-    Color? primaryVarient,
+    Color? primaryVariant,
     Color? secondary,
-    Color? secondaryVarient,
+    Color? secondaryVariant,
     Color? background,
     Color? appBarBackground,
     Color? danger,
@@ -118,9 +118,9 @@ class AppColors extends ThemeExtension<AppColors> {
   }) {
     return AppColors(
       primary: primary ?? this.primary,
-      primaryVarient: primaryVarient ?? this.primaryVarient,
+      primaryVariant: primaryVariant ?? this.primaryVariant,
       secondary: secondary ?? this.secondary,
-      secondaryVarient: secondaryVarient ?? this.secondaryVarient,
+      secondaryVariant: secondaryVariant ?? this.secondaryVariant,
       background: background ?? this.background,
       appBarBackground: appBarBackground ?? this.appBarBackground,
       danger: danger ?? this.danger,
@@ -155,9 +155,9 @@ class AppColors extends ThemeExtension<AppColors> {
         other.primary,
         t,
       )!,
-      primaryVarient: Color.lerp(
-        primaryVarient,
-        other.primaryVarient,
+      primaryVariant: Color.lerp(
+        primaryVariant,
+        other.primaryVariant,
         t,
       )!,
       secondary: Color.lerp(
@@ -165,9 +165,9 @@ class AppColors extends ThemeExtension<AppColors> {
         other.secondary,
         t,
       )!,
-      secondaryVarient: Color.lerp(
-        secondaryVarient,
-        other.secondaryVarient,
+      secondaryVariant: Color.lerp(
+        secondaryVariant,
+        other.secondaryVariant,
         t,
       )!,
       background: Color.lerp(

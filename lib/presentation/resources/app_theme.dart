@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/presentation/extensions/color_extensions.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
 sealed class AppTheme {
@@ -7,8 +8,6 @@ sealed class AppTheme {
   static ThemeData fromBrightness(Brightness brightness) {
     final _appColors = AppColors.fromBrightness(brightness);
     final _appTextStyles = AppTextStyles.fromBrightness(brightness);
-
-    // TODO: Setup & map the theme colors and once done remove this TODO
 
     final _lightColorScheme = ColorScheme.light(
       brightness: brightness,
@@ -49,7 +48,7 @@ sealed class AppTheme {
       colorScheme: _appColorScheme,
       highlightColor: Colors.transparent,
       splashColor: _appColors.splashColor,
-      disabledColor: _appColors.primary.withOpacity(0.5),
+      disabledColor: _appColors.primary.lowOpacity(),
       appBarTheme: AppBarTheme(
         color: _appColors.appBarBackground,
         foregroundColor: _appColors.foregroundOnAppBar,

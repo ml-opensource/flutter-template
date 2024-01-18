@@ -11,7 +11,7 @@ sealed class AppUiConstants {
   static const animationDuration = Duration(milliseconds: 250);
 
   // Paddings
-  static const deafultScreenHorizontalPadding =
+  static const defaultScreenHorizontalPadding =
       EdgeInsets.symmetric(horizontal: 24.0);
 
   static const defaultSmallButtonContentPadding = EdgeInsets.symmetric(

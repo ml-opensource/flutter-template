@@ -6,10 +6,11 @@ enum _AppTextType {
   header1,
   header2,
   header3,
+  appBarTitle,
   bodySmall,
   body,
   bodyLarge,
-  label,
+  buttonLabel,
   underlineText,
 }
 
@@ -117,6 +118,35 @@ class AppText extends StatelessWidget {
     );
   }
 
+  factory AppText.appBarTitle(
+    String text, {
+    Key? key,
+    Color? color,
+    TextAlign? textAlign,
+    int? maxLines,
+    TextOverflow? overflow,
+    double? letterSpacing,
+    String? fontFamily,
+    double? lineHeight,
+    FontWeight? fontWeight,
+    bool enableAutoTextSize = false,
+  }) {
+    return AppText._(
+      text,
+      type: _AppTextType.appBarTitle,
+      key: key,
+      color: color,
+      textAlign: textAlign,
+      maxLines: maxLines,
+      overflow: overflow,
+      letterSpacing: letterSpacing,
+      fontFamily: fontFamily,
+      lineHeight: lineHeight,
+      fontWeight: fontWeight,
+      enableAutoTextSize: enableAutoTextSize,
+    );
+  }
+
   factory AppText.bodySmall(
     String text, {
     Key? key,
@@ -204,7 +234,7 @@ class AppText extends StatelessWidget {
     );
   }
 
-  factory AppText.label(
+  factory AppText.buttonLabel(
     String text, {
     Key? key,
     Color? color,
@@ -219,7 +249,7 @@ class AppText extends StatelessWidget {
   }) {
     return AppText._(
       text,
-      type: _AppTextType.label,
+      type: _AppTextType.buttonLabel,
       key: key,
       color: color,
       textAlign: textAlign,
@@ -314,10 +344,11 @@ class AppText extends StatelessWidget {
       _AppTextType.header1 => _appTextStyles.header1,
       _AppTextType.header2 => _appTextStyles.header2,
       _AppTextType.header3 => _appTextStyles.header3,
+      _AppTextType.appBarTitle => _appTextStyles.appBarTitle,
       _AppTextType.bodySmall => _appTextStyles.bodySmall,
       _AppTextType.body => _appTextStyles.body,
       _AppTextType.bodyLarge => _appTextStyles.bodyLarge,
-      _AppTextType.label => _appTextStyles.label,
+      _AppTextType.buttonLabel => _appTextStyles.buttonLabel,
       _AppTextType.underlineText => _appTextStyles.underlineText,
     };
 

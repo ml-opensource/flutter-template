@@ -8,6 +8,7 @@ import 'package:flutter_template/presentation/resources/app_ui_constants.dart';
 import 'package:flutter_template/presentation/routes/router.gr.dart';
 import 'package:flutter_template/presentation/widgets/app_bar/top_app_bar.dart';
 import 'package:flutter_template/presentation/widgets/button/app_button.dart';
+import 'package:flutter_template/presentation/widgets/spacers/safe_area_spacer.dart';
 import 'package:flutter_template/presentation/widgets/text/app_text.dart';
 
 /// A playground screen designed for showcasing reusable widgets.
@@ -64,13 +65,13 @@ class PlaygroundScreen extends StatelessWidget {
                   labelColor: context.colors.foregroundOnPrimary,
                 ),
                 _PlaygroundColorBox(
-                  label: 'Primary Varient',
-                  color: context.colors.primaryVarient,
+                  label: 'Primary Variant',
+                  color: context.colors.primaryVariant,
                   labelColor: context.colors.foregroundOnPrimary,
                 ),
                 _PlaygroundColorBox(
-                  label: 'Secondary Varient',
-                  color: context.colors.secondaryVarient,
+                  label: 'Secondary Variant',
+                  color: context.colors.secondaryVariant,
                   labelColor: context.colors.foregroundOnSecondary,
                 ),
                 _PlaygroundColorBox(
@@ -157,9 +158,9 @@ class PlaygroundScreen extends StatelessWidget {
                 verticalGap,
                 AppText.bodyLarge('This is Body (large).'),
                 verticalGap,
-                AppText.label('This is label.'),
+                AppText.buttonLabel('This is Button label.'),
                 verticalGap,
-                AppText.underlineText('This is undelined text.'),
+                AppText.underlineText('This is underlined text.'),
                 verticalGap,
                 AppText.custom(
                   'This is custom',
@@ -172,6 +173,9 @@ class PlaygroundScreen extends StatelessWidget {
             child: SizedBox(
               height: 72,
             ),
+          ),
+          const SliverToBoxAdapter(
+            child: SafeAreaSpacer(),
           ),
         ],
       ),
@@ -198,12 +202,12 @@ class _PlaygroundStickyHeader extends StatelessWidget {
             horizontal: 24.0,
             vertical: 12.0,
           ).copyWith(bottom: 12.0),
-          child: Text(label),
+          child: AppText.header3(label),
         ),
       ),
       sliver: SliverToBoxAdapter(
         child: Padding(
-          padding: AppUiConstants.deafultScreenHorizontalPadding,
+          padding: AppUiConstants.defaultScreenHorizontalPadding,
           child: child,
         ),
       ),
@@ -235,12 +239,10 @@ class _PlaygroundColorBox extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
+            child: AppText.body(
               label,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: labelColor,
-              ),
+              color: labelColor,
             ),
           ),
         ),
@@ -258,12 +260,10 @@ class PlaygroundScreenOpenerButton extends StatelessWidget {
       return const SizedBox.shrink();
     }
 
-    return TextButton(
+    return AppButton.text(
+      label: 'Open Playground Screen',
       onPressed: () => context.pushRoute(
         const PlaygroundRoute(),
-      ),
-      child: const Text(
-        'Open Playground Screen',
       ),
     );
   }

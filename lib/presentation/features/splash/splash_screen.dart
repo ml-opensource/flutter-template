@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 import 'package:flutter_template/presentation/routes/router.gr.dart';
+import 'package:flutter_template/presentation/widgets/text/app_text.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {
@@ -36,9 +37,9 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: context.colors.appBarBackground,
       body: SafeArea(
         child: Center(
-          child: Text(
+          child: AppText.body(
             'SplashScreen',
-            style: TextStyle(color: context.colors.foregroundOnAppBar),
+            color: context.colors.foregroundOnAppBar,
           ),
         ),
       ),

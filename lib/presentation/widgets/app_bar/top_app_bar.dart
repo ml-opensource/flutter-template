@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/extensions/scroll_controller_extensions.dart';
+import 'package:flutter_template/presentation/resources/app_colors.dart';
+import 'package:flutter_template/presentation/widgets/text/app_text.dart';
 
 // TODO: Replace the name with Apps-specific naming (XyzAppBar)
 class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -24,7 +26,12 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
     return GestureDetector(
       onTap: PrimaryScrollController.maybeOf(context)?.animateToTop,
       child: AppBar(
-        title: label == null ? null : Text(label!),
+        title: label == null
+            ? null
+            : AppText.appBarTitle(
+                label!,
+                color: context.colors.foregroundOnAppBar,
+              ),
         actions: actions,
         automaticallyImplyLeading: automaticallyImplyLeading,
         centerTitle: centerTitle,
