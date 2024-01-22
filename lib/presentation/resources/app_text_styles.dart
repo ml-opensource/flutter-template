@@ -133,10 +133,13 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
 
 extension AppTextStylesExtension on BuildContext {
   AppTextStyles get textStyles {
-    final brightness = Theme.of(this).brightness;
+    final appTextStyles = Theme.of(this).extension<AppTextStyles>();
 
-    return AppTextStyles.fromBrightness(
-      brightness,
-    );
+    if (appTextStyles == null) {
+      throw Exception(
+        'Could not find the ThemeData extension for text styles.\n Make sure to pass AppTextStyles as ThemeData extension.',
+      );
+    }
+    return appTextStyles;
   }
 }

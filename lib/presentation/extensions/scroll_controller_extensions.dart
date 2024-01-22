@@ -5,7 +5,7 @@ extension ScrollControllerExtensions on ScrollController {
   Future<void> appAnimateTo(
     double offset, {
     Duration duration = AppUiConstants.animationDuration,
-    Curve curve = Curves.fastEaseInToSlowEaseOut,
+    Curve curve = AppUiConstants.transitionCurve,
   }) {
     return animateTo(offset, duration: duration, curve: curve);
   }

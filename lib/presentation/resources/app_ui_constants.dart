@@ -1,4 +1,4 @@
-import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
 
 /// Represents a collection of constants specific to the app's user interface (UI).
 ///
@@ -9,6 +9,9 @@ sealed class AppUiConstants {
 
   // Animations
   static const animationDuration = Duration(milliseconds: 250);
+
+  // Curves
+  static const transitionCurve = Curves.fastEaseInToSlowEaseOut;
 
   // Paddings
   static const defaultScreenHorizontalPadding =

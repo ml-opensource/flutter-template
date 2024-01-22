@@ -241,15 +241,14 @@ class AppColors extends ThemeExtension<AppColors> {
 
 extension AppColorsExtension on BuildContext {
   AppColors get colors {
-    final brightness = Theme.of(this).brightness;
+    final appColors = Theme.of(this).extension<AppColors>();
 
-    switch (brightness) {
-      case Brightness.light:
-        return AppColors.light();
-      case Brightness.dark:
-        return AppColors.dark();
-      default:
-        return AppColors.light();
+    if (appColors == null) {
+      throw Exception(
+        'Could not find the ThemeData extension for colors.\n Make sure to pass AppColors as ThemeData extension.',
+      );
     }
+
+    return appColors;
   }
 }

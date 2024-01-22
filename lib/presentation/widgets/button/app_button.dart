@@ -92,7 +92,7 @@ class AppButton extends StatelessWidget {
     );
   }
 
-  factory AppButton.danger({
+  factory AppButton.destructive({
     required String label,
     VoidCallback? onPressed,
     bool isLoading = false,

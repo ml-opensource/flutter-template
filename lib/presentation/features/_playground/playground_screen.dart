@@ -102,8 +102,8 @@ class PlaygroundScreen extends StatelessWidget {
                   onPressed: () {},
                 ),
                 verticalGap,
-                AppButton.danger(
-                  label: 'Danger Button',
+                AppButton.destructive(
+                  label: 'Destructive Button',
                   onPressed: () {},
                 ),
                 verticalGap,
