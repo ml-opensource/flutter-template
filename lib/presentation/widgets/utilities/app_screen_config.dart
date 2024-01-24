@@ -1,34 +1,38 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 
-/// A widget for dismissing the keyboard on tap outside.
+/// A configuration widget designed to manage actions when tapping on the scaffold, such as dismissing the keyboard.
 ///
-/// Wrap a widget that contain text inputs with this widget
-/// to enable tap-outside-to-dismiss-keyboard behaviour.
+/// Wrap a widget containing text inputs with this widget to enable tap-outside-to-dismiss-keyboard behavior.
 ///
-/// So instead of this:
+/// Example Usage:
+/// ```dart
+/// AppScreenConfig(
+///   child: MyScreen(),
+/// )
+/// ```
 ///
+/// Instead of manually handling tap events to dismiss the keyboard:
 /// ```dart
 /// GestureDetector(
 ///   onTap: () {
-///      final focusScope = FocusScope.of(context);
-///      if (focusScope.hasFocus) {
-///        focusScope.unfocus();
-///       }
-///   },
-///   child: MyPage(),
+///   final focusScope = FocusScope.of(context);
+///   if (focusScope.hasFocus) {
+///     focusScope.unfocus();
+///   }
+/// },
+///   child: MyScreen(),
 /// ),
 /// ```
 ///
-/// You could do this:
-///
+/// You can simplify it using `AppScreenConfig`:
 /// ```dart
-/// BackgroundFocusScopeDismisser(
-///   child: MyPage(),
+/// AppScreenConfig(
+///   child: MyScreen(),
 /// ),
 /// ```
-class FocusScopeDismissible extends StatelessWidget {
-  const FocusScopeDismissible({
+class AppScreenConfig extends StatelessWidget {
+  const AppScreenConfig({
     Key? key,
     this.excludeFromSemantics = false,
     this.dragStartBehavior = DragStartBehavior.start,
