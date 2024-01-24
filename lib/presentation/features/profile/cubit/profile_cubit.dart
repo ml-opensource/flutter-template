@@ -24,6 +24,8 @@ final class ProfileCubit extends Cubit<ProfileState> {
     try {
       final profileName = await _getProfileUseCase();
 
+      if (isClosed) return;
+
       return emit(
         state.copyWith(
           initializationStatus: const BaseStatus.success(),
@@ -32,6 +34,8 @@ final class ProfileCubit extends Cubit<ProfileState> {
       );
     } catch (e) {
       final responseError = ResponseError.from(e);
+
+      if (isClosed) return;
 
       return emit(
         state.copyWith(

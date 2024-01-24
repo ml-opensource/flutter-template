@@ -14,8 +14,10 @@ class App extends StatelessWidget {
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: getAppTheme(Brightness.light),
-      darkTheme: getAppTheme(Brightness.dark),
+      theme: AppTheme.fromBrightness(Brightness.light),
+      darkTheme: AppTheme.fromBrightness(Brightness.dark),
+      // TODO: Set to [ThemeMode.light] if your app only supports light mode
+      themeMode: ThemeMode.system,
       title: 'Project Name',
       builder: (c, widget) {
         if (widget == null) return const SizedBox();

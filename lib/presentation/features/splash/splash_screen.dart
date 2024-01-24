@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 import 'package:flutter_template/presentation/routes/router.gr.dart';
+import 'package:flutter_template/presentation/widgets/text/app_text.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {
@@ -33,10 +34,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.colors.accent,
-      body: const SafeArea(
+      backgroundColor: context.colors.appBarBackground,
+      body: SafeArea(
         child: Center(
-          child: Text('SplashScreen'),
+          child: AppText.body(
+            'SplashScreen',
+            color: context.colors.foregroundOnAppBar,
+          ),
         ),
       ),
     );
