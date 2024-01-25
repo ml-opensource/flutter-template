@@ -1,4 +1,0 @@
-enum HomeScreenTab {
-  news,
-  profile,
-}
