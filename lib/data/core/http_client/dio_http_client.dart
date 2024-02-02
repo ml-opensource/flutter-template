@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/domain/common/response_error/response_error.dart';
 import 'package:flutter_template/data/core/http_client/http_client.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
 import 'package:flutter_template/injection/modules/network_module.dart';
 import 'package:injectable/injectable.dart';
 

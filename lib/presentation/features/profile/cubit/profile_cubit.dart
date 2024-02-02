@@ -1,8 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/domain/common/response_error/response_error.dart';
 import 'package:flutter_template/domain/common/base_status/base_status.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
 import 'package:flutter_template/domain/use_cases/profile/get_profile_use_case.dart';
-
 import 'package:flutter_template/presentation/features/profile/cubit/profile_state.dart';
 import 'package:injectable/injectable.dart';
 
@@ -24,7 +23,9 @@ final class ProfileCubit extends Cubit<ProfileState> {
     try {
       final profileName = await _getProfileUseCase();
 
-      if (isClosed) return;
+      if (isClosed) {
+        return;
+      }
 
       return emit(
         state.copyWith(
@@ -35,7 +36,9 @@ final class ProfileCubit extends Cubit<ProfileState> {
     } catch (e) {
       final responseError = ResponseError.from(e);
 
-      if (isClosed) return;
+      if (isClosed) {
+        return;
+      }
 
       return emit(
         state.copyWith(
