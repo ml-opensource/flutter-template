@@ -35,7 +35,7 @@ sealed class ResponseError<T> with _$ResponseError<T> implements Exception {
   const factory ResponseError.invalidEmail() = _InvalidEmailError;
   const factory ResponseError.invalidLoginCredentials() =
       _InvalidLoginCredentials;
-  const factory ResponseError.invalidSearhTerm() = _InvalidSearchTermError;
+  const factory ResponseError.invalidSearchTerm() = _InvalidSearchTermError;
 
   static ResponseError from(Object error) {
     if (error is ResponseError) {
@@ -109,7 +109,7 @@ extension ResponseErrorExtensions on ResponseError {
       unauthorized: () => l10n.error.authenticationError,
       invalidPassword: () => l10n.error.authenticationError,
       invalidEmail: () => l10n.error.authenticationError,
-      invalidSearhTerm: () => l10n.error.authenticationError,
+      invalidSearchTerm: () => l10n.error.authenticationError,
       invalidLoginCredentials: () => l10n.error.authenticationError,
       badCertificate: () => l10n.error.authenticationError,
       connectionError: () => l10n.error.connectionError,

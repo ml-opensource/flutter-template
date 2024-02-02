@@ -1,3 +1,5 @@
+import 'package:flutter_template/domain/entities/profile/profile_entity.dart';
+
 abstract interface class ProfileService {
-  Future<String?> getProfileName();
+  Future<ProfileEntity> getProfile();
 }

@@ -1,10 +1,12 @@
-import 'package:injectable/injectable.dart';
-
-@Injectable()
+/// A configuration class providing properties specific to an API.
+///
+/// Class instance is registered via [ApiConfigModule].
 class ApiConfig {
-  final String baseUrl;
+  ApiConfig({
+    required this.baseUrl,
+  });
 
-  ApiConfig(this.baseUrl);
+  final String baseUrl;
 
   String get apiUrl => '$baseUrl/api';
 }

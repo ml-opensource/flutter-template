@@ -1,38 +1,44 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Development",
-            "request": "launch",
-            "type": "dart",
-            "program": "lib/main_development.dart",
-            "args": [
-                "--flavor",
-                "development"
-            ]
-        },
-        {
-            "name": "Staging",
-            "request": "launch",
-            "type": "dart",
-            "program": "lib/main_staging.dart",
-            "args": [
-                "--flavor",
-                "staging"
-            ]
-        },
-        {
-            "name": "Production",
-            "request": "launch",
-            "type": "dart",
-            "program": "lib/main_production.dart",
-            "args": [
-                "--flavor",
-                "production"
-            ]
-        },
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Development",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--dart-define",
+        "API_BASE_URL=https://randomuser.me"
+      ]
+    },
+    {
+      "name": "Staging",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_staging.dart",
+      "args": [
+        "--flavor",
+        "staging",
+        "--dart-define",
+        "API_BASE_URL=https://randomuser.me"
+      ]
+    },
+    {
+      "name": "Production",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_production.dart",
+      "args": [
+        "--flavor",
+        "production",
+        "--dart-define",
+        "API_BASE_URL=https://randomuser.me"
+      ]
+    }
+  ]
 }

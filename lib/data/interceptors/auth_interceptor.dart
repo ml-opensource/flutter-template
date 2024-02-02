@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_template/data/interceptor/meta_interceptor.dart';
+import 'package:flutter_template/data/interceptors/meta_interceptor.dart';
 import 'package:flutter_template/data/model/auth/auth_tokens.dart';
 import 'package:flutter_template/data/preferences/auth_preferences.dart';
-import 'package:flutter_template/data/response_objects/response_error.dart';
-import 'package:flutter_template/data/services/http_client/dio_http_client.dart';
-import 'package:flutter_template/data/services/http_client/http_client.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
+import 'package:flutter_template/data/core/http_client/dio_http_client.dart';
+import 'package:flutter_template/data/core/http_client/http_client.dart';
 import 'package:flutter_template/data/response_objects/tokens_response.dart';
 import 'package:flutter_template/domain/preferences/user_preferences.dart';
 
-class AuthInterceptor extends InterceptorsWrapper {
+class AuthInterceptor extends QueuedInterceptor {
   AuthInterceptor({
     required this.httpClient,
     required this.onTokenExpired,

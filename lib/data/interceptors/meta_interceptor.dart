@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_template/presentation/app_flavor.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-class MetaInterceptor extends InterceptorsWrapper {
+class MetaInterceptor extends QueuedInterceptor {
   MetaInterceptor(this.flavor);
 
   static String nMetaHeaderKey = 'n-meta';

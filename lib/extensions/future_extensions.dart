@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_template/data/response_objects/response_error.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
 
 extension FutureExtensions<T> on Future<T> {
   Future<T> catchPrintError(Function onError) {

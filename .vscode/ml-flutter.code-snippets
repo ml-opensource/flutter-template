@@ -1,22 +1,63 @@
 {
-    "Freezed Class": {
-        "prefix": "freezed",
-        "body": [
-            "import 'package:freezed_annotation/freezed_annotation.dart';",
-            "",
-            "part '${1:file}.freezed.dart';",
-            "part '${1:file}.g.dart';",
-            "",
-            "@freezed",
-            "class ${2:ClassName} with _$${2:ClassName} {",
-            "  const factory ${2:ClassName}({",
-            "    required ${0:param},",
-            "  }) = _${2:ClassName};",
-            "",
-            "  factory ${2:ClassName}.fromJson(Map<String, dynamic> json) =>",
-            "      _$${2:ClassName}FromJson(json);",
-            "}"
-        ],
-        "description": "Creates basement for a freezed class."
-    },
+  "Remote Data Source": {
+    "prefix": "remote_data_source",
+    "description": "Snippet for quick creation of a remote data source.",
+    "body": [
+      "import 'package:dio/dio.dart';",
+      "import 'package:flutter_template/injection/network_module.dart';",
+      "import 'package:injectable/injectable.dart';",
+      "import 'package:retrofit/retrofit.dart';",
+      "",
+      "part '$TM_FILENAME_BASE.g.dart';",
+      "",
+      "@RestApi()",
+      "@lazySingleton",
+      "abstract class ${2:Scope}RemoteDataSource {",
+      "  @factoryMethod",
+      "  factory $2RemoteDataSource(",
+      "    @Named(dioAuthenticated) Dio dio,",
+      "  ) = _$2RemoteDataSource;",
+      "",
+      "  ${3:/* Fill your calls here */}",
+      "}",
+      ""
+    ]
+  },
+  "Freezed Class": {
+    "prefix": "freezed",
+    "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';",
+      "",
+      "part '${1:file}.freezed.dart';",
+      "part '${1:file}.g.dart';",
+      "",
+      "@freezed",
+      "class ${2:ClassName} with _$${2:ClassName} {",
+      "  const factory ${2:ClassName}({",
+      "    required ${0:param},",
+      "  }) = _${2:ClassName};",
+      "",
+      "  factory ${2:ClassName}.fromJson(Map<String, dynamic> json) =>",
+      "      _$${2:ClassName}FromJson(json);",
+      "}"
+    ],
+    "description": "Creates basement for a freezed class."
+  },
+  "Remapper": {
+    "prefix": "remapper",
+    "description": "Create a basement for a remapper class.",
+    "body": [
+      "import 'package:injectable/injectable.dart';",
+      "",
+      "@lazySingleton",
+      "class ${1:Entity}Remapper {",
+      "  ${1:Entity}Entity fromResponse(${1:Entity}Response response) {",
+      "    return ${1:Entity}Entity(",
+      "       ${2}",
+      "    );",
+      "  }",
+      "",
+      "}"
+    ]
+  }
 }
