@@ -20,6 +20,13 @@ class TopAppBarConfig extends StatelessWidget {
       onTap: () {
         final controller = PrimaryScrollController.maybeOf(context);
 
+        final hasClients = controller?.hasClients ?? false;
+
+        if (!hasClients) {
+          FocusManager.instance.primaryFocus?.unfocus();
+          return;
+        }
+
         if (controller?.position.pixels == 0.0) {
           FocusManager.instance.primaryFocus?.unfocus();
         }
