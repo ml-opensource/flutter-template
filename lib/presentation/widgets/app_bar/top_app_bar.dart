@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/app_colors.dart';
-import 'package:flutter_template/presentation/widgets/utilities/top_app_bar_config.dart';
 import 'package:flutter_template/presentation/widgets/text/app_text.dart';
+import 'package:flutter_template/presentation/widgets/utilities/top_app_bar_config.dart';
 
 // TODO: Replace the name with Apps-specific naming (XyzAppBar)
 class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
