@@ -27,7 +27,7 @@ class ProfileBody extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(32.0),
           child: status.maybeWhen(
-            loading: () => AppLoadingIndicator.small(),
+            loading: AppLoadingIndicator.small,
             success: () => AppText.body(
               name,
               textAlign: TextAlign.center,

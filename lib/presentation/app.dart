@@ -20,7 +20,9 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       title: 'Project Name',
       builder: (c, widget) {
-        if (widget == null) return const SizedBox();
+        if (widget == null) {
+          return const SizedBox();
+        }
 
         return NStackWidget(
           child: widget,
