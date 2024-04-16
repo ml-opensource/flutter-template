@@ -35,6 +35,7 @@ dependencies:
   flutter_svg: ^2.0.9
   flutter_sticky_header: ^0.6.5
   auto_size_text: ^3.0.0
+  theme_tailor_annotation: ^2.1.0
 
   # Data
   dio: ^5.4.0
@@ -49,7 +50,7 @@ dependencies:
   # Persistence
   flutter_secure_storage: ^9.0.0
   shared_preferences: ^2.2.2
-  
+
   # Architecture
   get_it: ^7.6.6
   injectable: ^2.3.2
@@ -61,6 +62,7 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^2.4.7
+  theme_tailor: ^2.1.0
   freezed: ^2.4.6
   json_serializable: ^6.7.1
   injectable_generator: ^2.4.1

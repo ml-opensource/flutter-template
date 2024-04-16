@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/app_color_palette.dart';
+import 'package:theme_tailor_annotation/theme_tailor_annotation.dart';
 
-class AppColors extends ThemeExtension<AppColors> {
+part 'app_colors.tailor.dart';
+
+@TailorMixin()
+class AppColors extends ThemeExtension<AppColors> with _$AppColorsTailorMixin {
   static Color get black => AppColorPalette.black;
   static Color get white => AppColorPalette.white;
 
@@ -26,24 +30,41 @@ class AppColors extends ThemeExtension<AppColors> {
   });
 
   // Core colors
+  @override
   final Color primary;
+  @override
   final Color primaryVariant;
+  @override
   final Color secondary;
+  @override
   final Color secondaryVariant;
+  @override
   final Color background;
+  @override
   final Color appBarBackground;
+  @override
   final Color danger;
+  @override
   final Color foregroundOnBackground;
+  @override
   final Color foregroundLightOnBackground;
+  @override
   final Color foregroundOnPrimary;
+  @override
   final Color foregroundOnSecondary;
+  @override
   final Color foregroundOnAppBar;
+  @override
   final Color foregroundOnDanger;
+  @override
   final Color outline;
+  @override
   final Color transparant;
 
   // Other colors
+  @override
   final Color splashColor;
+  @override
   final Color disabledColor;
 
   factory AppColors.fromBrightness(Brightness brightness) =>
@@ -93,148 +114,6 @@ class AppColors extends ThemeExtension<AppColors> {
       transparant: AppColorPalette.alpha,
       splashColor: AppColorPalette.darkGrey,
       disabledColor: AppColorPalette.silverPolish,
-    );
-  }
-
-  @override
-  ThemeExtension<AppColors> copyWith({
-    Color? primary,
-    Color? primaryVariant,
-    Color? secondary,
-    Color? secondaryVariant,
-    Color? background,
-    Color? appBarBackground,
-    Color? danger,
-    Color? foregroundOnBackground,
-    Color? foregroundLightOnBackground,
-    Color? foregroundOnPrimary,
-    Color? foregroundOnSecondary,
-    Color? foregroundOnAppBar,
-    Color? foregroundOnDanger,
-    Color? transparant,
-    Color? outline,
-    Color? splashColor,
-    Color? disabledColor,
-  }) {
-    return AppColors(
-      primary: primary ?? this.primary,
-      primaryVariant: primaryVariant ?? this.primaryVariant,
-      secondary: secondary ?? this.secondary,
-      secondaryVariant: secondaryVariant ?? this.secondaryVariant,
-      background: background ?? this.background,
-      appBarBackground: appBarBackground ?? this.appBarBackground,
-      danger: danger ?? this.danger,
-      foregroundOnBackground:
-          foregroundOnBackground ?? this.foregroundOnBackground,
-      foregroundLightOnBackground:
-          foregroundLightOnBackground ?? this.foregroundLightOnBackground,
-      foregroundOnPrimary: foregroundOnPrimary ?? this.foregroundOnPrimary,
-      foregroundOnSecondary:
-          foregroundOnSecondary ?? this.foregroundOnSecondary,
-      foregroundOnAppBar: foregroundOnAppBar ?? this.foregroundOnAppBar,
-      foregroundOnDanger: foregroundOnDanger ?? this.foregroundOnDanger,
-      outline: outline ?? this.outline,
-      transparant: transparant ?? this.transparant,
-      splashColor: splashColor ?? this.splashColor,
-      disabledColor: disabledColor ?? this.disabledColor,
-    );
-  }
-
-  @override
-  ThemeExtension<AppColors> lerp(
-    covariant ThemeExtension<AppColors>? other,
-    double t,
-  ) {
-    if (other is! AppColors) {
-      return this;
-    }
-
-    return AppColors(
-      primary: Color.lerp(
-        primary,
-        other.primary,
-        t,
-      )!,
-      primaryVariant: Color.lerp(
-        primaryVariant,
-        other.primaryVariant,
-        t,
-      )!,
-      secondary: Color.lerp(
-        secondary,
-        other.secondary,
-        t,
-      )!,
-      secondaryVariant: Color.lerp(
-        secondaryVariant,
-        other.secondaryVariant,
-        t,
-      )!,
-      background: Color.lerp(
-        background,
-        other.background,
-        t,
-      )!,
-      appBarBackground: Color.lerp(
-        appBarBackground,
-        other.appBarBackground,
-        t,
-      )!,
-      danger: Color.lerp(
-        danger,
-        other.danger,
-        t,
-      )!,
-      foregroundOnBackground: Color.lerp(
-        foregroundOnBackground,
-        other.foregroundOnBackground,
-        t,
-      )!,
-      foregroundLightOnBackground: Color.lerp(
-        foregroundLightOnBackground,
-        other.foregroundLightOnBackground,
-        t,
-      )!,
-      foregroundOnPrimary: Color.lerp(
-        foregroundOnPrimary,
-        other.foregroundOnPrimary,
-        t,
-      )!,
-      foregroundOnSecondary: Color.lerp(
-        foregroundOnSecondary,
-        other.foregroundOnSecondary,
-        t,
-      )!,
-      foregroundOnAppBar: Color.lerp(
-        foregroundOnAppBar,
-        other.foregroundOnAppBar,
-        t,
-      )!,
-      foregroundOnDanger: Color.lerp(
-        foregroundOnDanger,
-        other.foregroundOnDanger,
-        t,
-      )!,
-      outline: Color.lerp(
-        outline,
-        other.outline,
-        t,
-      )!,
-      transparant: Color.lerp(
-        transparant,
-        other.transparant,
-        t,
-      )!,
-      splashColor: Color.lerp(
-        splashColor,
-        other.splashColor,
-        t,
-      )!,
-      disabledColor: Color.lerp(
-        disabledColor,
-        other.disabledColor,
-        t,
-      )!,
     );
   }
 }

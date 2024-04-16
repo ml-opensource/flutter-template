@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/resources/app_colors.dart';
 import 'package:flutter_template/presentation/resources/app_fonts.dart';
+import 'package:theme_tailor_annotation/theme_tailor_annotation.dart';
 
-class AppTextStyles extends ThemeExtension<AppTextStyles> {
+part 'app_text_styles.tailor.dart';
+
+@TailorMixin()
+class AppTextStyles extends ThemeExtension<AppTextStyles>
+    with _$AppTextStylesTailorMixin {
   AppTextStyles({
     required this.header1,
     required this.header2,
@@ -73,62 +78,24 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
     );
   }
 
+  @override
   final TextStyle header1;
+  @override
   final TextStyle header2;
+  @override
   final TextStyle header3;
+  @override
   final TextStyle appBarTitle;
+  @override
   final TextStyle bodySmall;
+  @override
   final TextStyle body;
+  @override
   final TextStyle bodyLarge;
+  @override
   final TextStyle buttonLabel;
+  @override
   final TextStyle underlineText;
-
-  @override
-  ThemeExtension<AppTextStyles> copyWith({
-    TextStyle? header1,
-    TextStyle? header2,
-    TextStyle? header3,
-    TextStyle? appBarTitle,
-    TextStyle? bodySmall,
-    TextStyle? bodyLarge,
-    TextStyle? body,
-    TextStyle? buttonLabel,
-    TextStyle? underlineText,
-  }) {
-    return AppTextStyles(
-      header1: header1 ?? this.header1,
-      header2: header2 ?? this.header2,
-      header3: header3 ?? this.header3,
-      appBarTitle: appBarTitle ?? this.appBarTitle,
-      bodySmall: bodySmall ?? this.bodySmall,
-      body: body ?? this.body,
-      bodyLarge: bodyLarge ?? this.bodyLarge,
-      buttonLabel: buttonLabel ?? this.buttonLabel,
-      underlineText: underlineText ?? this.underlineText,
-    );
-  }
-
-  @override
-  ThemeExtension<AppTextStyles> lerp(
-    covariant ThemeExtension<AppTextStyles>? other,
-    double t,
-  ) {
-    if (other is! AppTextStyles) {
-      return this;
-    }
-
-    return AppTextStyles(
-      header1: TextStyle.lerp(header1, other.header1, t)!,
-      header2: TextStyle.lerp(header2, other.header2, t)!,
-      header3: TextStyle.lerp(header3, other.header3, t)!,
-      appBarTitle: TextStyle.lerp(appBarTitle, other.appBarTitle, t)!,
-      bodySmall: TextStyle.lerp(bodySmall, other.bodySmall, t)!,
-      body: TextStyle.lerp(body, other.body, t)!,
-      bodyLarge: TextStyle.lerp(bodyLarge, other.bodyLarge, t)!,
-      buttonLabel: TextStyle.lerp(buttonLabel, other.buttonLabel, t)!,
-      underlineText: TextStyle.lerp(underlineText, other.underlineText, t)!,
-    );
-  }
 }
 
 extension AppTextStylesExtension on BuildContext {
