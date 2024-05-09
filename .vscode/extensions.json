@@ -8,5 +8,6 @@
         "nivisi.dart-build-runner-tools",
         "tenraneko.pubspec-dependency-opener",
         "jeroen-meijer.pubspec-assist",
+        "davidanson.vscode-markdownlint"
     ]
 }
