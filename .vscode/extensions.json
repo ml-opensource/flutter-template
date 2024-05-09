@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "dart-code.dart-code",
+        "dart-code.flutter",
+        "usernamehw.errorlens",
+        "felixangelov.mason",
+        "felixangelov.bloc",
+        "nivisi.dart-build-runner-tools",
+        "tenraneko.pubspec-dependency-opener",
+        "jeroen-meijer.pubspec-assist",
+    ]
+}
