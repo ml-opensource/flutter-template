@@ -1,7 +1,19 @@
 import 'package:flutter/widgets.dart';
 
 extension BuildContextIconize on BuildContext {
-  // Takes an object and, based on its type, returns the corresponding icon widget.
+  /// Takes an object and, based on its type, returns the corresponding icon widget.
+  /// 
+  /// For example, in a list view you can do the following:
+  /// 
+  /// ```dart
+  /// Row(
+  ///   children: [
+  ///     context.iconize(object),
+  ///     const SizedBox(width: 8.0),
+  ///     Text(context.localize(object)),
+  ///   ],
+  /// )
+  /// ```
   Widget iconize(dynamic object) {
     if (object == null) {
       assert(false, 'Trying to iconize a null object');
