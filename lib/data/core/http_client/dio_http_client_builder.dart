@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/data/services/http_client/dio_http_client.dart';
+import 'package:flutter_template/data/core/http_client/dio_http_client.dart';
 
 DioHttpClient? _dioClient;
 

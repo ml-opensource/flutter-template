@@ -41,6 +41,7 @@ dependencies:
   dio: ^5.4.0
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
+  retrofit: ^4.0.3
 
   # Utility
   device_info_plus: ^9.1.1
@@ -49,7 +50,7 @@ dependencies:
   # Persistence
   flutter_secure_storage: ^9.0.0
   shared_preferences: ^2.2.2
-  
+
   # Architecture
   get_it: ^7.6.6
   injectable: ^2.3.2
@@ -66,6 +67,7 @@ dev_dependencies:
   json_serializable: ^6.7.1
   injectable_generator: ^2.4.1
   auto_route_generator: ^7.3.2
+  retrofit_generator: ^8.0.6
   monstarlab_lints: ^1.0.2
 
   # Simplified work with assets

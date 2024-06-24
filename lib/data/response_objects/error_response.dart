@@ -1,4 +1,4 @@
-import 'package:flutter_template/data/response_objects/response_error.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
 import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -55,7 +55,7 @@ extension ErrorResponseExtensions on ErrorResponse {
 extension ErrorNameExtensions on ErrorName {
   String getErrorMessage(Localization l10n) {
     switch (this) {
-      //Handle error enum and return mapped nstack vlaue
+      //Handle error enum and return mapped nstack value
       case ErrorName.errorExample:
         return l10n.error.authenticationError;
       default:

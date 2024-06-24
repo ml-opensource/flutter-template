@@ -1,4 +1,4 @@
-import 'package:flutter_template/data/response_objects/response_error.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'base_status.freezed.dart';

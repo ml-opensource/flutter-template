@@ -5,8 +5,8 @@ import 'package:flutter_template/presentation/routes/router.dart';
 class DependencyManager {
   static Future<void> inject(AppFlavor flavor) async {
     injector.registerLazySingleton<AppFlavor>(() => flavor);
-    injector.registerLazySingleton<AppRouter>(AppRouter.new);
-
-    await configureDependencies();
+    // ignore: unnecessary_lambdas
+    injector.registerLazySingleton<AppRouter>(() => AppRouter());
+    configureDependencies();
   }
 }
