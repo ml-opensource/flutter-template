@@ -44,7 +44,7 @@ dependencies:
 
   # Utility
   device_info_plus: ^9.1.1
-  package_info_plus: ^5.0.1
+  package_info_plus: ^8.0.2
 
   # Persistence
   flutter_secure_storage: ^9.0.0
