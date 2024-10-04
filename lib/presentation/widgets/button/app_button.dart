@@ -132,7 +132,7 @@ class AppButton extends StatelessWidget {
 
     final shape = borderRadius == null
         ? null
-        : MaterialStateProperty.all<RoundedRectangleBorder>(
+        : WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
                 AppUiConstants.defaultBorderRadius ?? .0,
