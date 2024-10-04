@@ -5,7 +5,7 @@ targets:
       json_serializable:
         options:
           explicit_to_json: true
-          # By deafult, field_rename: none, More options —
+          # By default, field_rename: none, More options —
           # snake, kebab, pascal, etc. To use, uncomment this below line —
           # field_rename: snake
         generate_for:

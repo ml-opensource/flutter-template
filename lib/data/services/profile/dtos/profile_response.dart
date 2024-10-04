@@ -6,7 +6,7 @@ part 'profile_response.g.dart';
 @freezed
 class ProfileResponse with _$ProfileResponse {
   const factory ProfileResponse({
-    List<ResultDto>? results,
+    List<ProfileResultDto>? results,
   }) = _ProfileResponse;
 
   factory ProfileResponse.fromJson(Map<String, dynamic> json) =>
@@ -14,17 +14,17 @@ class ProfileResponse with _$ProfileResponse {
 }
 
 @freezed
-class ResultDto with _$ResultDto {
-  const factory ResultDto({
+class ProfileResultDto with _$ProfileResultDto {
+  const factory ProfileResultDto({
     String? gender,
     NameDto? name,
     String? email,
     String? phone,
     String? cell,
-  }) = _ResultDto;
+  }) = _ProfileResultDto;
 
-  factory ResultDto.fromJson(Map<String, dynamic> json) =>
-      _$ResultDtoFromJson(json);
+  factory ProfileResultDto.fromJson(Map<String, dynamic> json) =>
+      _$ProfileResultDtoFromJson(json);
 }
 
 @freezed

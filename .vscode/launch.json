@@ -12,8 +12,8 @@
       "args": [
         "--flavor",
         "development",
-        "--dart-define",
-        "API_BASE_URL=https://randomuser.me"
+        "--dart-define-from-file",
+        "lib/config/dart_define_keys/dart_define_development_keys.json"
       ]
     },
     {
@@ -24,8 +24,8 @@
       "args": [
         "--flavor",
         "staging",
-        "--dart-define",
-        "API_BASE_URL=https://randomuser.me"
+        "--dart-define-from-file",
+        "lib/config/dart_define_keys/dart_define_staging_keys.json"
       ]
     }
   ]

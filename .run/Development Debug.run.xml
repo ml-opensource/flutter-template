@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Development Debug" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="additionalArgs" value="--dart-define-from-file=lib/config/dart_define_keys/dart_define_development_keys.json" />
+    <option name="buildFlavor" value="development" />
+    <option name="filePath" value="$PROJECT_DIR$/lib/main_development.dart" />
+    <method v="2" />
+  </configuration>
+</component>
