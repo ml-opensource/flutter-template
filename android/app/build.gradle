@@ -1,96 +1,97 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
+def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
+    localPropertiesFile.withReader("UTF-8") { reader ->
         localProperties.load(reader)
     }
 }
 
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
-}
-
-def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
 if (flutterVersionCode == null) {
-    flutterVersionCode = '1'
+    flutterVersionCode = "1"
 }
 
-def flutterVersionName = localProperties.getProperty('flutter.versionName')
+def flutterVersionName = localProperties.getProperty("flutter.versionName")
 if (flutterVersionName == null) {
-    flutterVersionName = '1.0'
+    flutterVersionName = "1.0"
 }
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+// TODO: Change the appName, it will be used as app label 
+def appName = "Flutter Template"
+
+// TODO: Change the applicationId for production
+// On staging it will add .staging and on development it will add .development as suffix.
+def applicationId = "com.example.flutter_template"
+
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    namespace = "$applicationId"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.flutter_template"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        applicationId = "$applicationId"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
     }
 
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig = signingConfigs.debug
         }
     }
-
     //TODO: Change resValue application name
-    flavorDimensions "flavor-type"
+    flavorDimensions.add("flavor-type")
 
     productFlavors {
-        development {
-            dimension "flavor-type"
-            applicationIdSuffix ".development"
-            versionNameSuffix "-development"
-            resValue "string", "app_name", "Application Name Development"
-            signingConfig signingConfigs.debug
+        create("development") {
+            dimension = "flavor-type"
+            applicationIdSuffix = ".development"
+            versionNameSuffix = "-development"
+            manifestPlaceholders["appName"] = "[DEV] $appName"
+            signingConfig = signingConfigs.getByName("debug")
         }
-        staging {
-            dimension "flavor-type"
-            applicationIdSuffix ".staging"
-            versionNameSuffix "-staging"
-            resValue "string", "app_name", "Application Name Staging"
-            signingConfig signingConfigs.debug
+        create("staging") {
+            dimension = "flavor-type"
+            applicationIdSuffix = ".staging"
+            versionNameSuffix = "-staging"
+            manifestPlaceholders["appName"] = "[STG] $appName"
+            signingConfig = signingConfigs.getByName("debug")
         }
-        production {
-            dimension "flavor-type"
-            resValue "string", "app_name", "Application Name"
-            // TODO: After adding your own signing config for the release build.
-            // Change this to signingConfigs.release
-            signingConfig signingConfigs.debug
+        create("production") {
+            dimension = "flavor-type"
+            manifestPlaceholders["appName"] = "$appName"
+            // TODO: After adding your own signing config for the release build,
+            // Change this to
+            // signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("debug")
         }
-
     }
 }
 
 flutter {
-    source '../..'
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    source = "../.."
 }
