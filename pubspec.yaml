@@ -35,7 +35,7 @@ dependencies:
   flutter_svg: ^2.0.9
   flutter_sticky_header: ^0.6.5
   auto_size_text: ^3.0.0
-  theme_tailor_annotation: ^2.1.0
+  theme_tailor_annotation: ^3.0.1
 
   # Data
   dio: ^5.4.0
@@ -62,7 +62,7 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^2.4.7
-  theme_tailor: ^2.1.0
+  theme_tailor: ^3.0.1
   freezed: ^2.4.6
   json_serializable: ^6.7.1
   injectable_generator: ^2.4.1
