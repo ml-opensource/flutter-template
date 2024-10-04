@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Developement Release" type="FlutterRunConfigurationType" factoryName="Flutter">
-    <option name="additionalArgs" value="--release" />
-    <option name="filePath" value="$PROJECT_DIR$/lib/main_developement.dart" />
-    <method v="2" />
-  </configuration>
-</component>

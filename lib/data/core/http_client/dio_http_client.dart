@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/data/response_objects/response_error.dart';
-import 'package:flutter_template/data/services/http_client/http_client.dart';
+import 'package:flutter_template/data/core/http_client/http_client.dart';
+import 'package:flutter_template/domain/common/response_error/response_error.dart';
+import 'package:flutter_template/injection/modules/network_module.dart';
 import 'package:injectable/injectable.dart';
 
 /// Abstraction of the Dio http client class.
 
 @Injectable(as: HttpClient)
 class DioHttpClient extends HttpClient {
-  DioHttpClient(this.dio);
+  DioHttpClient(@Named(dioForAuthentication) this.dio);
 
   final Dio dio;
 

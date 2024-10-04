@@ -9,27 +9,24 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
-      "args": ["--flavor", "development"]
+      "args": [
+        "--flavor",
+        "development",
+        "--dart-define-from-file",
+        "lib/config/dart_define_keys/dart_define_development_keys.json"
+      ]
     },
     {
       "name": "Staging",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_staging.dart",
-      "args": ["--flavor", "staging"]
+      "args": [
+        "--flavor",
+        "staging",
+        "--dart-define-from-file",
+        "lib/config/dart_define_keys/dart_define_staging_keys.json"
+      ]
     }
-
-    // Commented to avoid running the product app from VSCode
-    // Uncomment only if we really need it
-    // {
-    //     "name": "Production",
-    //     "request": "launch",
-    //     "type": "dart",
-    //     "program": "lib/main_production.dart",
-    //     "args": [
-    //         "--flavor",
-    //         "production"
-    //     ]
-    // },
   ]
 }

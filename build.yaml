@@ -5,13 +5,15 @@ targets:
       json_serializable:
         options:
           explicit_to_json: true
-          # By deafult, field_rename: none, More options —
+          # By default, field_rename: none, More options —
           # snake, kebab, pascal, etc. To use, uncomment this below line —
           # field_rename: snake
         generate_for:
           include:
             # data layer:
             - lib/data/model/**.dart
+            - lib/data/services/**_request.dart
+            - lib/data/services/**_response.dart
             - lib/data/response_objects/**.dart
 
             # domain layer:
@@ -20,6 +22,12 @@ targets:
             # We should not allow the entire `/entities` folder here, as entities don't need fromJson(), toJson(), etc.
             # Specifying exact file will help build runner to run fast.
             - lib/domain/entities/user.dart
+
+      # Retrofit Classes / Remote Data Sources
+      retrofit_generator:
+        generate_for:
+          include:
+            - lib/data/**/data_sources/remote/*_remote_data_source.dart
       
       # Data Classes, Cloning
       freezed:freezed:
@@ -27,6 +35,8 @@ targets:
           include:
             # data layer:
             - lib/data/model/**.dart
+            - lib/data/services/**_request.dart
+            - lib/data/services/**_response.dart
             - lib/data/response_objects/**.dart
 
             # domain layer:
@@ -46,9 +56,12 @@ targets:
         generate_for:
           include:
             - lib/injection/injector.dart
+            - lib/injection/modules/*_module.dart
         
             # data
             - lib/data/**_config.dart
+            - lib/data/**_client.dart
+            - lib/data/**/data_sources/remote/*_remote_data_source.dart
             - lib/data/services/**_service_impl.dart
             - lib/data/services/**_remapper.dart
             - lib/data/preferences/**_preferences.dart
