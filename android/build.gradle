@@ -5,9 +5,7 @@ allprojects {
     }
 }
 
-rootProject.buildDir = '../build'
-
-
+rootProject.buildDir = "../build"
 // [NStack] the namespace property is null within 
 // the android block of the build.gradle file for the nstack sdk.
 // Additionally, the Kotlin Gradle plugin is using a very old version there.

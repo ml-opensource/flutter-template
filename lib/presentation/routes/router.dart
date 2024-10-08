@@ -7,7 +7,7 @@ import 'package:flutter_template/presentation/routes/router.gr.dart';
 /// for example, Bottom navigation child views, tab views, etc.
 ///
 @AutoRouterConfig()
-class AppRouter extends $AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   RouteType get defaultRouteType => const RouteType.material();
 
