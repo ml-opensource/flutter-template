@@ -44,7 +44,7 @@ dependencies:
   retrofit: ^4.4.1
 
   # Utility
-  device_info_plus: ^10.1.2
+  device_info_plus: ^9.1.1
   package_info_plus: ^8.0.2
 
   # Persistence
