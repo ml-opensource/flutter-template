@@ -44,8 +44,8 @@ dependencies:
   retrofit: ^4.4.1
 
   # Utility
-  device_info_plus: ^9.1.1
-  package_info_plus: ^8.0.2
+  device_info_plus: ^11.0.0
+  package_info_plus: ^8.0.3
 
   # Persistence
   flutter_secure_storage: ^9.2.2
