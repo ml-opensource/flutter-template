@@ -11,11 +11,18 @@ def appName = "Application Name"
 // On staging it will add .staging and on development it will add .development as suffix.
 def applicationId = "com.example.flutter_template"
 
+ext {
+    androidMinSdkVersion = 21
+    androidCompileSdkVersion = 34
+    androidTargetSdkVersion = 34
+    androidNdkVersion = "23.1.7779620"
+}
+
 
 android {
     namespace = "$applicationId"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = androidCompileSdkVersion
+    ndkVersion = "23.1.7779620"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -30,8 +37,8 @@ android {
         applicationId = "$applicationId"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = androidMinSdkVersion
+        targetSdk = androidTargetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
