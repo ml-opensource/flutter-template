@@ -51,6 +51,7 @@ nstack.dart
 *.gr.dart
 *.config.dart
 lib/gen/**
+lib/presentation/assets/gen**
 
 # Dependencies
 **.lock
