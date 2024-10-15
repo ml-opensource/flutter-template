@@ -31,47 +31,47 @@ dependencies:
       ref: v0.5.1
 
   # UI
-  cupertino_icons: ^1.0.6
-  flutter_svg: ^2.0.9
-  flutter_sticky_header: ^0.6.5
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.9 # Change this with caution
+  flutter_sticky_header: ^0.7.0
   auto_size_text: ^3.0.0
   theme_tailor_annotation: ^3.0.1
 
   # Data
-  dio: ^5.4.0
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.8.1
-  retrofit: ^4.0.3
+  dio: ^5.7.0
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  retrofit: ^4.4.1
 
   # Utility
-  device_info_plus: ^9.1.1
-  package_info_plus: ^5.0.1
+  device_info_plus: 11.0.0
+  package_info_plus: ^8.0.3
 
   # Persistence
-  flutter_secure_storage: ^9.0.0
-  shared_preferences: ^2.2.2
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.2
 
   # Architecture
-  get_it: ^7.6.6
-  injectable: ^2.3.2
-  auto_route: ^7.8.4
-  flutter_bloc: ^8.1.3
+  get_it: ^8.0.0
+  injectable: ^2.5.0
+  auto_route: ^9.2.2
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^2.4.7
+  build_runner: ^2.4.13
   theme_tailor: ^3.0.1
-  freezed: ^2.4.6
-  json_serializable: ^6.7.1
-  injectable_generator: ^2.4.1
-  auto_route_generator: ^7.3.2
-  retrofit_generator: ^8.0.6
-  monstarlab_lints: ^1.0.2
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+  injectable_generator: ^2.6.2
+  auto_route_generator: ^9.0.0
+  retrofit_generator: ^9.1.3
+  monstarlab_lints: ^1.0.4
 
   # Simplified work with assets
-  flutter_gen_runner: ^5.4.0
+  flutter_gen_runner: ^5.8.0
 
 flutter_gen:
   integrations:
