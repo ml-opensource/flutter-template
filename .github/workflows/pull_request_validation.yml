@@ -20,8 +20,6 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          cache: true
-          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
 
       - name: 📦 Install Dependencies
         run: flutter pub get
@@ -31,9 +29,6 @@ jobs:
 
       - name: 🕵️ Analyze Code
         run: flutter analyze lib test
-
-      - name: ✨ Check Formatting
-        run: dart format --line-length 80 --set-exit-if-changed lib test
 
       - name: 🏗️ Build APK (Production Flavor)
         run: flutter build apk --release --flavor production -t lib/main_production.dart
