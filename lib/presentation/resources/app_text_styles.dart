@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/presentation/resources/app_colors.dart';
-import 'package:flutter_template/presentation/resources/app_fonts.dart';
+import 'package:flutter_template/presentation/resources/resources.dart';
 import 'package:theme_tailor_annotation/theme_tailor_annotation.dart';
 
 part 'app_text_styles.tailor.dart';
