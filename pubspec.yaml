@@ -1,20 +1,8 @@
 name: flutter_template
 description: A new Flutter application.
 
-# The following line prevents the package from being accidentally published to
-# pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Private package, prevent accidental publishing
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -24,70 +12,74 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # UI & Design
+  cupertino_icons: ^1.0.8
+  flutter_svg: 2.0.9 # Change with caution
+  lottie: 1.4.3 # Change with caution
+  flutter_sticky_header: ^0.7.0
+  auto_size_text: ^3.0.0
+  theme_tailor_annotation: ^3.0.1
+
   # Localization
   nstack:
     git:
       url: https://github.com/nstack-io/flutter-sdk.git
       ref: v0.5.1
 
-  # UI
-  cupertino_icons: ^1.0.6
-  flutter_svg: ^2.0.9
-  flutter_sticky_header: ^0.6.5
-  auto_size_text: ^3.0.0
-  theme_tailor_annotation: ^3.0.1
+  # Networking & API
+  dio: ^5.7.0
+  retrofit: ^4.4.1
 
-  # Data
-  dio: ^5.4.0
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.8.1
-  retrofit: ^4.0.3
+  # State Management, Dependency Injection, Navigation
+  get_it: ^8.0.1
+  injectable: ^2.5.0
+  flutter_bloc: ^8.1.6
+  auto_route: ^9.2.2
 
-  # Utility
-  device_info_plus: ^9.1.1
-  package_info_plus: ^5.0.1
+  # Data Modeling & Serialization
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
 
-  # Persistence
-  flutter_secure_storage: ^9.0.0
-  shared_preferences: ^2.2.2
+  # Device & App Info
+  device_info_plus: ^11.1.0
+  package_info_plus: ^8.1.0
 
-  # Architecture
-  get_it: ^7.6.6
-  injectable: ^2.3.2
-  auto_route: ^7.8.4
-  flutter_bloc: ^8.1.3
+  # Persistence & Storage
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.2
 
 dev_dependencies:
+  # Testing
   flutter_test:
     sdk: flutter
 
-  build_runner: ^2.4.7
+  # Code Generation
+  build_runner: ^2.4.13
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
   theme_tailor: ^3.0.1
-  freezed: ^2.4.6
-  json_serializable: ^6.7.1
-  injectable_generator: ^2.4.1
-  auto_route_generator: ^7.3.2
-  retrofit_generator: ^8.0.6
-  monstarlab_lints: ^1.0.2
+  auto_route_generator: ^9.0.0
+  injectable_generator: ^2.6.2
+  retrofit_generator: ^9.1.3
 
-  # Simplified work with assets
-  flutter_gen_runner: ^5.4.0
+  # Linting & Code Quality
+  monstarlab_lints: ^1.0.4
+
+  # Asset Management
+  flutter_gen_runner: ^5.8.0
 
 flutter_gen:
   integrations:
     flutter_svg: true
+    lottie: true
 
-# The following section is specific to Flutter.
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/animations/
 
   fonts:
     - family: Roboto
@@ -122,6 +114,3 @@ flutter:
         - asset: assets/fonts/Roboto-ThinItalic.ttf
           weight: 100
           style: italic
-
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
