@@ -7,6 +7,6 @@ class DependencyManager {
     injector.registerLazySingleton<AppFlavor>(() => flavor);
     // ignore: unnecessary_lambdas
     injector.registerLazySingleton<AppRouter>(() => AppRouter());
-    configureDependencies();
+    return configureDependencies();
   }
 }
