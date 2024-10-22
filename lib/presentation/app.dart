@@ -18,7 +18,8 @@ class App extends StatelessWidget {
       darkTheme: AppTheme.fromBrightness(Brightness.dark),
       // TODO: Set to [ThemeMode.light] if your app only supports light mode
       themeMode: ThemeMode.system,
-      title: 'Project Name',
+      // TODO: Change Project Name Here
+      title: 'Monstarlab Flutter Template',
       builder: (c, widget) {
         if (widget == null) {
           return const SizedBox();
