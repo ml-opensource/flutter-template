@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// Defines color palette for the application.
 ///
 /// Consider using the color name that is mentioned in Figma.
-sealed class AppColorPalette {
+abstract interface class AppColorPalette {
   const AppColorPalette._();
 
   static const alpha = Colors.transparent;
