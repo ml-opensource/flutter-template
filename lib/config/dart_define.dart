@@ -1,5 +1,5 @@
-// This class is declared as an `abstract interface` to restrict inheritance
+// This class is declared as an `abstract final` to restrict inheritance
 // and prevent instantiation outside the library.
-abstract interface class DartDefine {
+abstract final class DartDefine {
   static const apiBaseUrl = String.fromEnvironment('API_BASE_URL');
 }

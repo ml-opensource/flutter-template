@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ///
 /// This class contains non-sensitive information and is designed to maintain consistency
 /// across the app's UI elements.
-abstract interface class AppUiConstants {
+abstract final class AppUiConstants {
   AppUiConstants._();
 
   // Animations

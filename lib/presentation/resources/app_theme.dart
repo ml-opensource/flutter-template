@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/presentation/extensions/color_extensions.dart';
 import 'package:flutter_template/presentation/resources/resources.dart';
 
-abstract interface class AppTheme {
+abstract final class AppTheme {
   const AppTheme._();
 
   static ThemeData fromBrightness(Brightness brightness) {

@@ -1,4 +1,4 @@
-abstract interface class AssetsCachingManager {
+abstract final class AssetsCachingManager {
   /// Caches only the animations required at the initial app startup,
   /// specifically for the splash screen.
   ///

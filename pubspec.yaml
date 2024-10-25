@@ -14,8 +14,8 @@ dependencies:
 
   # UI & Design
   cupertino_icons: ^1.0.8
-  flutter_svg: 2.0.9 # Change with caution
-  lottie: 1.4.3 # Change with caution
+  flutter_svg: 2.0.9 # ⚠️ Change with caution (reason: nstack)
+  lottie: 3.0.0 # ⚠️ Change with caution (reason: nstack -> http)
   flutter_sticky_header: ^0.7.0
   auto_size_text: ^3.0.0
   theme_tailor_annotation: ^3.0.1

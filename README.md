@@ -6,22 +6,35 @@ This project serves as a template project for Flutter applications. You can gene
 
 ## 🔧 Setup and Installation
 
-- Execute `$ flutter doctor` to verify installations
-- Execute `$ pub get` to pull project dependencies
-- Execute a run configuration of choice
-  - `$ flutter run --flavor development -t lib/main_development.dart --dart-define-from-file=lib/config/dart_define_keys/dart_define_development_keys.json`
-  - `$ flutter run --flavor staging -t lib/main_staging.dart --dart-define-from-file=lib/config/dart_define_keys/dart_define_staging_keys.json`
+1. Execute `$ flutter doctor` to verify installations.
+2. Execute `$ pub get` to pull project dependencies.
+3. Execute a run configuration of your choice:
 
-⚠️ **Running the Production Flavor**
+   ```sh
+   flutter run --flavor development -t lib/main_development.dart --dart-define-from-file=lib/config/dart_define_keys/dart_define_development_keys.json
+   ```
 
-It is **not recommended** to run the production flavor directly from the IDE
-(VS Code or Android Studio) as it may be run by mistake. For ease and accuracy,
-it is advised to run flavors via the **VS Code launch menu** or the **Android
-Studio Run menu** instead.
+   ```sh
+   flutter run --flavor staging -t lib/main_staging.dart --dart-define-from-file=lib/config/dart_define_keys/dart_define_staging_keys.json`
+   ```
+
+> [!IMPORTANT]
+>⚠️ **Running the Production Flavor**
+>
+>It is **not recommended** to run the production flavor directly from the IDE
+>(VS Code or Android Studio) as it may be run by mistake. For ease and >accuracy,
+>it is advised to run flavors via the **VS Code launch menu** or the **Android
+>Studio Run menu** instead.
+>
+>To use the build runner, use this command:
+>
+>```sh
+>dart run build_runner build --delete-conflicting-outputs
+>```
 
 ## 🌲 Branches
 
-- `master` - Latest version in the app store.
+- `main` - Latest version in the app store.
 - `develop` - Default. Feature branches are merged in when complete and then deleted.
 
 ## 🔗 Useful links
@@ -32,4 +45,3 @@ Studio Run menu** instead.
 - [OpenAPI Specification](https://TODO)
 - [NStack](https://TODO)
 - [Figma Design](https://TODO)
-- [UI Manifesto](https://github.com/monstar-lab-oss/ui-manifesto)
