@@ -1,7 +1,17 @@
-# Working with NStack [![Nstack Status](https://img.shields.io/website-up-down-green-red/https/www.nstack.io.svg)](https://www.nstack.io)
+# Working with NStack
 
-> **Note:**  
-> NStack might currently be down as the organization plans to sunset this service. However, this guide will assist future developers if they choose to work with it & NStack is up again.
+> [!IMPORTANT]
+> ⚠️ **Notes regarding the NStack**
+>
+> NStack might currently be down as the
+> organization plans to sunset this service.
+> However, this guide will assist future
+> developers if they choose to work with it &
+> NStack is up again.
+
+_Please visit [Nstack website](https://www.nstack.io) to check if it's up._
+
+The feature integration was removed in the [chore: Removed NStack feature integration](https://github.com/ml-opensource/flutter-template/pull/161) Pull Request.
 
 **NStack** is a Backend-as-a-Service (BaaS) developed by Nodes/Monstarlab. It offers features such as localization, in-app messaging, and rate limiting.
 
