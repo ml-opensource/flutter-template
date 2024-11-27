@@ -9,7 +9,7 @@ def appName = "Monstarlab Flutter Template"
 
 // TODO: Change the applicationId for production
 // On staging it will add .staging and on development it will add .development as suffix.
-def applicationId = "com.monstarlab.flutter"
+def packageName = "com.monstarlab.flutter"
 
 ext {
     androidMinSdkVersion = 21
@@ -18,9 +18,9 @@ ext {
 
 
 android {
-    namespace = "$applicationId"
+    namespace = "$packageName"
     compileSdk = androidCompileAndTargetSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "$applicationId"
+        applicationId = "$packageName"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = androidMinSdkVersion

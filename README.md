@@ -44,5 +44,4 @@ This project serves as a template project for Flutter applications. You can gene
 - [Confluence](https://TODO)
 - [Slack Channel](https://TODO)
 - [OpenAPI Specification](https://TODO)
-- [NStack](https://TODO)
 - [Figma Design](https://TODO)
