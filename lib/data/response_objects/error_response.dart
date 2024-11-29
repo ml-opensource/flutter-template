@@ -1,13 +1,12 @@
 import 'package:flutter_template/domain/common/response_error/response_error.dart';
-import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'error_response.freezed.dart';
 part 'error_response.g.dart';
 
-///The BE should provide one unique code for each error, in this case the
-///error is being provided through errorName so we create an Enum for each
-///code we are aware of with a default value to unknown
+/// The BE should provide one unique code for each error, in this case the
+/// error is being provided through errorName so we create an Enum for each
+/// code we are aware of with a default value to unknown
 @freezed
 class APIError with _$APIError {
   const factory APIError({
@@ -27,9 +26,9 @@ class APIError with _$APIError {
 @freezed
 class ErrorResponse with _$ErrorResponse {
   const factory ErrorResponse({
-    //TODO: name this according to the map key from the error response
-    //if no map key exists then just create this factory with the APIError values
-    //and remove APIError,
+    // TODO: name this according to the map key from the error response
+    // if no map key exists then just create this factory with the APIError values
+    // and remove APIError,
     required APIError error,
   }) = _ErrorResponse;
 
@@ -38,7 +37,7 @@ class ErrorResponse with _$ErrorResponse {
 }
 
 enum ErrorName {
-  //Add error enum and the BE value
+  // Add error enum and the BE value
   @JsonValue('errorExample')
   errorExample,
   unknown,
@@ -53,13 +52,13 @@ extension ErrorResponseExtensions on ErrorResponse {
 }
 
 extension ErrorNameExtensions on ErrorName {
-  String getErrorMessage(Localization l10n) {
+  String getErrorMessage() {
     switch (this) {
-      //Handle error enum and return mapped nstack value
+      // TODO: Handle error enum and return mapped localized value
       case ErrorName.errorExample:
-        return l10n.error.authenticationError;
+        return 'Error Occurred';
       default:
-        return '';
+        return 'Unexpected Error';
     }
   }
 }

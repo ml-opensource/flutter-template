@@ -3,10 +3,10 @@ description: A new Flutter application.
 
 publish_to: "none" # Private package, prevent accidental publishing
 
-version: 1.0.0+1
+version: 0.0.1+1
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.5.4
 
 dependencies:
   flutter:
@@ -14,24 +14,18 @@ dependencies:
 
   # UI & Design
   cupertino_icons: ^1.0.8
-  flutter_svg: 2.0.9 # ⚠️ Change with caution (reason: nstack)
-  lottie: 3.0.0 # ⚠️ Change with caution (reason: nstack -> http)
+  flutter_svg: ^2.0.16
+  lottie: ^3.1.3
   flutter_sticky_header: ^0.7.0
   auto_size_text: ^3.0.0
   theme_tailor_annotation: ^3.0.1
-
-  # Localization
-  nstack:
-    git:
-      url: https://github.com/nstack-io/flutter-sdk.git
-      ref: v0.5.1
 
   # Networking & API
   dio: ^5.7.0
   retrofit: ^4.4.1
 
   # State Management, Dependency Injection, Navigation
-  get_it: ^8.0.1
+  get_it: ^8.0.2
   injectable: ^2.5.0
   flutter_bloc: ^8.1.6
   auto_route: ^9.2.2
@@ -41,12 +35,12 @@ dependencies:
   json_annotation: ^4.9.0
 
   # Device & App Info
-  device_info_plus: ^11.1.0
-  package_info_plus: ^8.1.0
+  device_info_plus: ^11.1.1
+  package_info_plus: ^8.1.1
 
   # Persistence & Storage
   flutter_secure_storage: ^9.2.2
-  shared_preferences: ^2.3.2
+  shared_preferences: ^2.3.3
 
 dev_dependencies:
   # Testing
@@ -56,11 +50,11 @@ dev_dependencies:
   # Code Generation
   build_runner: ^2.4.13
   freezed: ^2.5.7
-  json_serializable: ^6.8.0
+  json_serializable: ^6.9.0
   theme_tailor: ^3.0.1
   auto_route_generator: ^9.0.0
   injectable_generator: ^2.6.2
-  retrofit_generator: ^9.1.3
+  retrofit_generator: ^9.1.5
 
   # Linting & Code Quality
   monstarlab_lints: ^1.0.4

@@ -47,10 +47,13 @@ app.*.map.json
 # Flutter code generation
 *.freezed.dart
 *.g.dart
-nstack.dart
 *.gr.dart
 *.config.dart
 lib/gen/**
 
 # Dependencies
-**.lock
+# Pubspec.lock should be checked out to git
+# to ensure everyone in the team is using the same version.
+# Recommended by Flutter as well.
+# We can git ignore Podfile.lock only.
+Podfile.lock

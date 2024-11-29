@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_template/data/response_objects/error_response.dart';
-import 'package:flutter_template/nstack/nstack.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'response_error.freezed.dart';
@@ -91,28 +90,27 @@ sealed class ResponseError<T> with _$ResponseError<T> implements Exception {
 }
 
 extension ResponseErrorExtensions on ResponseError {
-  String getErrorMessage(Localization l10n) {
-    //TODO: create error module for errors and set value accordingly
+  String getErrorMessage() {
     return when<String>(
-      noInternetConnection: () => l10n.error.connectionError,
-      sendTimeout: () => l10n.error.authenticationError,
-      connectTimeout: () => l10n.error.authenticationError,
-      receiveTimeout: () => l10n.error.authenticationError,
-      badRequest: (message) => message.getErrorMessage(l10n),
-      notFound: () => l10n.error.authenticationError,
-      tooManyRequests: () => l10n.error.authenticationError,
-      unprocessableEntity: () => l10n.error.authenticationError,
-      internalServerError: () => l10n.error.authenticationError,
-      unexpectedError: () => l10n.error.authenticationError,
-      requestCancelled: () => l10n.error.authenticationError,
-      conflict: () => l10n.error.authenticationError,
-      unauthorized: () => l10n.error.authenticationError,
-      invalidPassword: () => l10n.error.authenticationError,
-      invalidEmail: () => l10n.error.authenticationError,
-      invalidSearchTerm: () => l10n.error.authenticationError,
-      invalidLoginCredentials: () => l10n.error.authenticationError,
-      badCertificate: () => l10n.error.authenticationError,
-      connectionError: () => l10n.error.connectionError,
+      noInternetConnection: () => 'No Internet Connection',
+      sendTimeout: () => 'Send Timeout Error',
+      connectTimeout: () => 'Connection Timeout Error',
+      receiveTimeout: () => 'Receive Timeout Error',
+      badRequest: (message) => message.getErrorMessage(),
+      notFound: () => 'Not Found Error',
+      tooManyRequests: () => 'Too Many Requests',
+      unprocessableEntity: () => 'Unprocessable Entity',
+      internalServerError: () => 'Internal Server Error',
+      unexpectedError: () => 'Unexpected Error',
+      requestCancelled: () => 'Request Cancelled',
+      conflict: () => 'Conflict Error',
+      unauthorized: () => 'Unauthorized Error',
+      invalidPassword: () => 'Invalid Password',
+      invalidEmail: () => 'Invalid Email',
+      invalidSearchTerm: () => 'Invalid Search Term',
+      invalidLoginCredentials: () => 'Invalid Login Credentials',
+      badCertificate: () => 'Bad Certificate',
+      connectionError: () => 'Connection Error',
     );
   }
 }
