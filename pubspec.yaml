@@ -36,7 +36,7 @@ dependencies:
 
   # Device & App Info
   device_info_plus: ^11.1.1
-  package_info_plus: ^8.1.1
+  package_info_plus: ^8.1.2
 
   # Persistence & Storage
   flutter_secure_storage: ^9.2.2
