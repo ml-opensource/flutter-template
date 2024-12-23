@@ -40,7 +40,7 @@ dependencies:
 
   # Persistence & Storage
   flutter_secure_storage: ^9.2.2
-  shared_preferences: ^2.3.3
+  shared_preferences: ^2.3.4
 
 dev_dependencies:
   # Testing
