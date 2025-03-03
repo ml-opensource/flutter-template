@@ -35,7 +35,7 @@ dependencies:
   json_annotation: ^4.9.0
 
   # Device & App Info
-  device_info_plus: ^11.1.1
+  device_info_plus: ^11.3.3
   package_info_plus: ^8.1.1
 
   # Persistence & Storage
